@@ -29,7 +29,7 @@ export function HomeWorkspaceOne() {
           </p>
         </div>
 
-        <div className="flex min-w-0 flex-row flex-wrap items-stretch gap-2 [grid-area:actions]">
+        <div className="@container/hero-actions flex min-w-0 flex-row flex-wrap items-stretch gap-2 [grid-area:actions]">
           <a
             className={buttonVariants({ size: "hero", variant: "primary" })}
             href={omarchyIsoDownloadUrl}
@@ -49,29 +49,25 @@ export function HomeWorkspaceOne() {
             aria-label="Donate to Omarchy"
             className={cn(
               buttonVariants({ size: "hero", variant: "secondary" }),
-              "[@media(max-width:1099px)]:hidden!"
+              "hidden! @md/hero-actions:inline-flex!"
             )}
             href={omarchyDonateUrl}
             title="Donate to Omarchy"
           >
             <HeartIcon aria-hidden="true" className="shrink-0" size={15} />
-            <span className="hidden min-w-0 truncate [@media(min-width:1440px)]:inline">
-              Donate
-            </span>
+            <span className="hidden min-w-0 truncate @xl/hero-actions:inline">Donate</span>
           </a>
           <a
             aria-label="View Omarchy on GitHub"
             className={cn(
               buttonVariants({ size: "hero", variant: "secondary" }),
-              "[@media(max-width:1099px)]:hidden!"
+              "hidden! @md/hero-actions:inline-flex!"
             )}
             href={omarchyGithubUrl}
             title="View Omarchy on GitHub"
           >
             <GitHubLogoIcon />
-            <span className="hidden min-w-0 truncate [@media(min-width:1440px)]:inline">
-              GitHub
-            </span>
+            <span className="hidden min-w-0 truncate @xl/hero-actions:inline">GitHub</span>
           </a>
         </div>
       </div>
