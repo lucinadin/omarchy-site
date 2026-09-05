@@ -1,6 +1,6 @@
 # Omarchy
 
-Beautiful, Fun & Opinionated Linux by DHH.
+Beautiful, Fun & Agentic Linux by DHH.
 
 See https://github.com/omacom/omarchy for more.
 
@@ -14,22 +14,23 @@ convert it:
 
     magick preview.png -strip -resize '1200>' -quality 80 your-theme.webp
 
-Put the result in `assets/themes/`. Name the file after the theme, lowercase
+Put the result in `public/assets/themes/`. Name the file after the theme, lowercase
 and hyphenated — `your-theme.webp`. Aim for 1200x675; keep it under about
 100KB so the page stays quick to load.
 
-**2. An entry.** Add a figure block to `themes/index.html`, in alphabetical
+**2. An entry.** Add an object to `content/community-themes.ts`, in alphabetical
 order among the others:
 
-```html
-<figure class="themes__theme">
-  <a href="https://github.com/you/your-theme"><img src="/assets/themes/your-theme.webp" alt="Your Theme theme" loading="lazy" decoding="async"></a>
-  <figcaption><a href="https://github.com/you/your-theme">Your Theme</a></figcaption>
-</figure>
+```ts
+{
+  image: "/assets/themes/your-theme.webp",
+  name: "Your Theme",
+  repository: "https://github.com/you/your-theme",
+},
 ```
 
-Both links point at the theme's own repository, which is where people
-install it from and where it needs to keep living.
+The repository is where people install the theme from and where it needs to
+keep living.
 
 ### The screenshot matters
 
@@ -45,6 +46,6 @@ to put on the page.
 ## Plugins
 
 Plugins aren't in this repository. They're listed on
-[omarchyplugins.com](https://omarchyplugins.com/) from the
+[plugins.omarchy.org](https://plugins.omarchy.org/) from the
 [marketplace repo](https://github.com/HANCORE-linux/omarchy-plugin-marketplace),
 which has its own submission guide.

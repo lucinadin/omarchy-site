@@ -1,0 +1,82 @@
+{
+  "version": 1,
+  "repositories": [
+    {
+      "name": "omarchy-site-upstream",
+      "url": "https://github.com/omacom/omarchy-site",
+      "commit": "c7733b589423f079385cb20f1e0461a04e13971f",
+      "ref": "master",
+      "link": ".repos/omarchy-site-upstream"
+    },
+    {
+      "name": "omarchy-upstream",
+      "url": "https://github.com/omacom/omarchy",
+      "commit": "625c4a1603ff41e523e8e3d85022e6a60ebab944",
+      "ref": "quattro",
+      "link": ".repos/omarchy-upstream"
+    },
+    {
+      "name": "wterm",
+      "url": "https://github.com/vercel-labs/wterm",
+      "commit": "cdff1c07890ab2c5ba2efbcc1091f790dfb8f931",
+      "ref": "main",
+      "link": ".repos/wterm"
+    },
+    {
+      "name": "ttfx",
+      "url": "https://github.com/omacom/ttfx",
+      "commit": "7203e354498462064b7c0a89375051f65cf2ce99",
+      "ref": "v0.3.2",
+      "link": ".repos/ttfx"
+    },
+    {
+      "name": "vgpu",
+      "url": "https://github.com/vercel-labs/vgpu",
+      "commit": "2de6899b38e493213fed3508b0e2d6e527e2454f",
+      "ref": "main",
+      "link": ".repos/vgpu"
+    },
+    {
+      "name": "react-doctor",
+      "url": "https://github.com/millionco/react-doctor",
+      "commit": "fd23edca7eaa76b7f2b66795cfc829cc1967b7f3",
+      "ref": "react-doctor@0.9.13",
+      "link": ".repos/react-doctor"
+    },
+    {
+      "name": "anti-slop",
+      "url": "https://github.com/dmmulroy/anti-slop",
+      "commit": "e8c4880471b23ab7f216fba7b27d173a6ef07d4c",
+      "ref": "main",
+      "link": ".repos/anti-slop"
+    },
+    {
+      "name": "ultracite",
+      "url": "https://github.com/haydenbleasel/ultracite",
+      "commit": "963292a8957dbfeefd00d83a4a0763005bd19d85",
+      "ref": "main",
+      "link": ".repos/ultracite"
+    },
+    {
+      "name": "base-ui",
+      "url": "https://github.com/mui/base-ui",
+      "commit": "254f4744f0a241c20697b9eeab33402f4469a081",
+      "ref": "v1.7.0",
+      "link": ".repos/base-ui"
+    },
+    {
+      "name": "shadcn-ui",
+      "url": "https://github.com/shadcn-ui/ui",
+      "commit": "8a1b5386010e1a4a50367fff39ee3216bf6f01b2",
+      "ref": "main",
+      "link": ".repos/shadcn-ui"
+    },
+    {
+      "name": "cn",
+      "url": "https://github.com/shadcn-ui/cn",
+      "commit": "1ca7cc0fbb1e5a77a3e157799da68dbca7063521",
+      "ref": "cn@0.2.5",
+      "link": ".repos/cn"
+    }
+  ]
+}

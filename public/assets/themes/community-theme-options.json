@@ -1,0 +1,5499 @@
+{
+  "themes": [
+    {
+      "colors": {
+        "accent": "#be3f50",
+        "background": "#0e091d",
+        "blue": "#be3f50",
+        "brightBlue": "#be3f50",
+        "brightCyan": "#be3f50",
+        "brightForeground": "#14b9b5",
+        "brightGreen": "#be3f50",
+        "brightMagenta": "#be3f50",
+        "brightRed": "#be3f50",
+        "brightYellow": "#be3f50",
+        "brown": "#be3f50",
+        "cyan": "#be3f50",
+        "darkBackground": "#0e091d",
+        "darkForeground": "#14b9b5",
+        "darkerBackground": "#0e091d",
+        "foreground": "#14b9b5",
+        "green": "#be3f50",
+        "lightForeground": "#14b9b5",
+        "lighterBackground": "#0e091d",
+        "magenta": "#be3f50",
+        "muted": "#14b9b5",
+        "orange": "#be3f50",
+        "red": "#be3f50",
+        "selection": "#be3f50",
+        "yellow": "#be3f50"
+      },
+      "id": "community:aetheria",
+      "kind": "community",
+      "mode": "dark",
+      "name": "Aetheria",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAADwAQCdASoKAAYAA4BaJZQCdAEQ/OjvLgAA/vbZcqgMTgUrWD/WfrZ2UpGBIAAA",
+        "image": "/assets/themes/aetheria.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/aetheria-be13d42065b73e2a-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/aetheria-be13d42065b73e2a-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/aetheria-be13d42065b73e2a-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/aetheria-be13d42065b73e2a-1920.webp",
+            "width": 1920
+          }
+        ]
+      },
+      "repository": "https://github.com/JJDizz1L/aetheria",
+      "slug": "aetheria",
+      "wallpaper": "linear-gradient(#0e091d, #0e091d)"
+    },
+    {
+      "colors": {
+        "accent": "#8eb0e6",
+        "background": "#111422",
+        "blue": "#69c3ff",
+        "brightBlue": "#9bd6ff",
+        "brightCyan": "#66fff2",
+        "brightForeground": "#ffffff",
+        "brightGreen": "#67f7a2",
+        "brightMagenta": "#ffaff9",
+        "brightRed": "#ff6947",
+        "brightYellow": "#ffe17a",
+        "brown": "#9d6f5f",
+        "cyan": "#22ecdb",
+        "darkBackground": "#0d101b",
+        "darkForeground": "#6f7594",
+        "darkerBackground": "#090b13",
+        "foreground": "#bcc1dc",
+        "green": "#3cec85",
+        "lightForeground": "#d3d7ea",
+        "lighterBackground": "#1a1e33",
+        "magenta": "#f38cec",
+        "muted": "#424761",
+        "orange": "#e9954f",
+        "red": "#e35535",
+        "selection": "#313b62",
+        "yellow": "#eacd61"
+      },
+      "id": "community:arc-blueberry",
+      "kind": "community",
+      "mode": "dark",
+      "name": "Arc Blueberry",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRi4AAABXRUJQVlA4ICIAAABwAQCdASoKAAYAA4BaJZQCdAGIQAD+8axy0EdXRcxIB9gA",
+        "image": "/assets/themes/arc-blueberry.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/arc-blueberry-1dd5eb74d5020902-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/arc-blueberry-1dd5eb74d5020902-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/arc-blueberry-1dd5eb74d5020902-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/arc-blueberry-1dd5eb74d5020902-1920.webp",
+            "width": 1920
+          }
+        ]
+      },
+      "repository": "https://github.com/vale-c/omarchy-arc-blueberry",
+      "slug": "arc-blueberry",
+      "wallpaper": "linear-gradient(#111422, #111422)"
+    },
+    {
+      "colors": {
+        "accent": "#626262",
+        "background": "#121212",
+        "blue": "#626262",
+        "brightBlue": "#626262",
+        "brightCyan": "#9e9e9e",
+        "brightForeground": "#fafafa",
+        "brightGreen": "#767676",
+        "brightMagenta": "#8a8a8a",
+        "brightRed": "#9e9e9e",
+        "brightYellow": "#b2b2b2",
+        "brown": "#545454",
+        "cyan": "#767676",
+        "darkBackground": "#0d0d0d",
+        "darkForeground": "#adadad",
+        "darkerBackground": "#080808",
+        "foreground": "#e0e0e0",
+        "green": "#767676",
+        "lightForeground": "#eaeaea",
+        "lighterBackground": "#212121",
+        "magenta": "#8a8a8a",
+        "muted": "#5a5a5a",
+        "orange": "#949494",
+        "red": "#8a8a8a",
+        "selection": "#0d0d0d",
+        "yellow": "#9e9e9e"
+      },
+      "id": "community:ash",
+      "kind": "community",
+      "mode": "dark",
+      "name": "Ash",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRiYAAABXRUJQVlA4IBoAAAAwAQCdASoKAAYABIBaJaQAA3AA/vMAM3gAAA==",
+        "image": "/assets/themes/ash.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/ash-c5a7adf5b1986c63-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/ash-c5a7adf5b1986c63-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/ash-c5a7adf5b1986c63-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/ash-c5a7adf5b1986c63-1920.webp",
+            "width": 1920
+          }
+        ]
+      },
+      "repository": "https://github.com/bjarneo/omarchy-ash-theme",
+      "slug": "ash",
+      "wallpaper": "linear-gradient(#121212, #121212)"
+    },
+    {
+      "colors": {
+        "accent": "#8be9fd",
+        "background": "#282a36",
+        "blue": "#8be9fd",
+        "brightBlue": "#bde0fe",
+        "brightCyan": "#bde0fe",
+        "brightForeground": "#ffffff",
+        "brightGreen": "#bde0fe",
+        "brightMagenta": "#ffc8dd",
+        "brightRed": "#ffafcc",
+        "brightYellow": "#cbc3e3",
+        "brown": "#755f69",
+        "cyan": "#8be9fd",
+        "darkBackground": "#1e2029",
+        "darkForeground": "#a0a19f",
+        "darkerBackground": "#14151b",
+        "foreground": "#f8f8f2",
+        "green": "#8be9fd",
+        "lightForeground": "#fbfbf6",
+        "lighterBackground": "#44475a",
+        "magenta": "#ffc8dd",
+        "muted": "#44475a",
+        "orange": "#ffb86c",
+        "red": "#ffafcc",
+        "selection": "#44475a",
+        "yellow": "#cbc3e3"
+      },
+      "id": "community:aura",
+      "kind": "community",
+      "mode": "dark",
+      "name": "Aura",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRjIAAABXRUJQVlA4ICYAAABwAQCdASoKAAYAA4BaJZQCdAFAAAD+8HI6RM/moLG8sywX2rcAAA==",
+        "image": "/assets/themes/aura.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/aura-3646041562c47fe2-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/aura-3646041562c47fe2-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/aura-3646041562c47fe2-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/aura-3646041562c47fe2-1920.webp",
+            "width": 1920
+          }
+        ]
+      },
+      "repository": "https://github.com/bjarneo/omarchy-aura-theme",
+      "slug": "aura",
+      "wallpaper": "linear-gradient(#282a36, #282a36)"
+    },
+    {
+      "colors": {
+        "accent": "#36a166",
+        "background": "#22221b",
+        "blue": "#36a166",
+        "brightBlue": "#36a166",
+        "brightCyan": "#36a166",
+        "brightForeground": "#dcd9d6",
+        "brightGreen": "#36a166",
+        "brightMagenta": "#36a166",
+        "brightRed": "#36a166",
+        "brightYellow": "#36a166",
+        "brown": "#36a166",
+        "cyan": "#36a166",
+        "darkBackground": "#22221b",
+        "darkForeground": "#dcd9d6",
+        "darkerBackground": "#22221b",
+        "foreground": "#dcd9d6",
+        "green": "#36a166",
+        "lightForeground": "#dcd9d6",
+        "lighterBackground": "#22221b",
+        "magenta": "#36a166",
+        "muted": "#dcd9d6",
+        "orange": "#36a166",
+        "red": "#36a166",
+        "selection": "#36a166",
+        "yellow": "#36a166"
+      },
+      "id": "community:atelier",
+      "kind": "community",
+      "mode": "dark",
+      "name": "Atelier",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRi4AAABXRUJQVlA4ICIAAACwAQCdASoKAAYAA4BaJZwAAxecsg4AAP7uyrqPeGWLwIAA",
+        "image": "/assets/themes/atelier.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/atelier-732333c59a419966-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/atelier-732333c59a419966-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/atelier-732333c59a419966-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/atelier-732333c59a419966-1366.webp",
+            "width": 1366
+          }
+        ]
+      },
+      "repository": "https://github.com/atif-1402/omarchy-atelier-theme",
+      "slug": "atelier",
+      "wallpaper": "linear-gradient(#22221b, #22221b)"
+    },
+    {
+      "colors": {
+        "accent": "#fcef0c",
+        "background": "#1b1d1e",
+        "blue": "#737074",
+        "brightBlue": "#909495",
+        "brightCyan": "#a2a2a5",
+        "brightForeground": "#a7a8a3",
+        "brightGreen": "#fff27c",
+        "brightMagenta": "#9a999d",
+        "brightRed": "#fff68d",
+        "brightYellow": "#feed6c",
+        "brown": "#736d21",
+        "cyan": "#615f5e",
+        "darkBackground": "#1b1d1e",
+        "darkForeground": "#a7a8a3",
+        "darkerBackground": "#1b1d1e",
+        "foreground": "#a7a8a3",
+        "green": "#c8be46",
+        "lightForeground": "#a7a8a3",
+        "lighterBackground": "#1b1d1e",
+        "magenta": "#737271",
+        "muted": "#6d6f6e",
+        "orange": "#f3fd21",
+        "red": "#e6db43",
+        "selection": "#505354",
+        "yellow": "#f3fd21"
+      },
+      "id": "community:batman",
+      "kind": "community",
+      "mode": "dark",
+      "name": "Batman",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRigAAABXRUJQVlA4IBwAAAAwAQCdASoKAAYAA4BaJZwAA3AA/vFcdcJy6OAA",
+        "image": "/assets/themes/batman.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/batman-2f85f1c028fd191e-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/batman-2f85f1c028fd191e-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/batman-2f85f1c028fd191e-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/batman-2f85f1c028fd191e-1920.webp",
+            "width": 1920
+          }
+        ]
+      },
+      "repository": "https://github.com/OldJobobo/omarchy-batman-theme",
+      "slug": "batman",
+      "wallpaper": "linear-gradient(#1b1d1e, #1b1d1e)"
+    },
+    {
+      "colors": {
+        "accent": "#605d5b",
+        "background": "#121212",
+        "blue": "#605d5b",
+        "brightBlue": "#605d5b",
+        "brightCyan": "#605d5b",
+        "brightForeground": "#a4a4a4",
+        "brightGreen": "#605d5b",
+        "brightMagenta": "#605d5b",
+        "brightRed": "#605d5b",
+        "brightYellow": "#605d5b",
+        "brown": "#605d5b",
+        "cyan": "#605d5b",
+        "darkBackground": "#121212",
+        "darkForeground": "#a4a4a4",
+        "darkerBackground": "#121212",
+        "foreground": "#a4a4a4",
+        "green": "#605d5b",
+        "lightForeground": "#a4a4a4",
+        "lighterBackground": "#121212",
+        "magenta": "#605d5b",
+        "muted": "#a4a4a4",
+        "orange": "#605d5b",
+        "red": "#605d5b",
+        "selection": "#605d5b",
+        "yellow": "#605d5b"
+      },
+      "id": "community:batou",
+      "kind": "community",
+      "mode": "dark",
+      "name": "Batou",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRjIAAABXRUJQVlA4ICYAAADQAQCdASoKAAYAA4BaJaQAAxf+7aXYAAD+9qpnM87MQlby0VoAAA==",
+        "image": "/assets/themes/batou.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/batou-792aebdff53cb3f6-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/batou-792aebdff53cb3f6-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/batou-792aebdff53cb3f6-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/batou-792aebdff53cb3f6-1920.webp",
+            "width": 1920
+          }
+        ]
+      },
+      "repository": "https://github.com/HANCORE-linux/omarchy-batou-theme",
+      "slug": "batou",
+      "wallpaper": "linear-gradient(#121212, #121212)"
+    },
+    {
+      "colors": {
+        "accent": "#ae3f82",
+        "background": "#1a1515",
+        "blue": "#614f76",
+        "brightBlue": "#614f76",
+        "brightCyan": "#756d94",
+        "brightForeground": "#ffe9c7",
+        "brightGreen": "#768f80",
+        "brightMagenta": "#7b3d79",
+        "brightRed": "#f07342",
+        "brightYellow": "#959a6b",
+        "brown": "#ae3f82",
+        "cyan": "#756d94",
+        "darkBackground": "#1a1515",
+        "darkForeground": "#9c8181",
+        "darkerBackground": "#1a1515",
+        "foreground": "#dcc9bc",
+        "green": "#768f80",
+        "lightForeground": "#ffe9c7",
+        "lighterBackground": "#2d2424",
+        "magenta": "#7b3d79",
+        "muted": "#725a5a",
+        "orange": "#e39c45",
+        "red": "#f07342",
+        "selection": "#453636",
+        "yellow": "#959a6b"
+      },
+      "id": "community:biscuit-de-mar-dark",
+      "kind": "community",
+      "mode": "dark",
+      "name": "Biscuit de Mar Dark",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRi4AAABXRUJQVlA4ICIAAABQAQCdASoKAAYAA4BaJZwABAAAAP7w65uttPV/Ne/hWAAA",
+        "image": "/assets/themes/biscuit-de-mar-dark.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/biscuit-de-mar-dark-910190459d660962-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/biscuit-de-mar-dark-910190459d660962-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/biscuit-de-mar-dark-910190459d660962-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/biscuit-de-mar-dark-910190459d660962-1920.webp",
+            "width": 1920
+          }
+        ]
+      },
+      "repository": "https://github.com/OldJobobo/omarchy-biscuit-de-mar-dark-theme",
+      "slug": "biscuit-de-mar-dark",
+      "wallpaper": "linear-gradient(#1a1515, #1a1515)"
+    },
+    {
+      "colors": {
+        "accent": "#989898",
+        "background": "#000000",
+        "blue": "#989898",
+        "brightBlue": "#989898",
+        "brightCyan": "#989898",
+        "brightForeground": "#ffffff",
+        "brightGreen": "#989898",
+        "brightMagenta": "#989898",
+        "brightRed": "#989898",
+        "brightYellow": "#989898",
+        "brown": "#989898",
+        "cyan": "#989898",
+        "darkBackground": "#000000",
+        "darkForeground": "#ffffff",
+        "darkerBackground": "#000000",
+        "foreground": "#ffffff",
+        "green": "#989898",
+        "lightForeground": "#ffffff",
+        "lighterBackground": "#000000",
+        "magenta": "#989898",
+        "muted": "#ffffff",
+        "orange": "#989898",
+        "red": "#989898",
+        "selection": "#989898",
+        "yellow": "#989898"
+      },
+      "id": "community:black-arch",
+      "kind": "community",
+      "mode": "dark",
+      "name": "Black Arch",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRj4AAABXRUJQVlA4IDIAAADQAQCdASoKAAYAA4BaJaQAAwBVJtN5wAD+75pcrklH71VFdWLx4bhr9Qj5OKoXj2KAAA==",
+        "image": "/assets/themes/black-arch.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/black-arch-81110f12e9b67d93-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/black-arch-81110f12e9b67d93-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/black-arch-81110f12e9b67d93-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/black-arch-81110f12e9b67d93-1920.webp",
+            "width": 1920
+          }
+        ]
+      },
+      "repository": "https://github.com/ankur311sudo/black_arch",
+      "slug": "black-arch",
+      "wallpaper": "linear-gradient(#000000, #000000)"
+    },
+    {
+      "colors": {
+        "accent": "#6e6a58",
+        "background": "#0d0d0d",
+        "blue": "#6e6a58",
+        "brightBlue": "#6e6a58",
+        "brightCyan": "#6e6a58",
+        "brightForeground": "#ebdbb2",
+        "brightGreen": "#6e6a58",
+        "brightMagenta": "#6e6a58",
+        "brightRed": "#6e6a58",
+        "brightYellow": "#6e6a58",
+        "brown": "#6e6a58",
+        "cyan": "#6e6a58",
+        "darkBackground": "#0d0d0d",
+        "darkForeground": "#ebdbb2",
+        "darkerBackground": "#0d0d0d",
+        "foreground": "#ebdbb2",
+        "green": "#6e6a58",
+        "lightForeground": "#ebdbb2",
+        "lighterBackground": "#0d0d0d",
+        "magenta": "#6e6a58",
+        "muted": "#ebdbb2",
+        "orange": "#6e6a58",
+        "red": "#6e6a58",
+        "selection": "#6e6a58",
+        "yellow": "#6e6a58"
+      },
+      "id": "community:black-gold",
+      "kind": "community",
+      "mode": "dark",
+      "name": "Black Gold",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRj4AAABXRUJQVlA4IDIAAADQAQCdASoKAAYAA4BaJZQC7AELXPb6QAD+9dmwjs+ooTswaHcq72ry8iJcGQNhrgAAAA==",
+        "image": "/assets/themes/black-gold.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/black-gold-ebfa9a40250dcda8-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/black-gold-ebfa9a40250dcda8-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/black-gold-ebfa9a40250dcda8-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/black-gold-ebfa9a40250dcda8-1920.webp",
+            "width": 1920
+          }
+        ]
+      },
+      "repository": "https://github.com/HANCORE-linux/omarchy-blackgold-theme",
+      "slug": "black-gold",
+      "wallpaper": "linear-gradient(#0d0d0d, #0d0d0d)"
+    },
+    {
+      "colors": {
+        "accent": "#ced6e0",
+        "background": "#14181e",
+        "blue": "#8ea7c2",
+        "brightBlue": "#adc0d7",
+        "brightCyan": "#acccd2",
+        "brightForeground": "#e9eef5",
+        "brightGreen": "#a6cab5",
+        "brightMagenta": "#d3b9d5",
+        "brightRed": "#d2a2a6",
+        "brightYellow": "#d8cfb6",
+        "brown": "#876f5e",
+        "cyan": "#8fb5bd",
+        "darkBackground": "#0e1116",
+        "darkForeground": "#6c7987",
+        "darkerBackground": "#080b10",
+        "foreground": "#ced6e0",
+        "green": "#89b39b",
+        "lightForeground": "#afb8c7",
+        "lighterBackground": "#1c2026",
+        "magenta": "#bc9bbf",
+        "muted": "#525d6a",
+        "orange": "#c19f8b",
+        "red": "#bd8489",
+        "selection": "#363f4a",
+        "yellow": "#c3b798"
+      },
+      "id": "community:black-sand",
+      "kind": "community",
+      "mode": "dark",
+      "name": "Black Sand",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRjIAAABXRUJQVlA4ICYAAACwAQCdASoKAAYAA4BaJZwAAlxfkrbAAP70d5wRRG16Mapu4OAAAA==",
+        "image": "/assets/themes/black-sand.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/black-sand-bff187c4c787ff36-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/black-sand-bff187c4c787ff36-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/black-sand-bff187c4c787ff36-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/black-sand-bff187c4c787ff36-1920.webp",
+            "width": 1920
+          }
+        ]
+      },
+      "repository": "https://github.com/pkovzz/omarchy-black-sand-theme",
+      "slug": "black-sand",
+      "wallpaper": "linear-gradient(#14181e, #14181e)"
+    },
+    {
+      "colors": {
+        "accent": "#adf0e9",
+        "background": "#0a0a0a",
+        "blue": "#adf0e9",
+        "brightBlue": "#adf0e9",
+        "brightCyan": "#adf0e9",
+        "brightForeground": "#c8dcdc",
+        "brightGreen": "#adf0e9",
+        "brightMagenta": "#adf0e9",
+        "brightRed": "#adf0e9",
+        "brightYellow": "#adf0e9",
+        "brown": "#adf0e9",
+        "cyan": "#adf0e9",
+        "darkBackground": "#0a0a0a",
+        "darkForeground": "#c8dcdc",
+        "darkerBackground": "#0a0a0a",
+        "foreground": "#c8dcdc",
+        "green": "#adf0e9",
+        "lightForeground": "#c8dcdc",
+        "lighterBackground": "#0a0a0a",
+        "magenta": "#adf0e9",
+        "muted": "#c8dcdc",
+        "orange": "#adf0e9",
+        "red": "#adf0e9",
+        "selection": "#adf0e9",
+        "yellow": "#adf0e9"
+      },
+      "id": "community:black-turq",
+      "kind": "community",
+      "mode": "dark",
+      "name": "Black Turq",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRjgAAABXRUJQVlA4ICwAAACwAQCdASoKAAYAA4BaJZwAAu19MUnQAP73gOJvwqunaWIHVN8oP0hlqq2wAA==",
+        "image": "/assets/themes/black-turq.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/black-turq-d1ba9ed3be3f1444-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/black-turq-d1ba9ed3be3f1444-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/black-turq-d1ba9ed3be3f1444-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/black-turq-d1ba9ed3be3f1444-1920.webp",
+            "width": 1920
+          }
+        ]
+      },
+      "repository": "https://github.com/HANCORE-linux/omarchy-blackturq-theme",
+      "slug": "black-turq",
+      "wallpaper": "linear-gradient(#0a0a0a, #0a0a0a)"
+    },
+    {
+      "colors": {
+        "accent": "#4242b1",
+        "background": "#161616",
+        "blue": "#4242b1",
+        "brightBlue": "#4242b1",
+        "brightCyan": "#4242b1",
+        "brightForeground": "#f2f4f8",
+        "brightGreen": "#4242b1",
+        "brightMagenta": "#4242b1",
+        "brightRed": "#4242b1",
+        "brightYellow": "#4242b1",
+        "brown": "#4242b1",
+        "cyan": "#4242b1",
+        "darkBackground": "#161616",
+        "darkForeground": "#f2f4f8",
+        "darkerBackground": "#161616",
+        "foreground": "#f2f4f8",
+        "green": "#4242b1",
+        "lightForeground": "#f2f4f8",
+        "lighterBackground": "#161616",
+        "magenta": "#4242b1",
+        "muted": "#f2f4f8",
+        "orange": "#4242b1",
+        "red": "#4242b1",
+        "selection": "#4242b1",
+        "yellow": "#4242b1"
+      },
+      "id": "community:bluedotrb",
+      "kind": "community",
+      "mode": "dark",
+      "name": "bluedotrb",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRjAAAABXRUJQVlA4ICQAAACwAQCdASoKAAYAA4BaJZwAAudj1qXAAP71dHz3NSilPUcAAAA=",
+        "image": "/assets/themes/bluedotrb.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/bluedotrb-c2c2b004440471fb-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/bluedotrb-c2c2b004440471fb-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/bluedotrb-c2c2b004440471fb-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/bluedotrb-c2c2b004440471fb-1920.webp",
+            "width": 1920
+          }
+        ]
+      },
+      "repository": "https://github.com/dotsilva/omarchy-bluedotrb-theme",
+      "slug": "bluedotrb",
+      "wallpaper": "linear-gradient(#161616, #161616)"
+    },
+    {
+      "colors": {
+        "accent": "#9b6b9f",
+        "background": "#060606",
+        "blue": "#5870a8",
+        "brightBlue": "#7d99db",
+        "brightCyan": "#89c0d3",
+        "brightForeground": "#f4deea",
+        "brightGreen": "#afd39e",
+        "brightMagenta": "#ae89d3",
+        "brightRed": "#d38669",
+        "brightYellow": "#ffd780",
+        "brown": "#5a4038",
+        "cyan": "#6090a0",
+        "darkBackground": "#040404",
+        "darkForeground": "#b49faa",
+        "darkerBackground": "#040303",
+        "foreground": "#f0d4e4",
+        "green": "#80a070",
+        "lightForeground": "#f2dae8",
+        "lighterBackground": "#1f1f1e",
+        "magenta": "#8060a0",
+        "muted": "#626262",
+        "orange": "#c47838",
+        "red": "#a06048",
+        "selection": "#f0d4e4",
+        "yellow": "#d4b060"
+      },
+      "id": "community:castle-on-a-lake",
+      "kind": "community",
+      "mode": "dark",
+      "name": "Castle on a Lake",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRjgAAABXRUJQVlA4ICwAAADwAQCdASoKAAYAA4BaJZwAAxanXCVoXAAA/qMr7+79UHcgV+MohawtxQAAAA==",
+        "image": "/assets/themes/castle-on-a-lake.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/castle-on-a-lake-b32ff5126290cb11-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/castle-on-a-lake-b32ff5126290cb11-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/castle-on-a-lake-b32ff5126290cb11-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/castle-on-a-lake-b32ff5126290cb11-1920.webp",
+            "width": 1920
+          }
+        ]
+      },
+      "repository": "https://github.com/shmall03/omarchy-castle-on-a-lake-theme",
+      "slug": "castle-on-a-lake",
+      "wallpaper": "linear-gradient(#060606, #060606)"
+    },
+    {
+      "colors": {
+        "accent": "#89b4fa",
+        "background": "#010101",
+        "blue": "#89b4fa",
+        "brightBlue": "#89b4fa",
+        "brightCyan": "#89b4fa",
+        "brightForeground": "#cdd6f4",
+        "brightGreen": "#89b4fa",
+        "brightMagenta": "#89b4fa",
+        "brightRed": "#89b4fa",
+        "brightYellow": "#89b4fa",
+        "brown": "#89b4fa",
+        "cyan": "#89b4fa",
+        "darkBackground": "#010101",
+        "darkForeground": "#cdd6f4",
+        "darkerBackground": "#010101",
+        "foreground": "#cdd6f4",
+        "green": "#89b4fa",
+        "lightForeground": "#cdd6f4",
+        "lighterBackground": "#010101",
+        "magenta": "#89b4fa",
+        "muted": "#cdd6f4",
+        "orange": "#89b4fa",
+        "red": "#89b4fa",
+        "selection": "#89b4fa",
+        "yellow": "#89b4fa"
+      },
+      "id": "community:catppuccin-mocha-dark",
+      "kind": "community",
+      "mode": "dark",
+      "name": "Catppuccin Mocha Dark",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRioAAABXRUJQVlA4IB4AAAAwAQCdASoKAAYAA4BaJaQAA3AA/vKrdXH39UOAAAA=",
+        "image": "/assets/themes/catppuccin-mocha-dark.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/catppuccin-mocha-dark-c275520b68ec60db-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/catppuccin-mocha-dark-c275520b68ec60db-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/catppuccin-mocha-dark-c275520b68ec60db-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/catppuccin-mocha-dark-c275520b68ec60db-1920.webp",
+            "width": 1920
+          }
+        ]
+      },
+      "repository": "https://github.com/Luquatic/omarchy-catppuccin-dark",
+      "slug": "catppuccin-mocha-dark",
+      "wallpaper": "linear-gradient(#010101, #010101)"
+    },
+    {
+      "colors": {
+        "accent": "#3a82db",
+        "background": "#101b25",
+        "blue": "#2e72ca",
+        "brightBlue": "#4a95e9",
+        "brightCyan": "#7db3d0",
+        "brightForeground": "#f4f8f7",
+        "brightGreen": "#7a8c63",
+        "brightMagenta": "#c2a8ad",
+        "brightRed": "#b98a80",
+        "brightYellow": "#dccb98",
+        "brown": "#8c8664",
+        "cyan": "#5b96b8",
+        "darkBackground": "#0a1319",
+        "darkForeground": "#8e989f",
+        "darkerBackground": "#060b0f",
+        "foreground": "#dfe6e4",
+        "green": "#5a6b45",
+        "lightForeground": "#b0c1cc",
+        "lighterBackground": "#1f3846",
+        "magenta": "#a98f95",
+        "muted": "#748a9b",
+        "orange": "#c08a5e",
+        "red": "#9c6b63",
+        "selection": "#234152",
+        "yellow": "#c9b77e"
+      },
+      "id": "community:cincinnati",
+      "kind": "community",
+      "mode": "dark",
+      "name": "Cincinnati",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAADQAQCdASoKAAYAA4BaJYgCdAEemPAoAAD+3VjCGwpU9AsgC/GsyXFsZ7IV+hIoT8Tt5q51K2lgAA==",
+        "image": "/assets/themes/cincinnati.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/cincinnati-2fc8f5ac58763d90-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/cincinnati-2fc8f5ac58763d90-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/cincinnati-2fc8f5ac58763d90-1200.webp",
+            "width": 1200
+          }
+        ]
+      },
+      "repository": "https://github.com/jkwuc89/omarchy-cincinnati-theme",
+      "slug": "cincinnati",
+      "wallpaper": "linear-gradient(#101b25, #101b25)"
+    },
+    {
+      "colors": {
+        "accent": "#ad2222",
+        "background": "#181a1f",
+        "blue": "#ad2222",
+        "brightBlue": "#dce0e6",
+        "brightCyan": "#aab0b9",
+        "brightForeground": "#b9bec6",
+        "brightGreen": "#eceff2",
+        "brightMagenta": "#f5f7f9",
+        "brightRed": "#ff5c5c",
+        "brightYellow": "#f04a4a",
+        "brown": "#6a3030",
+        "cyan": "#8f949c",
+        "darkBackground": "#181a1f",
+        "darkForeground": "#b9bec6",
+        "darkerBackground": "#181a1f",
+        "foreground": "#b9bec6",
+        "green": "#dce0e6",
+        "lightForeground": "#b9bec6",
+        "lighterBackground": "#181a1f",
+        "magenta": "#c3c8d0",
+        "muted": "#4b515b",
+        "orange": "#cc1f1f",
+        "red": "#e53939",
+        "selection": "#2b2f37",
+        "yellow": "#9e1a1a"
+      },
+      "id": "community:city-783",
+      "kind": "community",
+      "mode": "dark",
+      "name": "City-783",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRiwAAABXRUJQVlA4ICAAAAAwAQCdASoKAAYAA4BaJZwAA3AA/vFlu/nu94aSAWKEAA==",
+        "image": "/assets/themes/city-783.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/city-783-df04351b9e39f6f1-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/city-783-df04351b9e39f6f1-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/city-783-df04351b9e39f6f1-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/city-783-df04351b9e39f6f1-1920.webp",
+            "width": 1920
+          }
+        ]
+      },
+      "repository": "https://github.com/OldJobobo/omarchy-city-783-theme",
+      "slug": "city-783",
+      "wallpaper": "linear-gradient(#181a1f, #181a1f)"
+    },
+    {
+      "colors": {
+        "accent": "#ffc600",
+        "background": "#122738",
+        "blue": "#ffc600",
+        "brightBlue": "#ffc600",
+        "brightCyan": "#ffc600",
+        "brightForeground": "#ffffff",
+        "brightGreen": "#ffc600",
+        "brightMagenta": "#ffc600",
+        "brightRed": "#ffc600",
+        "brightYellow": "#ffc600",
+        "brown": "#ffc600",
+        "cyan": "#ffc600",
+        "darkBackground": "#122738",
+        "darkForeground": "#ffffff",
+        "darkerBackground": "#122738",
+        "foreground": "#ffffff",
+        "green": "#ffc600",
+        "lightForeground": "#ffffff",
+        "lighterBackground": "#122738",
+        "magenta": "#ffc600",
+        "muted": "#ffffff",
+        "orange": "#ffc600",
+        "red": "#ffc600",
+        "selection": "#ffc600",
+        "yellow": "#ffc600"
+      },
+      "id": "community:cobalt2",
+      "kind": "community",
+      "mode": "dark",
+      "name": "Cobalt2",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRjQAAABXRUJQVlA4ICgAAABQAQCdASoKAAYAA4BaJQBOgCgAAP7wdbhLcDG+CQtse/BQ0Xw+AAAA",
+        "image": "/assets/themes/cobalt2.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/cobalt2-a84486d331411245-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/cobalt2-a84486d331411245-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/cobalt2-a84486d331411245-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/cobalt2-a84486d331411245-1920.webp",
+            "width": 1920
+          }
+        ]
+      },
+      "repository": "https://github.com/hoblin/omarchy-cobalt2-theme",
+      "slug": "cobalt2",
+      "wallpaper": "linear-gradient(#122738, #122738)"
+    },
+    {
+      "colors": {
+        "accent": "#e0a15c",
+        "background": "#1d150f",
+        "blue": "#cf90a2",
+        "brightBlue": "#e0a3b3",
+        "brightCyan": "#ffe98f",
+        "brightForeground": "#fff3ea",
+        "brightGreen": "#e2cd8a",
+        "brightMagenta": "#ffa39a",
+        "brightRed": "#e8a086",
+        "brightYellow": "#ffe0a0",
+        "brown": "#8a6450",
+        "cyan": "#e8c07f",
+        "darkBackground": "#160f0a",
+        "darkForeground": "#ab9683",
+        "darkerBackground": "#0e0806",
+        "foreground": "#f0e2d0",
+        "green": "#cdb878",
+        "lightForeground": "#d9c7b3",
+        "lighterBackground": "#2d2118",
+        "magenta": "#ec8f89",
+        "muted": "#8f7a67",
+        "orange": "#e59a68",
+        "red": "#d78a6f",
+        "selection": "#3a2a20",
+        "yellow": "#ffda92"
+      },
+      "id": "community:coffee",
+      "kind": "community",
+      "mode": "dark",
+      "name": "Coffee",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRjYAAABXRUJQVlA4ICoAAADQAQCdASoKAAYAA4BaJQBOgCPtyZS0AAD+9DN7AzZXx16aWyR+BL4AAAA=",
+        "image": "/assets/themes/coffee.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/coffee-ddeb57a153ff8f2c-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/coffee-ddeb57a153ff8f2c-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/coffee-ddeb57a153ff8f2c-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/coffee-ddeb57a153ff8f2c-1280.webp",
+            "width": 1280
+          }
+        ]
+      },
+      "repository": "https://github.com/megabyte0x/omarchy-coffee-theme",
+      "slug": "coffee",
+      "wallpaper": "linear-gradient(#1d150f, #1d150f)"
+    },
+    {
+      "colors": {
+        "accent": "#8e2d53",
+        "background": "#e8e3c3",
+        "blue": "#8e2d53",
+        "brightBlue": "#bb4a78",
+        "brightCyan": "#6e9100",
+        "brightForeground": "#2d1a1d",
+        "brightGreen": "#517b00",
+        "brightMagenta": "#a8275f",
+        "brightRed": "#d25e83",
+        "brightYellow": "#858b00",
+        "brown": "#6b3847",
+        "cyan": "#4f6b00",
+        "darkBackground": "#e8e3c3",
+        "darkForeground": "#2d1a1d",
+        "darkerBackground": "#e8e3c3",
+        "foreground": "#2d1a1d",
+        "green": "#345600",
+        "lightForeground": "#2d1a1d",
+        "lighterBackground": "#e8e3c3",
+        "magenta": "#7a003b",
+        "muted": "#76756f",
+        "orange": "#b25d76",
+        "red": "#a4405e",
+        "selection": "#c5c1a6",
+        "yellow": "#636600"
+      },
+      "id": "community:coffee-latte",
+      "kind": "community",
+      "mode": "light",
+      "name": "Coffee Latte",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAADQAQCdASoKAAYAA4BaJYgCdADhcQN4iAD+14G+RIc/cjFRF3E7DMjWLhtiW/TQfEOZWMdVBWj1pj4RrIyBN9AA",
+        "image": "/assets/themes/coffee-latte.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/coffee-latte-ed1ec6ee9dc68bf9-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/coffee-latte-ed1ec6ee9dc68bf9-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/coffee-latte-ed1ec6ee9dc68bf9-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/coffee-latte-ed1ec6ee9dc68bf9-1280.webp",
+            "width": 1280
+          }
+        ]
+      },
+      "repository": "https://github.com/megabyte0x/omarchy-coffee-latte-theme",
+      "slug": "coffee-latte",
+      "wallpaper": "linear-gradient(#e8e3c3, #e8e3c3)"
+    },
+    {
+      "colors": {
+        "accent": "#5af78e",
+        "background": "#0b0f14",
+        "blue": "#57c7ff",
+        "brightBlue": "#8fdbff",
+        "brightCyan": "#c4f5ff",
+        "brightForeground": "#f1f1f0",
+        "brightGreen": "#8dffb4",
+        "brightMagenta": "#ff9bd6",
+        "brightRed": "#ff8a85",
+        "brightYellow": "#faffc8",
+        "brown": "#9c7942",
+        "cyan": "#9aedfe",
+        "darkBackground": "#070a0e",
+        "darkForeground": "#6b9981",
+        "darkerBackground": "#030507",
+        "foreground": "#7cffb2",
+        "green": "#5af78e",
+        "lightForeground": "#a9ffcd",
+        "lighterBackground": "#121a24",
+        "magenta": "#ff6ac1",
+        "muted": "#5c739b",
+        "orange": "#ffb454",
+        "red": "#ff5c57",
+        "selection": "#1b2635",
+        "yellow": "#f3f99d"
+      },
+      "id": "community:commit",
+      "kind": "community",
+      "mode": "dark",
+      "name": "Commit",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRjIAAABXRUJQVlA4ICYAAABQAQCdASoKAAYAA4BaJZwABDOAAP7zQF4R9HafvoiVqgZ6WYAAAA==",
+        "image": "/assets/themes/commit.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/commit-aeb2a9384ce48135-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/commit-aeb2a9384ce48135-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/commit-aeb2a9384ce48135-1200.webp",
+            "width": 1200
+          }
+        ]
+      },
+      "repository": "https://github.com/c0ze/omarchy-commit-theme",
+      "slug": "commit",
+      "wallpaper": "linear-gradient(#0b0f14, #0b0f14)"
+    },
+    {
+      "colors": {
+        "accent": "#aaacac",
+        "background": "#040303",
+        "blue": "#aaacac",
+        "brightBlue": "#aaacac",
+        "brightCyan": "#aaacac",
+        "brightForeground": "#ffffff",
+        "brightGreen": "#aaacac",
+        "brightMagenta": "#aaacac",
+        "brightRed": "#aaacac",
+        "brightYellow": "#aaacac",
+        "brown": "#aaacac",
+        "cyan": "#aaacac",
+        "darkBackground": "#040303",
+        "darkForeground": "#ffffff",
+        "darkerBackground": "#040303",
+        "foreground": "#ffffff",
+        "green": "#aaacac",
+        "lightForeground": "#ffffff",
+        "lighterBackground": "#040303",
+        "magenta": "#aaacac",
+        "muted": "#ffffff",
+        "orange": "#aaacac",
+        "red": "#aaacac",
+        "selection": "#aaacac",
+        "yellow": "#aaacac"
+      },
+      "id": "community:cpunk",
+      "kind": "community",
+      "mode": "dark",
+      "name": "CpUnk",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRjwAAABXRUJQVlA4IDAAAABQAQCdASoKAAYAA4BaJQBdgC6gAP7yOYQZMU+Q6VVBGJoEatZOvxRyOzwkiZJ4AAA=",
+        "image": "/assets/themes/cpunk.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/cpunk-57e6c9a765ede8c8-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/cpunk-57e6c9a765ede8c8-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/cpunk-57e6c9a765ede8c8-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/cpunk-57e6c9a765ede8c8-1920.webp",
+            "width": 1920
+          }
+        ]
+      },
+      "repository": "https://github.com/stannorbvb-cmd/cpunk",
+      "slug": "cpunk",
+      "wallpaper": "linear-gradient(#040303, #040303)"
+    },
+    {
+      "colors": {
+        "accent": "#5c624b",
+        "background": "#0f0f0f",
+        "blue": "#5c624b",
+        "brightBlue": "#5c624b",
+        "brightCyan": "#5c624b",
+        "brightForeground": "#e0d4c2",
+        "brightGreen": "#5c624b",
+        "brightMagenta": "#5c624b",
+        "brightRed": "#5c624b",
+        "brightYellow": "#5c624b",
+        "brown": "#5c624b",
+        "cyan": "#5c624b",
+        "darkBackground": "#0f0f0f",
+        "darkForeground": "#e0d4c2",
+        "darkerBackground": "#0f0f0f",
+        "foreground": "#e0d4c2",
+        "green": "#5c624b",
+        "lightForeground": "#e0d4c2",
+        "lighterBackground": "#0f0f0f",
+        "magenta": "#5c624b",
+        "muted": "#e0d4c2",
+        "orange": "#5c624b",
+        "red": "#5c624b",
+        "selection": "#5c624b",
+        "yellow": "#5c624b"
+      },
+      "id": "community:demon",
+      "kind": "community",
+      "mode": "dark",
+      "name": "Demon",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRiwAAABXRUJQVlA4ICAAAABQAQCdASoKAAYAA4BaJZwABAAAAP7ztXVfAYJBA4AAAA==",
+        "image": "/assets/themes/demon.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/demon-e26fc0e282f4abda-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/demon-e26fc0e282f4abda-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/demon-e26fc0e282f4abda-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/demon-e26fc0e282f4abda-1920.webp",
+            "width": 1920
+          }
+        ]
+      },
+      "repository": "https://github.com/HANCORE-linux/omarchy-demon-theme",
+      "slug": "demon",
+      "wallpaper": "linear-gradient(#0f0f0f, #0f0f0f)"
+    },
+    {
+      "colors": {
+        "accent": "#b14242",
+        "background": "#121212",
+        "blue": "#b14242",
+        "brightBlue": "#b14242",
+        "brightCyan": "#b14242",
+        "brightForeground": "#f5f5f5",
+        "brightGreen": "#b14242",
+        "brightMagenta": "#b14242",
+        "brightRed": "#b14242",
+        "brightYellow": "#b14242",
+        "brown": "#b14242",
+        "cyan": "#b14242",
+        "darkBackground": "#121212",
+        "darkForeground": "#f5f5f5",
+        "darkerBackground": "#121212",
+        "foreground": "#f5f5f5",
+        "green": "#b14242",
+        "lightForeground": "#f5f5f5",
+        "lighterBackground": "#121212",
+        "magenta": "#b14242",
+        "muted": "#f5f5f5",
+        "orange": "#b14242",
+        "red": "#b14242",
+        "selection": "#b14242",
+        "yellow": "#b14242"
+      },
+      "id": "community:dotrb",
+      "kind": "community",
+      "mode": "dark",
+      "name": "Dotrb",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRjAAAABXRUJQVlA4ICQAAACwAQCdASoKAAYAA4BaJZwAAudkGRwAAP71dBAO1EsoeFRQAAA=",
+        "image": "/assets/themes/dotrb.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/dotrb-4bd796578ce9ab31-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/dotrb-4bd796578ce9ab31-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/dotrb-4bd796578ce9ab31-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/dotrb-4bd796578ce9ab31-1920.webp",
+            "width": 1920
+          }
+        ]
+      },
+      "repository": "https://github.com/dotsilva/omarchy-dotrb-theme",
+      "slug": "dotrb",
+      "wallpaper": "linear-gradient(#121212, #121212)"
+    },
+    {
+      "colors": {
+        "accent": "#819890",
+        "background": "#131516",
+        "blue": "#819890",
+        "brightBlue": "#819890",
+        "brightCyan": "#819890",
+        "brightForeground": "#f8ebe3",
+        "brightGreen": "#819890",
+        "brightMagenta": "#819890",
+        "brightRed": "#819890",
+        "brightYellow": "#819890",
+        "brown": "#819890",
+        "cyan": "#819890",
+        "darkBackground": "#131516",
+        "darkForeground": "#f8ebe3",
+        "darkerBackground": "#131516",
+        "foreground": "#f8ebe3",
+        "green": "#819890",
+        "lightForeground": "#f8ebe3",
+        "lighterBackground": "#131516",
+        "magenta": "#819890",
+        "muted": "#f8ebe3",
+        "orange": "#819890",
+        "red": "#819890",
+        "selection": "#819890",
+        "yellow": "#819890"
+      },
+      "id": "community:dos-moos",
+      "kind": "community",
+      "mode": "dark",
+      "name": "Dos Moos",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRjQAAABXRUJQVlA4ICgAAABwAQCdASoKAAYAA4BaJZV2AAHhAAD+8jGpj3909cgw0N8Xa2tLMAAA",
+        "image": "/assets/themes/dos-moos.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/dos-moos-70d3b30de641902c-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/dos-moos-70d3b30de641902c-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/dos-moos-70d3b30de641902c-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/dos-moos-70d3b30de641902c-1920.webp",
+            "width": 1920
+          }
+        ]
+      },
+      "repository": "https://github.com/HANCORE-linux/omarchy-dos-moos-theme",
+      "slug": "dos-moos",
+      "wallpaper": "linear-gradient(#131516, #131516)"
+    },
+    {
+      "colors": {
+        "accent": "#26bbd9",
+        "background": "#1c1e26",
+        "blue": "#26bbd9",
+        "brightBlue": "#3fc4de",
+        "brightCyan": "#6be4e6",
+        "brightForeground": "#cbced0",
+        "brightGreen": "#3fdaa4",
+        "brightMagenta": "#f075b5",
+        "brightRed": "#ec6a88",
+        "brightYellow": "#fbc3a7",
+        "brown": "#f09383",
+        "cyan": "#59e1e3",
+        "darkBackground": "#1c1e26",
+        "darkForeground": "#cbced0",
+        "darkerBackground": "#1c1e26",
+        "foreground": "#cbced0",
+        "green": "#29d398",
+        "lightForeground": "#cbced0",
+        "lighterBackground": "#1c1e26",
+        "magenta": "#ee64ac",
+        "muted": "#6f6f70",
+        "orange": "#fab795",
+        "red": "#e95678",
+        "selection": "#2e303e",
+        "yellow": "#fac29a"
+      },
+      "id": "community:event-horizon",
+      "kind": "community",
+      "mode": "dark",
+      "name": "Event Horizon",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRjgAAABXRUJQVlA4ICwAAADQAQCdASoKAAYAA4BaJZQCdADy/bz7AAD+8zhVRjy1ixcXOkyd9J3PXxwAAA==",
+        "image": "/assets/themes/event-horizon.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/event-horizon-3181fc2b48e43604-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/event-horizon-3181fc2b48e43604-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/event-horizon-3181fc2b48e43604-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/event-horizon-3181fc2b48e43604-1920.webp",
+            "width": 1920
+          }
+        ]
+      },
+      "repository": "https://github.com/OldJobobo/omarchy-event-horizon-theme",
+      "slug": "event-horizon",
+      "wallpaper": "linear-gradient(#1c1e26, #1c1e26)"
+    },
+    {
+      "colors": {
+        "accent": "#b3e6db",
+        "background": "#232a2e",
+        "blue": "#b3e6db",
+        "brightBlue": "#b3e6db",
+        "brightCyan": "#b3e6db",
+        "brightForeground": "#adc9bc",
+        "brightGreen": "#b3e6db",
+        "brightMagenta": "#b3e6db",
+        "brightRed": "#b3e6db",
+        "brightYellow": "#b3e6db",
+        "brown": "#b3e6db",
+        "cyan": "#b3e6db",
+        "darkBackground": "#232a2e",
+        "darkForeground": "#adc9bc",
+        "darkerBackground": "#232a2e",
+        "foreground": "#adc9bc",
+        "green": "#b3e6db",
+        "lightForeground": "#adc9bc",
+        "lighterBackground": "#232a2e",
+        "magenta": "#b3e6db",
+        "muted": "#adc9bc",
+        "orange": "#b3e6db",
+        "red": "#b3e6db",
+        "selection": "#b3e6db",
+        "yellow": "#b3e6db"
+      },
+      "id": "community:evergarden",
+      "kind": "community",
+      "mode": "dark",
+      "name": "Evergarden",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRi4AAABXRUJQVlA4ICIAAABwAQCdASoKAAcAA4BaJZwCdAFAAAD+71eYIxsfhRPjgAAA",
+        "image": "/assets/themes/evergarden.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/evergarden-980d4f694b2483cb-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/evergarden-980d4f694b2483cb-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/evergarden-980d4f694b2483cb-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/evergarden-980d4f694b2483cb-1500.webp",
+            "width": 1500
+          }
+        ]
+      },
+      "repository": "https://github.com/celsobenedetti/omarchy-evergarden",
+      "slug": "evergarden",
+      "wallpaper": "linear-gradient(#232a2e, #232a2e)"
+    },
+    {
+      "colors": {
+        "accent": "#ff8852",
+        "background": "#000000",
+        "blue": "#ff8852",
+        "brightBlue": "#ff8852",
+        "brightCyan": "#ff8852",
+        "brightForeground": "#e7e9ea",
+        "brightGreen": "#ff8852",
+        "brightMagenta": "#ff8852",
+        "brightRed": "#ff8852",
+        "brightYellow": "#ff8852",
+        "brown": "#ff8852",
+        "cyan": "#ff8852",
+        "darkBackground": "#000000",
+        "darkForeground": "#e7e9ea",
+        "darkerBackground": "#000000",
+        "foreground": "#e7e9ea",
+        "green": "#ff8852",
+        "lightForeground": "#e7e9ea",
+        "lighterBackground": "#000000",
+        "magenta": "#ff8852",
+        "muted": "#e7e9ea",
+        "orange": "#ff8852",
+        "red": "#ff8852",
+        "selection": "#ff8852",
+        "yellow": "#ff8852"
+      },
+      "id": "community:felix",
+      "kind": "community",
+      "mode": "dark",
+      "name": "Felix",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRjIAAABXRUJQVlA4ICYAAACwAQCdASoKAAcAA4BaJaQAAueJ/jGAAP7vGX5V+F/Z8tIcIwAAAA==",
+        "image": "/assets/themes/felix.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/felix-eb290950073c7680-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/felix-eb290950073c7680-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/felix-eb290950073c7680-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/felix-eb290950073c7680-1920.webp",
+            "width": 1920
+          }
+        ]
+      },
+      "repository": "https://github.com/TyRichards/omarchy-felix-theme",
+      "slug": "felix",
+      "wallpaper": "linear-gradient(#000000, #000000)"
+    },
+    {
+      "colors": {
+        "accent": "#b8b8b6",
+        "background": "#0a1220",
+        "blue": "#b8b8b6",
+        "brightBlue": "#cdcbc9",
+        "brightCyan": "#e3ddda",
+        "brightForeground": "#ffffff",
+        "brightGreen": "#9eaca1",
+        "brightMagenta": "#f0a19a",
+        "brightRed": "#e06b58",
+        "brightYellow": "#c8c3b8",
+        "brown": "#80433f",
+        "cyan": "#d0cac7",
+        "darkBackground": "#080e18",
+        "darkForeground": "#b3bdcc",
+        "darkerBackground": "#050910",
+        "foreground": "#f0f2f5",
+        "green": "#889889",
+        "lightForeground": "#fcfdfd",
+        "lighterBackground": "#111f37",
+        "magenta": "#e48b7a",
+        "muted": "#5a606b",
+        "orange": "#cc907d",
+        "red": "#e06b58",
+        "selection": "#111f37",
+        "yellow": "#b8b5a2"
+      },
+      "id": "community:fireside",
+      "kind": "community",
+      "mode": "dark",
+      "name": "Fireside",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRjQAAABXRUJQVlA4ICgAAADQAQCdASoKAAYAA4BaJZQCdAEOf+fzAAD+8s0ynqXOjnYl3jedf4AA",
+        "image": "/assets/themes/fireside.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/fireside-fa436d73d67bc639-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/fireside-fa436d73d67bc639-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/fireside-fa436d73d67bc639-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/fireside-fa436d73d67bc639-1920.webp",
+            "width": 1920
+          }
+        ]
+      },
+      "repository": "https://github.com/bjarneo/omarchy-fireside-theme",
+      "slug": "fireside",
+      "wallpaper": "linear-gradient(#0a1220, #0a1220)"
+    },
+    {
+      "colors": {
+        "accent": "#bd93f9",
+        "background": "#282a36",
+        "blue": "#bd93f9",
+        "brightBlue": "#bd93f9",
+        "brightCyan": "#bd93f9",
+        "brightForeground": "#f8f8f2",
+        "brightGreen": "#bd93f9",
+        "brightMagenta": "#bd93f9",
+        "brightRed": "#bd93f9",
+        "brightYellow": "#bd93f9",
+        "brown": "#bd93f9",
+        "cyan": "#bd93f9",
+        "darkBackground": "#282a36",
+        "darkForeground": "#f8f8f2",
+        "darkerBackground": "#282a36",
+        "foreground": "#f8f8f2",
+        "green": "#bd93f9",
+        "lightForeground": "#f8f8f2",
+        "lighterBackground": "#282a36",
+        "magenta": "#bd93f9",
+        "muted": "#f8f8f2",
+        "orange": "#bd93f9",
+        "red": "#bd93f9",
+        "selection": "#bd93f9",
+        "yellow": "#bd93f9"
+      },
+      "id": "community:flat-dracula",
+      "kind": "community",
+      "mode": "dark",
+      "name": "Flat Dracula",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRi4AAABXRUJQVlA4ICIAAABwAQCdASoKAAYAA4BaJZwC7AFAAAD+8O9gysDJ8G7ugAAA",
+        "image": "/assets/themes/flat-dracula.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/flat-dracula-142e8c6c86006fa6-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/flat-dracula-142e8c6c86006fa6-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/flat-dracula-142e8c6c86006fa6-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/flat-dracula-142e8c6c86006fa6-1920.webp",
+            "width": 1920
+          }
+        ]
+      },
+      "repository": "https://github.com/OldJobobo/omarchy-flat-dracula-theme",
+      "slug": "flat-dracula",
+      "wallpaper": "linear-gradient(#282a36, #282a36)"
+    },
+    {
+      "colors": {
+        "accent": "#4385be",
+        "background": "#100f0f",
+        "blue": "#4385be",
+        "brightBlue": "#4385be",
+        "brightCyan": "#4385be",
+        "brightForeground": "#cecdc3",
+        "brightGreen": "#4385be",
+        "brightMagenta": "#4385be",
+        "brightRed": "#4385be",
+        "brightYellow": "#4385be",
+        "brown": "#4385be",
+        "cyan": "#4385be",
+        "darkBackground": "#100f0f",
+        "darkForeground": "#cecdc3",
+        "darkerBackground": "#100f0f",
+        "foreground": "#cecdc3",
+        "green": "#4385be",
+        "lightForeground": "#cecdc3",
+        "lighterBackground": "#100f0f",
+        "magenta": "#4385be",
+        "muted": "#cecdc3",
+        "orange": "#4385be",
+        "red": "#4385be",
+        "selection": "#4385be",
+        "yellow": "#4385be"
+      },
+      "id": "community:flexoki-dark",
+      "kind": "community",
+      "mode": "dark",
+      "name": "Flexoki Dark",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRigAAABXRUJQVlA4IBwAAAAwAQCdASoKAAYAA4BaJaQAA3AA/vKsWJxggAAA",
+        "image": "/assets/themes/flexoki-dark.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/flexoki-dark-fc2044b67b840d4c-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/flexoki-dark-fc2044b67b840d4c-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/flexoki-dark-fc2044b67b840d4c-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/flexoki-dark-fc2044b67b840d4c-1920.webp",
+            "width": 1920
+          }
+        ]
+      },
+      "repository": "https://github.com/euandeas/omarchy-flexoki-dark-theme",
+      "slug": "flexoki-dark",
+      "wallpaper": "linear-gradient(#100f0f, #100f0f)"
+    },
+    {
+      "colors": {
+        "accent": "#9bb0c2",
+        "background": "#0a0f1c",
+        "blue": "#9bb0c2",
+        "brightBlue": "#9bb0c2",
+        "brightCyan": "#b8c7d0",
+        "brightForeground": "#efeff1",
+        "brightGreen": "#95a8b8",
+        "brightMagenta": "#a8b9c6",
+        "brightRed": "#869aac",
+        "brightYellow": "#9fadb8",
+        "brown": "#4e5b6b",
+        "cyan": "#b8c7d0",
+        "darkBackground": "#070b14",
+        "darkForeground": "#9ea0a9",
+        "darkerBackground": "#05070d",
+        "foreground": "#d4d5d9",
+        "green": "#95a8b8",
+        "lightForeground": "#dfe0e3",
+        "lighterBackground": "#121b33",
+        "magenta": "#a8b9c6",
+        "muted": "#51545e",
+        "orange": "#92a3b2",
+        "red": "#869aac",
+        "selection": "#121b33",
+        "yellow": "#9fadb8"
+      },
+      "id": "community:frost",
+      "kind": "community",
+      "mode": "dark",
+      "name": "Frost",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRjQAAABXRUJQVlA4ICgAAACwAQCdASoKAAYAA4BaJZwAApyd6SlwAP7j0HxYaz2zst2jgN8XofAA",
+        "image": "/assets/themes/frost.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/frost-89df2cc9636ee86a-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/frost-89df2cc9636ee86a-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/frost-89df2cc9636ee86a-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/frost-89df2cc9636ee86a-1920.webp",
+            "width": 1920
+          }
+        ]
+      },
+      "repository": "https://github.com/bjarneo/omarchy-frost-theme",
+      "slug": "frost",
+      "wallpaper": "linear-gradient(#0a0f1c, #0a0f1c)"
+    },
+    {
+      "colors": {
+        "accent": "#4dd6c8",
+        "background": "#1a2234",
+        "blue": "#88aede",
+        "brightBlue": "#a0bee6",
+        "brightCyan": "#6fdfd0",
+        "brightForeground": "#e0e8ff",
+        "brightGreen": "#9cd5ae",
+        "brightMagenta": "#d7afda",
+        "brightRed": "#f0ada0",
+        "brightYellow": "#f4b478",
+        "brown": "#785030",
+        "cyan": "#4dd6c8",
+        "darkBackground": "#141a27",
+        "darkForeground": "#4e5784",
+        "darkerBackground": "#0d111a",
+        "foreground": "#cdd6ee",
+        "green": "#86c79c",
+        "lightForeground": "#a8b1d2",
+        "lighterBackground": "#232c44",
+        "magenta": "#c79dc9",
+        "muted": "#4e5784",
+        "orange": "#f0a060",
+        "red": "#e89a8a",
+        "selection": "#4dd6c8",
+        "yellow": "#f0a060"
+      },
+      "id": "community:fuchsblau",
+      "kind": "community",
+      "mode": "dark",
+      "name": "fuchsblau",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRkAAAABXRUJQVlA4IDQAAADQAQCdASoKAAYAA4BaJQBOgCHSzSa5AAD+7vJvpeQvCWGPGM5diANuEGNBGTJ3o2rXAAAA",
+        "image": "/assets/themes/fuchsblau.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/fuchsblau-dbc67e2090690306-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/fuchsblau-dbc67e2090690306-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/fuchsblau-dbc67e2090690306-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/fuchsblau-dbc67e2090690306-1920.webp",
+            "width": 1920
+          }
+        ]
+      },
+      "repository": "https://github.com/fuchsblau/omarchy-fuchsblau-theme",
+      "slug": "fuchsblau",
+      "wallpaper": "linear-gradient(#1a2234, #1a2234)"
+    },
+    {
+      "colors": {
+        "accent": "#ff40a3",
+        "background": "#0a1428",
+        "blue": "#f0f8ff",
+        "brightBlue": "#00bfff",
+        "brightCyan": "#00bfff",
+        "brightForeground": "#ffffff",
+        "brightGreen": "#00bfff",
+        "brightMagenta": "#ff40a3",
+        "brightRed": "#ff40a3",
+        "brightYellow": "#6a90d2",
+        "brown": "#80305d",
+        "cyan": "#f0f8ff",
+        "darkBackground": "#080f1e",
+        "darkForeground": "#9dacbe",
+        "darkerBackground": "#050a14",
+        "foreground": "#f0f8ff",
+        "green": "#00bfff",
+        "lightForeground": "#f7fbff",
+        "lighterBackground": "#17294a",
+        "magenta": "#ff40a3",
+        "muted": "#53627a",
+        "orange": "#ff7ab8",
+        "red": "#ff40a3",
+        "selection": "#17294a",
+        "yellow": "#5076b2"
+      },
+      "id": "community:futurism",
+      "kind": "community",
+      "mode": "dark",
+      "name": "Futurism",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRjAAAABXRUJQVlA4ICQAAABQAQCdASoKAAYAA4BaJQBOgCgAAP7yMaaYtOKlNuXkFKCAAAA=",
+        "image": "/assets/themes/futurism.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/futurism-8604fbbbe8981cb2-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/futurism-8604fbbbe8981cb2-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/futurism-8604fbbbe8981cb2-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/futurism-8604fbbbe8981cb2-1920.webp",
+            "width": 1920
+          }
+        ]
+      },
+      "repository": "https://github.com/bjarneo/omarchy-futurism-theme",
+      "slug": "futurism",
+      "wallpaper": "linear-gradient(#0a1428, #0a1428)"
+    },
+    {
+      "colors": {
+        "accent": "#3ec8d4",
+        "background": "#0a1624",
+        "blue": "#3a8fb0",
+        "brightBlue": "#64b8d4",
+        "brightCyan": "#7ae8f0",
+        "brightForeground": "#eef6fa",
+        "brightGreen": "#8ee89a",
+        "brightMagenta": "#e890f0",
+        "brightRed": "#f09078",
+        "brightYellow": "#ffd078",
+        "brown": "#9a6248",
+        "cyan": "#3ec8d4",
+        "darkBackground": "#08111c",
+        "darkForeground": "#6b8496",
+        "darkerBackground": "#050b14",
+        "foreground": "#dceaf2",
+        "green": "#6bcf7a",
+        "lightForeground": "#c5d9e6",
+        "lighterBackground": "#173049",
+        "magenta": "#d06ae0",
+        "muted": "#5e7a88",
+        "orange": "#e89a4a",
+        "red": "#e07a62",
+        "selection": "#173049",
+        "yellow": "#f0b84a"
+      },
+      "id": "community:futurist",
+      "kind": "community",
+      "mode": "dark",
+      "name": "Futurist",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRkIAAABXRUJQVlA4IDYAAADQAQCdASoKAAYAA4BaJZwCw7DaP/ZCAAD+5Ev1m2GtZZGIkwvyAPW023UGgjP9c7iPQ4gAAAA=",
+        "image": "/assets/themes/futurist.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/futurist-6711f89af6751bba-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/futurist-6711f89af6751bba-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/futurist-6711f89af6751bba-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/futurist-6711f89af6751bba-1800.webp",
+            "width": 1800
+          }
+        ]
+      },
+      "repository": "https://github.com/benwillems/omarchy-futurist-theme",
+      "slug": "futurist",
+      "wallpaper": "linear-gradient(#0a1624, #0a1624)"
+    },
+    {
+      "colors": {
+        "accent": "#d6a06b",
+        "background": "#3a332a",
+        "blue": "#74accf",
+        "brightBlue": "#93c2e2",
+        "brightCyan": "#98d2d3",
+        "brightForeground": "#fff6e2",
+        "brightGreen": "#a0cdb7",
+        "brightMagenta": "#d5afca",
+        "brightRed": "#ee9881",
+        "brightYellow": "#ebd493",
+        "brown": "#bd966e",
+        "cyan": "#7dbebf",
+        "darkBackground": "#2e2820",
+        "darkForeground": "#b0a48f",
+        "darkerBackground": "#241f19",
+        "foreground": "#f5ecd9",
+        "green": "#83baa1",
+        "lightForeground": "#faf2e0",
+        "lighterBackground": "#463e33",
+        "magenta": "#c494b9",
+        "muted": "#968872",
+        "orange": "#e08f53",
+        "red": "#ed806b",
+        "selection": "#514838",
+        "yellow": "#dab46b"
+      },
+      "id": "community:gand",
+      "kind": "community",
+      "mode": "dark",
+      "name": "Gand",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRjAAAABXRUJQVlA4ICQAAABwAQCdASoKAAYAA4BaJZQCdAFAAAD+76HrhVEoU+vgjUAAAAA=",
+        "image": "/assets/themes/gand.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/gand-b75a368e228e3073-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/gand-b75a368e228e3073-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/gand-b75a368e228e3073-1200.webp",
+            "width": 1200
+          }
+        ]
+      },
+      "repository": "https://github.com/c0ze/omarchy-gand-theme",
+      "slug": "gand",
+      "wallpaper": "linear-gradient(#3a332a, #3a332a)"
+    },
+    {
+      "colors": {
+        "accent": "#979fec",
+        "background": "#070506",
+        "blue": "#979fec",
+        "brightBlue": "#979fec",
+        "brightCyan": "#979fec",
+        "brightForeground": "#ffffff",
+        "brightGreen": "#979fec",
+        "brightMagenta": "#979fec",
+        "brightRed": "#979fec",
+        "brightYellow": "#979fec",
+        "brown": "#979fec",
+        "cyan": "#979fec",
+        "darkBackground": "#070506",
+        "darkForeground": "#ffffff",
+        "darkerBackground": "#070506",
+        "foreground": "#ffffff",
+        "green": "#979fec",
+        "lightForeground": "#ffffff",
+        "lighterBackground": "#070506",
+        "magenta": "#979fec",
+        "muted": "#ffffff",
+        "orange": "#979fec",
+        "red": "#979fec",
+        "selection": "#979fec",
+        "yellow": "#979fec"
+      },
+      "id": "community:ghost-pastel",
+      "kind": "community",
+      "mode": "dark",
+      "name": "Ghost Pastel",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRk4AAABXRUJQVlA4IEIAAADQAQCdASoKAAYAA4BaJQBOgB5uMxT6AAD+5TuXFO6to6UdLRpJ6u5Dctwa0JOhNF3waA95LZvUbYcnJZscALlAAAA=",
+        "image": "/assets/themes/ghost-pastel.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/ghost-pastel-c7a8f99487fa85a2-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/ghost-pastel-c7a8f99487fa85a2-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/ghost-pastel-c7a8f99487fa85a2-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/ghost-pastel-c7a8f99487fa85a2-1920.webp",
+            "width": 1920
+          }
+        ]
+      },
+      "repository": "https://github.com/row-huh/omarchy-ghost-pastel-theme",
+      "slug": "ghost-pastel",
+      "wallpaper": "linear-gradient(#070506, #070506)"
+    },
+    {
+      "colors": {
+        "accent": "#c3a983",
+        "background": "#0f0b05",
+        "blue": "#c3a983",
+        "brightBlue": "#c3a983",
+        "brightCyan": "#c3a983",
+        "brightForeground": "#c3a983",
+        "brightGreen": "#c3a983",
+        "brightMagenta": "#c3a983",
+        "brightRed": "#c3a983",
+        "brightYellow": "#c3a983",
+        "brown": "#c3a983",
+        "cyan": "#c3a983",
+        "darkBackground": "#0f0b05",
+        "darkForeground": "#c3a983",
+        "darkerBackground": "#0f0b05",
+        "foreground": "#c3a983",
+        "green": "#c3a983",
+        "lightForeground": "#c3a983",
+        "lighterBackground": "#0f0b05",
+        "magenta": "#c3a983",
+        "muted": "#c3a983",
+        "orange": "#c3a983",
+        "red": "#c3a983",
+        "selection": "#c3a983",
+        "yellow": "#c3a983"
+      },
+      "id": "community:golden-brown",
+      "kind": "community",
+      "mode": "dark",
+      "name": "Golden Brown",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRiwAAABXRUJQVlA4ICAAAABwAQCdASoKAAYAA4BaJYwCdAF1AAD+8nt9aoNq3AAAAA==",
+        "image": "/assets/themes/golden-brown.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/golden-brown-178edd76eaaf8c81-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/golden-brown-178edd76eaaf8c81-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/golden-brown-178edd76eaaf8c81-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/golden-brown-178edd76eaaf8c81-1366.webp",
+            "width": 1366
+          }
+        ]
+      },
+      "repository": "https://github.com/atif-1402/omarchy-golden-brown-theme",
+      "slug": "golden-brown",
+      "wallpaper": "linear-gradient(#0f0b05, #0f0b05)"
+    },
+    {
+      "colors": {
+        "accent": "#de6a41",
+        "background": "#d0d0c8",
+        "blue": "#de6a41",
+        "brightBlue": "#de6a41",
+        "brightCyan": "#de6a41",
+        "brightForeground": "#242424",
+        "brightGreen": "#de6a41",
+        "brightMagenta": "#de6a41",
+        "brightRed": "#de6a41",
+        "brightYellow": "#de6a41",
+        "brown": "#de6a41",
+        "cyan": "#de6a41",
+        "darkBackground": "#d0d0c8",
+        "darkForeground": "#242424",
+        "darkerBackground": "#d0d0c8",
+        "foreground": "#242424",
+        "green": "#de6a41",
+        "lightForeground": "#242424",
+        "lighterBackground": "#d0d0c8",
+        "magenta": "#de6a41",
+        "muted": "#242424",
+        "orange": "#de6a41",
+        "red": "#de6a41",
+        "selection": "#de6a41",
+        "yellow": "#de6a41"
+      },
+      "id": "community:the-greek",
+      "kind": "community",
+      "mode": "light",
+      "name": "The Greek",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRjQAAABXRUJQVlA4ICgAAADQAQCdASoKAAYAA4BaJZwAAudmoVckgAD+5zg/xKE52LSbYAIGT4AA",
+        "image": "/assets/themes/the-greek.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/the-greek-6761c8ec1403a5ed-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/the-greek-6761c8ec1403a5ed-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/the-greek-6761c8ec1403a5ed-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/the-greek-6761c8ec1403a5ed-1920.webp",
+            "width": 1920
+          }
+        ]
+      },
+      "repository": "https://github.com/HANCORE-linux/omarchy-thegreek-theme",
+      "slug": "the-greek",
+      "wallpaper": "linear-gradient(#d0d0c8, #d0d0c8)"
+    },
+    {
+      "colors": {
+        "accent": "#f25623",
+        "background": "#171717",
+        "blue": "#f25623",
+        "brightBlue": "#f25623",
+        "brightCyan": "#f25623",
+        "brightForeground": "#ccd0cf",
+        "brightGreen": "#f25623",
+        "brightMagenta": "#f25623",
+        "brightRed": "#f25623",
+        "brightYellow": "#f25623",
+        "brown": "#f25623",
+        "cyan": "#f25623",
+        "darkBackground": "#171717",
+        "darkForeground": "#ccd0cf",
+        "darkerBackground": "#171717",
+        "foreground": "#ccd0cf",
+        "green": "#f25623",
+        "lightForeground": "#ccd0cf",
+        "lighterBackground": "#171717",
+        "magenta": "#f25623",
+        "muted": "#ccd0cf",
+        "orange": "#f25623",
+        "red": "#f25623",
+        "selection": "#f25623",
+        "yellow": "#f25623"
+      },
+      "id": "community:greek-noir",
+      "kind": "community",
+      "mode": "dark",
+      "name": "Greek Noir",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRjgAAABXRUJQVlA4ICwAAACwAQCdASoKAAYAA4BaJZwAAtz/uVg0AP7si++J6ff0QVx7+K7y5d0y+8BwAA==",
+        "image": "/assets/themes/greek-noir.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/greek-noir-3b86a3bc49c754a2-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/greek-noir-3b86a3bc49c754a2-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/greek-noir-3b86a3bc49c754a2-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/greek-noir-3b86a3bc49c754a2-1920.webp",
+            "width": 1920
+          }
+        ]
+      },
+      "repository": "https://github.com/HANCORE-linux/omarchy-greek-noir-theme",
+      "slug": "greek-noir",
+      "wallpaper": "linear-gradient(#171717, #171717)"
+    },
+    {
+      "colors": {
+        "accent": "#e78a4e",
+        "background": "#282828",
+        "blue": "#7daea3",
+        "brightBlue": "#7daea3",
+        "brightCyan": "#89b482",
+        "brightForeground": "#ddc7a1",
+        "brightGreen": "#a9b665",
+        "brightMagenta": "#d3869b",
+        "brightRed": "#ea6962",
+        "brightYellow": "#d8a657",
+        "brown": "#744527",
+        "cyan": "#89b482",
+        "darkBackground": "#1b1b1b",
+        "darkForeground": "#7c6f64",
+        "darkerBackground": "#141414",
+        "foreground": "#d4be98",
+        "green": "#a9b665",
+        "lightForeground": "#a89984",
+        "lighterBackground": "#32302f",
+        "magenta": "#d3869b",
+        "muted": "#928374",
+        "orange": "#e78a4e",
+        "red": "#ea6962",
+        "selection": "#45403d",
+        "yellow": "#d8a657"
+      },
+      "id": "community:gruvbox-material",
+      "kind": "community",
+      "mode": "dark",
+      "name": "Gruvbox Material",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRi4AAABXRUJQVlA4ICIAAAAwAQCdASoKAAYAA4BaJaQAA3AA/vC29dMPisEoCWiC+IAA",
+        "image": "/assets/themes/gruvbox-material.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/gruvbox-material-4e274f7d813ce810-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/gruvbox-material-4e274f7d813ce810-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/gruvbox-material-4e274f7d813ce810-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/gruvbox-material-4e274f7d813ce810-1800.webp",
+            "width": 1800
+          }
+        ]
+      },
+      "repository": "https://github.com/curbol/omarchy-gruvbox-material",
+      "slug": "gruvbox-material",
+      "wallpaper": "linear-gradient(#282828, #282828)"
+    },
+    {
+      "colors": {
+        "accent": "#5e81ac",
+        "background": "#dfe4c4",
+        "blue": "#5e81ac",
+        "brightBlue": "#5e81ac",
+        "brightCyan": "#5e81ac",
+        "brightForeground": "#1c2d28",
+        "brightGreen": "#5e81ac",
+        "brightMagenta": "#5e81ac",
+        "brightRed": "#5e81ac",
+        "brightYellow": "#5e81ac",
+        "brown": "#5e81ac",
+        "cyan": "#5e81ac",
+        "darkBackground": "#dfe4c4",
+        "darkForeground": "#1c2d28",
+        "darkerBackground": "#dfe4c4",
+        "foreground": "#1c2d28",
+        "green": "#5e81ac",
+        "lightForeground": "#1c2d28",
+        "lighterBackground": "#dfe4c4",
+        "magenta": "#5e81ac",
+        "muted": "#1c2d28",
+        "orange": "#5e81ac",
+        "red": "#5e81ac",
+        "selection": "#5e81ac",
+        "yellow": "#5e81ac"
+      },
+      "id": "community:harbor",
+      "kind": "community",
+      "mode": "light",
+      "name": "Harbor",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRjgAAABXRUJQVlA4ICwAAACwAQCdASoKAAYAA4BaJQAAVV/A/KjgAP60D+Q3xmwV5cKC3lv8T7k/S4wgAA==",
+        "image": "/assets/themes/harbor.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/harbor-8142137f671d3960-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/harbor-8142137f671d3960-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/harbor-8142137f671d3960-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/harbor-8142137f671d3960-1920.webp",
+            "width": 1920
+          }
+        ]
+      },
+      "repository": "https://github.com/HANCORE-linux/omarchy-harbor-theme",
+      "slug": "harbor",
+      "wallpaper": "linear-gradient(#dfe4c4, #dfe4c4)"
+    },
+    {
+      "colors": {
+        "accent": "#e75a50",
+        "background": "#1b1b1b",
+        "blue": "#e75a50",
+        "brightBlue": "#e75a50",
+        "brightCyan": "#e75a50",
+        "brightForeground": "#efebdc",
+        "brightGreen": "#e75a50",
+        "brightMagenta": "#e75a50",
+        "brightRed": "#e75a50",
+        "brightYellow": "#e75a50",
+        "brown": "#e75a50",
+        "cyan": "#e75a50",
+        "darkBackground": "#1b1b1b",
+        "darkForeground": "#efebdc",
+        "darkerBackground": "#1b1b1b",
+        "foreground": "#efebdc",
+        "green": "#e75a50",
+        "lightForeground": "#efebdc",
+        "lighterBackground": "#1b1b1b",
+        "magenta": "#e75a50",
+        "muted": "#efebdc",
+        "orange": "#e75a50",
+        "red": "#e75a50",
+        "selection": "#e75a50",
+        "yellow": "#e75a50"
+      },
+      "id": "community:harbor-dark",
+      "kind": "community",
+      "mode": "dark",
+      "name": "Harbor Dark",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRjAAAABXRUJQVlA4ICQAAACwAQCdASoKAAYAA4BaJZwAAl1sz1PQAP70VIPf5IfQVt3b0AA=",
+        "image": "/assets/themes/harbor-dark.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/harbor-dark-e343daf061fe34de-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/harbor-dark-e343daf061fe34de-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/harbor-dark-e343daf061fe34de-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/harbor-dark-e343daf061fe34de-1920.webp",
+            "width": 1920
+          }
+        ]
+      },
+      "repository": "https://github.com/HANCORE-linux/omarchy-harbordark-theme",
+      "slug": "harbor-dark",
+      "wallpaper": "linear-gradient(#1b1b1b, #1b1b1b)"
+    },
+    {
+      "colors": {
+        "accent": "#61d6ff",
+        "background": "#08090a",
+        "blue": "#74a8c7",
+        "brightBlue": "#94bcd2",
+        "brightCyan": "#8de4ff",
+        "brightForeground": "#ffffff",
+        "brightGreen": "#a5e4ae",
+        "brightMagenta": "#cebdda",
+        "brightRed": "#f08a8a",
+        "brightYellow": "#ecd69a",
+        "brown": "#a58a76",
+        "cyan": "#61d6ff",
+        "darkBackground": "#08090a",
+        "darkForeground": "#606468",
+        "darkerBackground": "#050607",
+        "foreground": "#f1f1ec",
+        "green": "#86d993",
+        "lightForeground": "#f1f1ec",
+        "lighterBackground": "#101214",
+        "magenta": "#b7a1c7",
+        "muted": "#606468",
+        "orange": "#d89b6a",
+        "red": "#e46e6e",
+        "selection": "#26333a",
+        "yellow": "#e2c275"
+      },
+      "id": "community:hermarchy",
+      "kind": "community",
+      "mode": "dark",
+      "name": "Hermarchy",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRioAAABXRUJQVlA4IB4AAACQAQCdASoKAAYAA4BaJaQAAudZtgAA/vhRaHC1AAA=",
+        "image": "/assets/themes/hermarchy.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/hermarchy-27eeec64a9d58e84-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/hermarchy-27eeec64a9d58e84-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/hermarchy-27eeec64a9d58e84-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/hermarchy-27eeec64a9d58e84-1920.webp",
+            "width": 1920
+          }
+        ]
+      },
+      "repository": "https://github.com/archer-clawbot/omarchy-hermarchy-theme",
+      "slug": "hermarchy",
+      "wallpaper": "linear-gradient(#08090a, #08090a)"
+    },
+    {
+      "colors": {
+        "accent": "#686868",
+        "background": "#222222",
+        "blue": "#686868",
+        "brightBlue": "#686868",
+        "brightCyan": "#686868",
+        "brightForeground": "#ffffff",
+        "brightGreen": "#686868",
+        "brightMagenta": "#686868",
+        "brightRed": "#686868",
+        "brightYellow": "#686868",
+        "brown": "#686868",
+        "cyan": "#686868",
+        "darkBackground": "#222222",
+        "darkForeground": "#ffffff",
+        "darkerBackground": "#222222",
+        "foreground": "#ffffff",
+        "green": "#686868",
+        "lightForeground": "#ffffff",
+        "lighterBackground": "#222222",
+        "magenta": "#686868",
+        "muted": "#ffffff",
+        "orange": "#686868",
+        "red": "#686868",
+        "selection": "#686868",
+        "yellow": "#686868"
+      },
+      "id": "community:hinterlands",
+      "kind": "community",
+      "mode": "dark",
+      "name": "Hinterlands",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRjwAAABXRUJQVlA4IDAAAACwAQCdASoKAAYAA4BaJaQAAxYPMTDsAP7pVXVmFvkfvrojl+E2/Xc2lD8+Qd8MAAA=",
+        "image": "/assets/themes/hinterlands.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/hinterlands-ee8e39fc50eec529-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/hinterlands-ee8e39fc50eec529-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/hinterlands-ee8e39fc50eec529-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/hinterlands-ee8e39fc50eec529-1920.webp",
+            "width": 1920
+          }
+        ]
+      },
+      "repository": "https://github.com/OldJobobo/omarchy-hinterlands-theme",
+      "slug": "hinterlands",
+      "wallpaper": "linear-gradient(#222222, #222222)"
+    },
+    {
+      "colors": {
+        "accent": "#7c7ca8",
+        "background": "#13131d",
+        "blue": "#7c7ca8",
+        "brightBlue": "#7c7ca8",
+        "brightCyan": "#7c7ca8",
+        "brightForeground": "#c8c8c8",
+        "brightGreen": "#7c7ca8",
+        "brightMagenta": "#7c7ca8",
+        "brightRed": "#7c7ca8",
+        "brightYellow": "#7c7ca8",
+        "brown": "#7c7ca8",
+        "cyan": "#7c7ca8",
+        "darkBackground": "#13131d",
+        "darkForeground": "#c8c8c8",
+        "darkerBackground": "#13131d",
+        "foreground": "#c8c8c8",
+        "green": "#7c7ca8",
+        "lightForeground": "#c8c8c8",
+        "lighterBackground": "#13131d",
+        "magenta": "#7c7ca8",
+        "muted": "#c8c8c8",
+        "orange": "#7c7ca8",
+        "red": "#7c7ca8",
+        "selection": "#7c7ca8",
+        "yellow": "#7c7ca8"
+      },
+      "id": "community:inky-pinky",
+      "kind": "community",
+      "mode": "dark",
+      "name": "Inky Pinky",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRjQAAABXRUJQVlA4ICgAAABwAQCdASoKAAYAA4BaJZV2AAHJgAD+8P/orzm5eV5GHFPhYrwoFAAA",
+        "image": "/assets/themes/inky-pinky.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/inky-pinky-f76d687fd5f514c8-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/inky-pinky-f76d687fd5f514c8-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/inky-pinky-f76d687fd5f514c8-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/inky-pinky-f76d687fd5f514c8-1920.webp",
+            "width": 1920
+          }
+        ]
+      },
+      "repository": "https://github.com/HANCORE-linux/omarchy-inkypinky-theme",
+      "slug": "inky-pinky",
+      "wallpaper": "linear-gradient(#13131d, #13131d)"
+    },
+    {
+      "colors": {
+        "accent": "#d97757",
+        "background": "#151515",
+        "blue": "#648ad8",
+        "brightBlue": "#7fa5f1",
+        "brightCyan": "#42d2d8",
+        "brightForeground": "#f1f1e8",
+        "brightGreen": "#95d891",
+        "brightMagenta": "#d89ce4",
+        "brightRed": "#f2827e",
+        "brightYellow": "#e0ab57",
+        "brown": "#76503f",
+        "cyan": "#1fb5bc",
+        "darkBackground": "#111111",
+        "darkForeground": "#8d8d89",
+        "darkerBackground": "#0b0b0b",
+        "foreground": "#e7e7e7",
+        "green": "#78bd74",
+        "lightForeground": "#c3c2b8",
+        "lighterBackground": "#1e1e1e",
+        "magenta": "#be80ca",
+        "muted": "#7a7a75",
+        "orange": "#d97757",
+        "red": "#d76563",
+        "selection": "#3a3a38",
+        "yellow": "#c68f32"
+      },
+      "id": "community:lamplight",
+      "kind": "community",
+      "mode": "dark",
+      "name": "Lamplight",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRi4AAABXRUJQVlA4ICIAAACwAQCdASoKAAYAA4BaJaQAAudIFOAAAP71afvAM+y84cAA",
+        "image": "/assets/themes/lamplight.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/lamplight-e731b75f1fca5174-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/lamplight-e731b75f1fca5174-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/lamplight-e731b75f1fca5174-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/lamplight-e731b75f1fca5174-1800.webp",
+            "width": 1800
+          }
+        ]
+      },
+      "repository": "https://github.com/thisisgm/omarchy-lamplight-theme",
+      "slug": "lamplight",
+      "wallpaper": "linear-gradient(#151515, #151515)"
+    },
+    {
+      "colors": {
+        "accent": "#89b4fa",
+        "background": "#1e1e2e",
+        "blue": "#89b4fa",
+        "brightBlue": "#89b4fa",
+        "brightCyan": "#94e2d5",
+        "brightForeground": "#dae0f7",
+        "brightGreen": "#a6e3a1",
+        "brightMagenta": "#cba6f7",
+        "brightRed": "#f38ba8",
+        "brightYellow": "#f9e2af",
+        "brown": "#b87886",
+        "cyan": "#94e2d5",
+        "darkBackground": "#171723",
+        "darkForeground": "#9aa1b7",
+        "darkerBackground": "#0f0f17",
+        "foreground": "#cdd6f4",
+        "green": "#a6e3a1",
+        "lightForeground": "#d5dcf6",
+        "lighterBackground": "#353543",
+        "magenta": "#cba6f7",
+        "muted": "#45475a",
+        "orange": "#f59cb5",
+        "red": "#f38ba8",
+        "selection": "#353543",
+        "yellow": "#f9e2af"
+      },
+      "id": "community:lawson-night",
+      "kind": "community",
+      "mode": "dark",
+      "name": "Lawson Night",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAADQAQCdASoKAAYAA4BaJQBOgCKfChsOwAD+zeFHBE/D9det63/onIxWyIA7sMAA",
+        "image": "/assets/themes/lawson-night.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/lawson-night-46c8452024fbfbaf-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/lawson-night-46c8452024fbfbaf-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/lawson-night-46c8452024fbfbaf-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/lawson-night-46c8452024fbfbaf-1920.webp",
+            "width": 1920
+          }
+        ]
+      },
+      "repository": "https://github.com/phuclh/omarchy-lawson-night-theme",
+      "slug": "lawson-night",
+      "wallpaper": "linear-gradient(#1e1e2e, #1e1e2e)"
+    },
+    {
+      "colors": {
+        "accent": "#d4bd99",
+        "background": "#1c1b19",
+        "blue": "#d4bd99",
+        "brightBlue": "#d4bd99",
+        "brightCyan": "#d4bd99",
+        "brightForeground": "#f0e4c5",
+        "brightGreen": "#d4bd99",
+        "brightMagenta": "#d4bd99",
+        "brightRed": "#d4bd99",
+        "brightYellow": "#d4bd99",
+        "brown": "#d4bd99",
+        "cyan": "#d4bd99",
+        "darkBackground": "#1c1b19",
+        "darkForeground": "#f0e4c5",
+        "darkerBackground": "#1c1b19",
+        "foreground": "#f0e4c5",
+        "green": "#d4bd99",
+        "lightForeground": "#f0e4c5",
+        "lighterBackground": "#1c1b19",
+        "magenta": "#d4bd99",
+        "muted": "#f0e4c5",
+        "orange": "#d4bd99",
+        "red": "#d4bd99",
+        "selection": "#d4bd99",
+        "yellow": "#d4bd99"
+      },
+      "id": "community:mechanoonna",
+      "kind": "community",
+      "mode": "dark",
+      "name": "Mechanoonna",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAADwAQCdASoKAAYAA4BaJZQCw7Ddb/yocgAA/oe2QXAJRzk1d3AOJjnFqzEz/OQddO5MWrU5NYvjpVSAAAA=",
+        "image": "/assets/themes/mechanoonna.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/mechanoonna-a52253323eee2bb7-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/mechanoonna-a52253323eee2bb7-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/mechanoonna-a52253323eee2bb7-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/mechanoonna-a52253323eee2bb7-1920.webp",
+            "width": 1920
+          }
+        ]
+      },
+      "repository": "https://github.com/HANCORE-linux/omarchy-mechanoonna-theme",
+      "slug": "mechanoonna",
+      "wallpaper": "linear-gradient(#1c1b19, #1c1b19)"
+    },
+    {
+      "colors": {
+        "accent": "#407e70",
+        "background": "#000000",
+        "blue": "#8a9fbe",
+        "brightBlue": "#a4bbdd",
+        "brightCyan": "#a2c4d3",
+        "brightForeground": "#ffffff",
+        "brightGreen": "#a5b799",
+        "brightMagenta": "#d9b9d9",
+        "brightRed": "#b91c1c",
+        "brightYellow": "#f59e0b",
+        "brown": "#8a8a8d",
+        "cyan": "#88aabb",
+        "darkBackground": "#0d0d0d",
+        "darkForeground": "#555555",
+        "darkerBackground": "#000000",
+        "foreground": "#efefef",
+        "green": "#8a9a7b",
+        "lightForeground": "#8a8a8d",
+        "lighterBackground": "#121212",
+        "magenta": "#c1a1c1",
+        "muted": "#1e1e1e",
+        "orange": "#f59e0b",
+        "red": "#d35f5f",
+        "selection": "#333333",
+        "yellow": "#ffc107"
+      },
+      "id": "community:midnight",
+      "kind": "community",
+      "mode": "dark",
+      "name": "Midnight",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRiYAAABXRUJQVlA4IBoAAAAwAQCdASoKAAYAA4BaJaQAA3AA/vWPHQpAAA==",
+        "image": "/assets/themes/midnight.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/midnight-f8227f7762ed51c6-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/midnight-f8227f7762ed51c6-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/midnight-f8227f7762ed51c6-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/midnight-f8227f7762ed51c6-1920.webp",
+            "width": 1920
+          }
+        ]
+      },
+      "repository": "https://github.com/JaxonWright/omarchy-midnight-theme",
+      "slug": "midnight",
+      "wallpaper": "linear-gradient(#000000, #000000)"
+    },
+    {
+      "colors": {
+        "accent": "#c8102e",
+        "background": "#0b0b0d",
+        "blue": "#3a4658",
+        "brightBlue": "#5a6a80",
+        "brightCyan": "#b4c4cc",
+        "brightForeground": "#f6f6f8",
+        "brightGreen": "#4a9a6e",
+        "brightMagenta": "#c44a5c",
+        "brightRed": "#e31c3d",
+        "brightYellow": "#e0c04a",
+        "brown": "#3a2424",
+        "cyan": "#8a9aa8",
+        "darkBackground": "#070708",
+        "darkForeground": "#6a6a70",
+        "darkerBackground": "#040405",
+        "foreground": "#d8d8da",
+        "green": "#2f6b4f",
+        "lightForeground": "#ececee",
+        "lighterBackground": "#1a1a1c",
+        "magenta": "#9a2438",
+        "muted": "#3c3c40",
+        "orange": "#e03a28",
+        "red": "#c8102e",
+        "selection": "#2a1216",
+        "yellow": "#c9a227"
+      },
+      "id": "community:mini-jcw",
+      "kind": "community",
+      "mode": "dark",
+      "name": "Mini Jcw",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRjIAAABXRUJQVlA4ICYAAADQAQCdASoKAAYAA4BaJaQAAudmnpc3gAD+9r6llATSYiFTyIAAAA==",
+        "image": "/assets/themes/mini-jcw.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/mini-jcw-768367a8d758a9a0-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/mini-jcw-768367a8d758a9a0-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/mini-jcw-768367a8d758a9a0-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/mini-jcw-768367a8d758a9a0-1920.webp",
+            "width": 1920
+          }
+        ]
+      },
+      "repository": "https://github.com/davydotcom/omarchy-mini-jcw-theme",
+      "slug": "mini-jcw",
+      "wallpaper": "linear-gradient(#0b0b0d, #0b0b0d)"
+    },
+    {
+      "colors": {
+        "accent": "#4ecdc4",
+        "background": "#181c22",
+        "blue": "#4ecdc4",
+        "brightBlue": "#4ecdc4",
+        "brightCyan": "#4ecdc4",
+        "brightForeground": "#e0e6ed",
+        "brightGreen": "#4ecdc4",
+        "brightMagenta": "#4ecdc4",
+        "brightRed": "#4ecdc4",
+        "brightYellow": "#4ecdc4",
+        "brown": "#4ecdc4",
+        "cyan": "#4ecdc4",
+        "darkBackground": "#181c22",
+        "darkForeground": "#e0e6ed",
+        "darkerBackground": "#181c22",
+        "foreground": "#e0e6ed",
+        "green": "#4ecdc4",
+        "lightForeground": "#e0e6ed",
+        "lighterBackground": "#181c22",
+        "magenta": "#4ecdc4",
+        "muted": "#e0e6ed",
+        "orange": "#4ecdc4",
+        "red": "#4ecdc4",
+        "selection": "#4ecdc4",
+        "yellow": "#4ecdc4"
+      },
+      "id": "community:moodpeak",
+      "kind": "community",
+      "mode": "dark",
+      "name": "Moodpeak",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRkIAAABXRUJQVlA4IDYAAADwAQCdASoKAAYAA4BaJQBOgCFrsVkLH4AA/vNRL3yF3JYfKy6lGvZ3Ht3gX1AV9IJundQAAAA=",
+        "image": "/assets/themes/moodpeak.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/moodpeak-afeb1d73dd30eca1-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/moodpeak-afeb1d73dd30eca1-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/moodpeak-afeb1d73dd30eca1-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/moodpeak-afeb1d73dd30eca1-1920.webp",
+            "width": 1920
+          }
+        ]
+      },
+      "repository": "https://github.com/HANCORE-linux/omarchy-moodpeak-theme",
+      "slug": "moodpeak",
+      "wallpaper": "linear-gradient(#181c22, #181c22)"
+    },
+    {
+      "colors": {
+        "accent": "#add8e6",
+        "background": "#072626",
+        "blue": "#add8e6",
+        "brightBlue": "#0fdfaf",
+        "brightCyan": "#0fdfaf",
+        "brightForeground": "#ffffff",
+        "brightGreen": "#3fdf1f",
+        "brightMagenta": "#f6779f",
+        "brightRed": "#ff0000",
+        "brightYellow": "#ffff00",
+        "brown": "#504038",
+        "cyan": "#add8e6",
+        "darkBackground": "#041818",
+        "darkForeground": "#041818",
+        "darkerBackground": "#020c0c",
+        "foreground": "#d3b58d",
+        "green": "#90ee90",
+        "lightForeground": "#c8d4ec",
+        "lighterBackground": "#0a3434",
+        "magenta": "#c8d4ec",
+        "muted": "#504038",
+        "orange": "#ff8000",
+        "red": "#800000",
+        "selection": "#0000ff",
+        "yellow": "#8fbc8f"
+      },
+      "id": "community:naysayer",
+      "kind": "community",
+      "mode": "dark",
+      "name": "Naysayer",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRi4AAABXRUJQVlA4ICIAAACwAQCdASoKAAYAA4BaJQBOgCHfwF2AAP7ym/iitcH0YjAA",
+        "image": "/assets/themes/naysayer.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/naysayer-1092f4dc4a4c2698-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/naysayer-1092f4dc4a4c2698-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/naysayer-1092f4dc4a4c2698-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/naysayer-1092f4dc4a4c2698-1920.webp",
+            "width": 1920
+          }
+        ]
+      },
+      "repository": "https://github.com/brianblakely/omarchy-naysayer-theme",
+      "slug": "naysayer",
+      "wallpaper": "linear-gradient(#072626, #072626)"
+    },
+    {
+      "colors": {
+        "accent": "#e85faf",
+        "background": "#16122a",
+        "blue": "#7b8ff2",
+        "brightBlue": "#9dabff",
+        "brightCyan": "#8adcf7",
+        "brightForeground": "#f0eaff",
+        "brightGreen": "#7df0bd",
+        "brightMagenta": "#dca5ff",
+        "brightRed": "#ff7c88",
+        "brightYellow": "#ffd894",
+        "brown": "#8e5f73",
+        "cyan": "#5cc8f5",
+        "darkBackground": "#0d0a18",
+        "darkForeground": "#7c719c",
+        "darkerBackground": "#07050d",
+        "foreground": "#cfc7e8",
+        "green": "#4be09a",
+        "lightForeground": "#b3a9d2",
+        "lighterBackground": "#221b3c",
+        "magenta": "#c77df5",
+        "muted": "#3a3154",
+        "orange": "#f2874a",
+        "red": "#f2596c",
+        "selection": "#38265c",
+        "yellow": "#eec06a"
+      },
+      "id": "community:neon-dusk",
+      "kind": "community",
+      "mode": "dark",
+      "name": "Neon Dusk",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRioAAABXRUJQVlA4IB4AAAAwAQCdASoKAAYAA4BaJYwAA3AA/vHr6Xtk70kHAAA=",
+        "image": "/assets/themes/neon-dusk.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/neon-dusk-4b0ccb8b059c7ce4-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/neon-dusk-4b0ccb8b059c7ce4-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/neon-dusk-4b0ccb8b059c7ce4-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/neon-dusk-4b0ccb8b059c7ce4-1915.webp",
+            "width": 1915
+          }
+        ]
+      },
+      "repository": "https://github.com/daniel-felipe/omarchy-neon-dusk-theme",
+      "slug": "neon-dusk",
+      "wallpaper": "linear-gradient(#16122a, #16122a)"
+    },
+    {
+      "colors": {
+        "accent": "#6a8f9a",
+        "background": "#0b1012",
+        "blue": "#6a8f9a",
+        "brightBlue": "#8ab4be",
+        "brightCyan": "#9ac8d4",
+        "brightForeground": "#eef2f3",
+        "brightGreen": "#5a8a74",
+        "brightMagenta": "#7a8aa4",
+        "brightRed": "#e07060",
+        "brightYellow": "#d8c080",
+        "brown": "#4a3e32",
+        "cyan": "#7aadc0",
+        "darkBackground": "#080c0e",
+        "darkForeground": "#5a6a70",
+        "darkerBackground": "#050708",
+        "foreground": "#c8d0d4",
+        "green": "#4a7a68",
+        "lightForeground": "#dce4e6",
+        "lighterBackground": "#1a252a",
+        "magenta": "#5a6a88",
+        "muted": "#3a4e56",
+        "orange": "#d4784a",
+        "red": "#c45a4a",
+        "selection": "#1c333a",
+        "yellow": "#c4a86a"
+      },
+      "id": "community:neptune-blue",
+      "kind": "community",
+      "mode": "dark",
+      "name": "Neptune Blue",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRi4AAABXRUJQVlA4ICIAAADQAQCdASoKAAYAA4BaJaQAAxZhTSR8AAD+8QAf8wX2AAAA",
+        "image": "/assets/themes/neptune-blue.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/neptune-blue-2175051eb8bcff66-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/neptune-blue-2175051eb8bcff66-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/neptune-blue-2175051eb8bcff66-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/neptune-blue-2175051eb8bcff66-1920.webp",
+            "width": 1920
+          }
+        ]
+      },
+      "repository": "https://github.com/davydotcom/omarchy-neptune-blue-theme",
+      "slug": "neptune-blue",
+      "wallpaper": "linear-gradient(#0b1012, #0b1012)"
+    },
+    {
+      "colors": {
+        "accent": "#9a9d9a",
+        "background": "#101010",
+        "blue": "#9a9d9a",
+        "brightBlue": "#cecfc9",
+        "brightCyan": "#cecfc9",
+        "brightForeground": "#e7e7e4",
+        "brightGreen": "#cecfc9",
+        "brightMagenta": "#da0f0f",
+        "brightRed": "#da0f0f",
+        "brightYellow": "#cecfc9",
+        "brown": "#7f2a25",
+        "cyan": "#9a9d9a",
+        "darkBackground": "#0b0b0b",
+        "darkForeground": "#9d9f93",
+        "darkerBackground": "#060606",
+        "foreground": "#cecfc9",
+        "green": "#9a9d9a",
+        "lightForeground": "#d8d9d4",
+        "lighterBackground": "#1f1f1f",
+        "magenta": "#d93f37",
+        "muted": "#525351",
+        "orange": "#ba6e68",
+        "red": "#d93f37",
+        "selection": "#1f1f1f",
+        "yellow": "#9a9d9a"
+      },
+      "id": "community:nes",
+      "kind": "community",
+      "mode": "dark",
+      "name": "NES",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRigAAABXRUJQVlA4IBwAAAAwAQCdASoKAAYAA4BaJaQAA3AA/vN+yKRGoAAA",
+        "image": "/assets/themes/nes.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/nes-2aa892df6b4aa3d9-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/nes-2aa892df6b4aa3d9-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/nes-2aa892df6b4aa3d9-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/nes-2aa892df6b4aa3d9-1920.webp",
+            "width": 1920
+          }
+        ]
+      },
+      "repository": "https://github.com/bjarneo/omarchy-nes-theme",
+      "slug": "nes",
+      "wallpaper": "linear-gradient(#101010, #101010)"
+    },
+    {
+      "colors": {
+        "accent": "#8a9a7b",
+        "background": "#000000",
+        "blue": "#aaaaaa",
+        "brightBlue": "#aaaaaa",
+        "brightCyan": "#aa9988",
+        "brightForeground": "#c1c1c1",
+        "brightGreen": "#c1c1c1",
+        "brightMagenta": "#999999",
+        "brightRed": "#8a9a7b",
+        "brightYellow": "#888888",
+        "brown": "#5e6556",
+        "cyan": "#aa9988",
+        "darkBackground": "#000000",
+        "darkForeground": "#c1c1c1",
+        "darkerBackground": "#000000",
+        "foreground": "#c1c1c1",
+        "green": "#c1c1c1",
+        "lightForeground": "#c1c1c1",
+        "lighterBackground": "#000000",
+        "magenta": "#999999",
+        "muted": "#505050",
+        "orange": "#9ca98f",
+        "red": "#8a9a7b",
+        "selection": "#c1c1c1",
+        "yellow": "#888888"
+      },
+      "id": "community:noir",
+      "kind": "community",
+      "mode": "dark",
+      "name": "Noir",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRi4AAABXRUJQVlA4ICIAAACQAQCdASoKAAYAA4BaJZwAAudZt7gA/vkXDvQptVHAAAAA",
+        "image": "/assets/themes/noir.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/noir-e7dfc2940d35c63a-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/noir-e7dfc2940d35c63a-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/noir-e7dfc2940d35c63a-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/noir-e7dfc2940d35c63a-1920.webp",
+            "width": 1920
+          }
+        ]
+      },
+      "repository": "https://github.com/tahadx/omarchy-noir-theme",
+      "slug": "noir",
+      "wallpaper": "linear-gradient(#000000, #000000)"
+    },
+    {
+      "colors": {
+        "accent": "#c6f36b",
+        "background": "#0b1020",
+        "blue": "#4ba3c7",
+        "brightBlue": "#83d9f0",
+        "brightCyan": "#a1edff",
+        "brightForeground": "#f7fbff",
+        "brightGreen": "#c6f36b",
+        "brightMagenta": "#d7c2ff",
+        "brightRed": "#ff9696",
+        "brightYellow": "#ffe39a",
+        "brown": "#7e4b2a",
+        "cyan": "#55d8ff",
+        "darkBackground": "#080d18",
+        "darkForeground": "#6f7d95",
+        "darkerBackground": "#050912",
+        "foreground": "#e8eef6",
+        "green": "#9fe870",
+        "lightForeground": "#b7c6d6",
+        "lighterBackground": "#141e30",
+        "magenta": "#b78cff",
+        "muted": "#65718a",
+        "orange": "#f2a65a",
+        "red": "#ff6b6b",
+        "selection": "#263851",
+        "yellow": "#f4c95d"
+      },
+      "id": "community:oligarchy",
+      "kind": "community",
+      "mode": "dark",
+      "name": "Oligarchy",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRiwAAABXRUJQVlA4ICAAAABwAQCdASoKAAYAA4BaJZQCdAFAAAD+8v2PuWVOV1TgAA==",
+        "image": "/assets/themes/oligarchy.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/oligarchy-70f4db8b8b92bcf6-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/oligarchy-70f4db8b8b92bcf6-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/oligarchy-70f4db8b8b92bcf6-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/oligarchy-70f4db8b8b92bcf6-1800.webp",
+            "width": 1800
+          }
+        ]
+      },
+      "repository": "https://github.com/EF-Code/omarchy-oligarchy-theme",
+      "slug": "oligarchy",
+      "wallpaper": "linear-gradient(#0b1020, #0b1020)"
+    },
+    {
+      "colors": {
+        "accent": "#b26ac6",
+        "background": "#0d0a11",
+        "blue": "#6d4fd0",
+        "brightBlue": "#8f74e8",
+        "brightCyan": "#9cc3ca",
+        "brightForeground": "#fdf7f7",
+        "brightGreen": "#b6bb85",
+        "brightMagenta": "#e79ad8",
+        "brightRed": "#dd8189",
+        "brightYellow": "#f2e06a",
+        "brown": "#6e4a2c",
+        "cyan": "#7fa8b0",
+        "darkBackground": "#09070c",
+        "darkForeground": "#7d747a",
+        "darkerBackground": "#050407",
+        "foreground": "#e3dcda",
+        "green": "#9aa06b",
+        "lightForeground": "#c9c0bd",
+        "lighterBackground": "#231a2b",
+        "magenta": "#dc7fcc",
+        "muted": "#6b5268",
+        "orange": "#e88b2c",
+        "red": "#c56e6f",
+        "selection": "#3d2456",
+        "yellow": "#e0c25a"
+      },
+      "id": "community:nujabes",
+      "kind": "community",
+      "mode": "dark",
+      "name": "Nujabes",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRk4AAABXRUJQVlA4IEIAAADwAQCdASoKAAYAA4BaJZQCsAD5jFa5KSAA/s0dB08hok9VB5TF3yL7ZnmNsfsNvYL8O9Z2SBAi1I88gCjYrs11gAA=",
+        "image": "/assets/themes/nujabes.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/nujabes-b1e6302e151cba37-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/nujabes-b1e6302e151cba37-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/nujabes-b1e6302e151cba37-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/nujabes-b1e6302e151cba37-1800.webp",
+            "width": 1800
+          }
+        ]
+      },
+      "repository": "https://github.com/HalmyLyseas/omarchy-nujabes-theme",
+      "slug": "nujabes",
+      "wallpaper": "linear-gradient(#0d0a11, #0d0a11)"
+    },
+    {
+      "colors": {
+        "accent": "#860111",
+        "background": "#000000",
+        "blue": "#ac1c1e",
+        "brightBlue": "#d02224",
+        "brightCyan": "#f1a7a9",
+        "brightForeground": "#f6cacc",
+        "brightGreen": "#e35053",
+        "brightMagenta": "#f6cacc",
+        "brightRed": "#ff0022",
+        "brightYellow": "#f6cacc",
+        "brown": "#9c191b",
+        "cyan": "#ec8385",
+        "darkBackground": "#000000",
+        "darkForeground": "#dd2c2f",
+        "darkerBackground": "#000000",
+        "foreground": "#e66063",
+        "green": "#bd1f21",
+        "lightForeground": "#ec8385",
+        "lighterBackground": "#5a000b",
+        "magenta": "#f1a7a9",
+        "muted": "#5a000b",
+        "orange": "#e35053",
+        "red": "#dd2c2f",
+        "selection": "#860111",
+        "yellow": "#e66063"
+      },
+      "id": "community:omaled",
+      "kind": "community",
+      "mode": "dark",
+      "name": "OmaLED",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRjIAAABXRUJQVlA4ICYAAACwAQCdASoKAAYAA4BaJQAAXO/PH29AAP74V8VCzRet9btsQgAAAA==",
+        "image": "/assets/themes/omaled.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/omaled-37f901f2e784c8ed-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/omaled-37f901f2e784c8ed-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/omaled-37f901f2e784c8ed-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/omaled-37f901f2e784c8ed-1920.webp",
+            "width": 1920
+          }
+        ]
+      },
+      "repository": "https://github.com/brianblakely/omarchy-omaled-theme",
+      "slug": "omaled",
+      "wallpaper": "linear-gradient(#000000, #000000)"
+    },
+    {
+      "colors": {
+        "accent": "#61afef",
+        "background": "#282c34",
+        "blue": "#61afef",
+        "brightBlue": "#7cc3ff",
+        "brightCyan": "#66d9e8",
+        "brightForeground": "#dcdfe4",
+        "brightGreen": "#a9d98a",
+        "brightMagenta": "#d68fe8",
+        "brightRed": "#ff7b86",
+        "brightYellow": "#f0d399",
+        "brown": "#be5046",
+        "cyan": "#56b6c2",
+        "darkBackground": "#21252b",
+        "darkForeground": "#5c6370",
+        "darkerBackground": "#1b1e24",
+        "foreground": "#abb2bf",
+        "green": "#98c379",
+        "lightForeground": "#c5cbd6",
+        "lighterBackground": "#333842",
+        "magenta": "#c678dd",
+        "muted": "#5c6370",
+        "orange": "#d19a66",
+        "red": "#e06c75",
+        "selection": "#3e4451",
+        "yellow": "#e5c07b"
+      },
+      "id": "community:one-dark",
+      "kind": "community",
+      "mode": "dark",
+      "name": "One Dark",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRi4AAABXRUJQVlA4ICIAAABwAQCdASoKAAYAA4BaJZQC7AF1AAD+8CV5HedHgyYOb4AA",
+        "image": "/assets/themes/one-dark.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/one-dark-2f387b0a8cfcc299-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/one-dark-2f387b0a8cfcc299-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/one-dark-2f387b0a8cfcc299-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/one-dark-2f387b0a8cfcc299-1800.webp",
+            "width": 1800
+          }
+        ]
+      },
+      "repository": "https://github.com/joaopinto15/omarchy-one-dark-theme",
+      "slug": "one-dark",
+      "wallpaper": "linear-gradient(#282c34, #282c34)"
+    },
+    {
+      "colors": {
+        "accent": "#61afef",
+        "background": "#282c34",
+        "blue": "#61afef",
+        "brightBlue": "#61afef",
+        "brightCyan": "#56b6c2",
+        "brightForeground": "#c8ccd4",
+        "brightGreen": "#98c379",
+        "brightMagenta": "#c678dd",
+        "brightRed": "#e06c75",
+        "brightYellow": "#e5c07b",
+        "brown": "#be5046",
+        "cyan": "#56b6c2",
+        "darkBackground": "#21252b",
+        "darkForeground": "#5c6370",
+        "darkerBackground": "#181a1f",
+        "foreground": "#abb2bf",
+        "green": "#98c379",
+        "lightForeground": "#9aa2ad",
+        "lighterBackground": "#3e4451",
+        "magenta": "#c678dd",
+        "muted": "#5c6370",
+        "orange": "#d19a66",
+        "red": "#e06c75",
+        "selection": "#3e4451",
+        "yellow": "#e5c07b"
+      },
+      "id": "community:one-dark-pro",
+      "kind": "community",
+      "mode": "dark",
+      "name": "One Dark Pro",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRiwAAABXRUJQVlA4ICAAAABwAQCdASoKAAYABwBaJZwCsAFAAAD+8I2eQuEm0XOAAA==",
+        "image": "/assets/themes/one-dark-pro.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/one-dark-pro-6f3a479d23fe6fa1-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/one-dark-pro-6f3a479d23fe6fa1-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/one-dark-pro-6f3a479d23fe6fa1-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/one-dark-pro-6f3a479d23fe6fa1-1800.webp",
+            "width": 1800
+          }
+        ]
+      },
+      "repository": "https://github.com/sc0ttman/omarchy-one-dark-pro-theme",
+      "slug": "one-dark-pro",
+      "wallpaper": "linear-gradient(#282c34, #282c34)"
+    },
+    {
+      "colors": {
+        "accent": "#33b1ff",
+        "background": "#161616",
+        "blue": "#33b1ff",
+        "brightBlue": "#33b1ff",
+        "brightCyan": "#33b1ff",
+        "brightForeground": "#f2f4f8",
+        "brightGreen": "#33b1ff",
+        "brightMagenta": "#33b1ff",
+        "brightRed": "#33b1ff",
+        "brightYellow": "#33b1ff",
+        "brown": "#33b1ff",
+        "cyan": "#33b1ff",
+        "darkBackground": "#161616",
+        "darkForeground": "#f2f4f8",
+        "darkerBackground": "#161616",
+        "foreground": "#f2f4f8",
+        "green": "#33b1ff",
+        "lightForeground": "#f2f4f8",
+        "lighterBackground": "#161616",
+        "magenta": "#33b1ff",
+        "muted": "#f2f4f8",
+        "orange": "#33b1ff",
+        "red": "#33b1ff",
+        "selection": "#33b1ff",
+        "yellow": "#33b1ff"
+      },
+      "id": "community:oxo-carbon",
+      "kind": "community",
+      "mode": "dark",
+      "name": "Oxo Carbon",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRjYAAABXRUJQVlA4ICoAAACwAQCdASoKAAYAA4BaJZwAAvdnvXBAAP70Mxt/KyBJ9mL2caJHP6A4AAA=",
+        "image": "/assets/themes/oxo-carbon.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/oxo-carbon-14d0ffcdbd524b81-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/oxo-carbon-14d0ffcdbd524b81-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/oxo-carbon-14d0ffcdbd524b81-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/oxo-carbon-14d0ffcdbd524b81-1920.webp",
+            "width": 1920
+          }
+        ]
+      },
+      "repository": "https://github.com/HANCORE-linux/omarchy-oxocarbon-theme",
+      "slug": "oxo-carbon",
+      "wallpaper": "linear-gradient(#161616, #161616)"
+    },
+    {
+      "colors": {
+        "accent": "#25aff4",
+        "background": "#0a0a0a",
+        "blue": "#25aff4",
+        "brightBlue": "#6ac9ff",
+        "brightCyan": "#82e2f3",
+        "brightForeground": "#ffffff",
+        "brightGreen": "#86c6a6",
+        "brightMagenta": "#c8a5d3",
+        "brightRed": "#ef6b62",
+        "brightYellow": "#e0cc95",
+        "brown": "#907764",
+        "cyan": "#47cfeb",
+        "darkBackground": "#070707",
+        "darkForeground": "#999999",
+        "darkerBackground": "#030303",
+        "foreground": "#f2f2f2",
+        "green": "#63aa87",
+        "lightForeground": "#e6e6e6",
+        "lighterBackground": "#0f0f0f",
+        "magenta": "#ae83bd",
+        "muted": "#6e6e6e",
+        "orange": "#bc7a44",
+        "red": "#de443e",
+        "selection": "#1f1f1f",
+        "yellow": "#c9ae6d"
+      },
+      "id": "community:pagan",
+      "kind": "community",
+      "mode": "dark",
+      "name": "Pagan",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRiwAAABXRUJQVlA4ICAAAAAwAQCdASoKAAYAA4BaJaQAA3AA/vPsKW6KMXe5dWYAAA==",
+        "image": "/assets/themes/pagan.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/pagan-4ee8e6f77205454f-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/pagan-4ee8e6f77205454f-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/pagan-4ee8e6f77205454f-1200.webp",
+            "width": 1200
+          }
+        ]
+      },
+      "repository": "https://github.com/c0ze/omarchy-pagan-theme",
+      "slug": "pagan",
+      "wallpaper": "linear-gradient(#0a0a0a, #0a0a0a)"
+    },
+    {
+      "colors": {
+        "accent": "#7fc9c4",
+        "background": "#060f12",
+        "blue": "#6f9cb5",
+        "brightBlue": "#8bb2c9",
+        "brightCyan": "#9bd9d4",
+        "brightForeground": "#e0efec",
+        "brightGreen": "#98c5a5",
+        "brightMagenta": "#cba0b8",
+        "brightRed": "#e87a5e",
+        "brightYellow": "#dcb684",
+        "brown": "#8a5b3e",
+        "cyan": "#7fc9c4",
+        "darkBackground": "#040a0c",
+        "darkForeground": "#587473",
+        "darkerBackground": "#020607",
+        "foreground": "#a9c0bf",
+        "green": "#7fae8e",
+        "lightForeground": "#c2d6d3",
+        "lighterBackground": "#0f2129",
+        "magenta": "#b587a0",
+        "muted": "#5c7876",
+        "orange": "#dd8b57",
+        "red": "#d4644a",
+        "selection": "#17333a",
+        "yellow": "#c9a06a"
+      },
+      "id": "community:periphery",
+      "kind": "community",
+      "mode": "dark",
+      "name": "Periphery",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRk4AAABXRUJQVlA4IEIAAAAQAgCdASoKAAYAA4BaJQBOj+ACcdHz3B0QAP70VhwYt4rwIb6W6ECKFFrbgAV/jOK73zGGwBFTakwYFOI2RpwAAAA=",
+        "image": "/assets/themes/periphery.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/periphery-43162799ba1f9eeb-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/periphery-43162799ba1f9eeb-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/periphery-43162799ba1f9eeb-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/periphery-43162799ba1f9eeb-1800.webp",
+            "width": 1800
+          }
+        ]
+      },
+      "repository": "https://github.com/r-bart/omarchy-periphery-theme",
+      "slug": "periphery",
+      "wallpaper": "linear-gradient(#060f12, #060f12)"
+    },
+    {
+      "colors": {
+        "accent": "#d7accd",
+        "background": "#121212",
+        "blue": "#d7accd",
+        "brightBlue": "#d7accd",
+        "brightCyan": "#d7accd",
+        "brightForeground": "#d7accd",
+        "brightGreen": "#d7accd",
+        "brightMagenta": "#d7accd",
+        "brightRed": "#d7accd",
+        "brightYellow": "#d7accd",
+        "brown": "#d7accd",
+        "cyan": "#d7accd",
+        "darkBackground": "#121212",
+        "darkForeground": "#d7accd",
+        "darkerBackground": "#121212",
+        "foreground": "#d7accd",
+        "green": "#d7accd",
+        "lightForeground": "#d7accd",
+        "lighterBackground": "#121212",
+        "magenta": "#d7accd",
+        "muted": "#d7accd",
+        "orange": "#d7accd",
+        "red": "#d7accd",
+        "selection": "#d7accd",
+        "yellow": "#d7accd"
+      },
+      "id": "community:purplewave",
+      "kind": "community",
+      "mode": "dark",
+      "name": "Purplewave",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAADQAQCdASoKAAYAA4BaJagC7AD5iglCwAD+94JaeTBL0GbGiwyIRddFmgvQ3AAA",
+        "image": "/assets/themes/purplewave.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/purplewave-35b8e7729ad0ae85-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/purplewave-35b8e7729ad0ae85-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/purplewave-35b8e7729ad0ae85-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/purplewave-35b8e7729ad0ae85-1920.webp",
+            "width": 1920
+          }
+        ]
+      },
+      "repository": "https://github.com/dotsilva/omarchy-purplewave-theme",
+      "slug": "purplewave",
+      "wallpaper": "linear-gradient(#121212, #121212)"
+    },
+    {
+      "colors": {
+        "accent": "#8a4a2c",
+        "background": "#f0e6d3",
+        "blue": "#3f5378",
+        "brightBlue": "#354764",
+        "brightCyan": "#2f5457",
+        "brightForeground": "#1c150c",
+        "brightGreen": "#355c3f",
+        "brightMagenta": "#752f49",
+        "brightRed": "#8e2622",
+        "brightYellow": "#6d4e0c",
+        "brown": "#6b4a2c",
+        "cyan": "#3a6367",
+        "darkBackground": "#e4d8c0",
+        "darkForeground": "#7a6a50",
+        "darkerBackground": "#d8c9ad",
+        "foreground": "#33291b",
+        "green": "#3f6b4a",
+        "lightForeground": "#4c3f2c",
+        "lighterBackground": "#e9dfc9",
+        "magenta": "#8c3a58",
+        "muted": "#8a7a5e",
+        "orange": "#95521a",
+        "red": "#a32d2a",
+        "selection": "#ddcdab",
+        "yellow": "#7d5a10"
+      },
+      "id": "community:quattrocento-light",
+      "kind": "community",
+      "mode": "light",
+      "name": "Quattrocento Light",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRj4AAABXRUJQVlA4IDIAAABwAQCdASoKAAYAA4BaJZACdAFAAAD+7vn8BHnrIgPQBSE1e51y+pNRGMJpLbLJ36wAAA==",
+        "image": "/assets/themes/quattrocento-light.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/quattrocento-light-3521caefdf85c46b-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/quattrocento-light-3521caefdf85c46b-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/quattrocento-light-3521caefdf85c46b-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/quattrocento-light-3521caefdf85c46b-1800.webp",
+            "width": 1800
+          }
+        ]
+      },
+      "repository": "https://github.com/r-bart/omarchy-quattrocento-light-theme",
+      "slug": "quattrocento-light",
+      "wallpaper": "linear-gradient(#f0e6d3, #f0e6d3)"
+    },
+    {
+      "colors": {
+        "accent": "#89b4fa",
+        "background": "#1e1e2e",
+        "blue": "#89b4fa",
+        "brightBlue": "#89b4fa",
+        "brightCyan": "#89b4fa",
+        "brightForeground": "#cdd6f4",
+        "brightGreen": "#89b4fa",
+        "brightMagenta": "#89b4fa",
+        "brightRed": "#89b4fa",
+        "brightYellow": "#89b4fa",
+        "brown": "#89b4fa",
+        "cyan": "#89b4fa",
+        "darkBackground": "#1e1e2e",
+        "darkForeground": "#cdd6f4",
+        "darkerBackground": "#1e1e2e",
+        "foreground": "#cdd6f4",
+        "green": "#89b4fa",
+        "lightForeground": "#cdd6f4",
+        "lighterBackground": "#1e1e2e",
+        "magenta": "#89b4fa",
+        "muted": "#cdd6f4",
+        "orange": "#89b4fa",
+        "red": "#89b4fa",
+        "selection": "#89b4fa",
+        "yellow": "#89b4fa"
+      },
+      "id": "community:rainy-night",
+      "kind": "community",
+      "mode": "dark",
+      "name": "Rainy Night",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRi4AAABXRUJQVlA4ICIAAABQAQCdASoKAAYAA4BaJZQABAAAAP7wt5NyHFkMXbJ2vAIA",
+        "image": "/assets/themes/rainy-night.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/rainy-night-39d1c36751a036c6-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/rainy-night-39d1c36751a036c6-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/rainy-night-39d1c36751a036c6-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/rainy-night-39d1c36751a036c6-1366.webp",
+            "width": 1366
+          }
+        ]
+      },
+      "repository": "https://github.com/atif-1402/omarchy-rainynight-theme",
+      "slug": "rainy-night",
+      "wallpaper": "linear-gradient(#1e1e2e, #1e1e2e)"
+    },
+    {
+      "colors": {
+        "accent": "#f7931a",
+        "background": "#050b07",
+        "blue": "#3f6f9e",
+        "brightBlue": "#6f9fd0",
+        "brightCyan": "#5ff0c6",
+        "brightForeground": "#e8fff0",
+        "brightGreen": "#5cff8a",
+        "brightMagenta": "#c496d4",
+        "brightRed": "#ff6f4d",
+        "brightYellow": "#ffdf7a",
+        "brown": "#7a5a2a",
+        "cyan": "#2fd6a8",
+        "darkBackground": "#030704",
+        "darkForeground": "#4e7a5e",
+        "darkerBackground": "#020402",
+        "foreground": "#c8f5d4",
+        "green": "#00d94a",
+        "lightForeground": "#a2e0b4",
+        "lighterBackground": "#0b170f",
+        "magenta": "#a16fb0",
+        "muted": "#2c5138",
+        "orange": "#f7931a",
+        "red": "#ff4d2e",
+        "selection": "#123a1e",
+        "yellow": "#f7c948"
+      },
+      "id": "community:red-pill",
+      "kind": "community",
+      "mode": "dark",
+      "name": "Red Pill",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRigAAABXRUJQVlA4IBwAAABQAQCdASoKAAYAA4BaJZwABAAAAP71MlcAzAAA",
+        "image": "/assets/themes/red-pill.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/red-pill-07ff97c798b5819a-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/red-pill-07ff97c798b5819a-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/red-pill-07ff97c798b5819a-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/red-pill-07ff97c798b5819a-1920.webp",
+            "width": 1920
+          }
+        ]
+      },
+      "repository": "https://github.com/ferlemes/omarchy-red-pill-theme",
+      "slug": "red-pill",
+      "wallpaper": "linear-gradient(#050b07, #050b07)"
+    },
+    {
+      "colors": {
+        "accent": "#85b34c",
+        "background": "#fdf6ee",
+        "blue": "#85b34c",
+        "brightBlue": "#85b34c",
+        "brightCyan": "#85b34c",
+        "brightForeground": "#22211d",
+        "brightGreen": "#85b34c",
+        "brightMagenta": "#85b34c",
+        "brightRed": "#85b34c",
+        "brightYellow": "#85b34c",
+        "brown": "#85b34c",
+        "cyan": "#85b34c",
+        "darkBackground": "#fdf6ee",
+        "darkForeground": "#22211d",
+        "darkerBackground": "#fdf6ee",
+        "foreground": "#22211d",
+        "green": "#85b34c",
+        "lightForeground": "#22211d",
+        "lighterBackground": "#fdf6ee",
+        "magenta": "#85b34c",
+        "muted": "#22211d",
+        "orange": "#85b34c",
+        "red": "#85b34c",
+        "selection": "#85b34c",
+        "yellow": "#85b34c"
+      },
+      "id": "community:ristretto-light",
+      "kind": "community",
+      "mode": "light",
+      "name": "Ristretto Light",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRjgAAABXRUJQVlA4ICwAAADwAQCdASoKAAYAA4BaJYwCdAD0lwbQCAAA/uIloQ5GH5bn++bmjuUMy2AAAA==",
+        "image": "/assets/themes/ristretto-light.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/ristretto-light-ba7910189a2f74b9-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/ristretto-light-ba7910189a2f74b9-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/ristretto-light-ba7910189a2f74b9-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/ristretto-light-ba7910189a2f74b9-1920.webp",
+            "width": 1920
+          }
+        ]
+      },
+      "repository": "https://github.com/brokkoli71/omarchy-ristretto-light-theme",
+      "slug": "ristretto-light",
+      "wallpaper": "linear-gradient(#fdf6ee, #fdf6ee)"
+    },
+    {
+      "colors": {
+        "accent": "#ff7edb",
+        "background": "#000000",
+        "blue": "#ff7edb",
+        "brightBlue": "#ff7edb",
+        "brightCyan": "#ff7edb",
+        "brightForeground": "#ffffff",
+        "brightGreen": "#ff7edb",
+        "brightMagenta": "#ff7edb",
+        "brightRed": "#ff7edb",
+        "brightYellow": "#ff7edb",
+        "brown": "#ff7edb",
+        "cyan": "#ff7edb",
+        "darkBackground": "#000000",
+        "darkForeground": "#ffffff",
+        "darkerBackground": "#000000",
+        "foreground": "#ffffff",
+        "green": "#ff7edb",
+        "lightForeground": "#ffffff",
+        "lighterBackground": "#000000",
+        "magenta": "#ff7edb",
+        "muted": "#ffffff",
+        "orange": "#ff7edb",
+        "red": "#ff7edb",
+        "selection": "#ff7edb",
+        "yellow": "#ff7edb"
+      },
+      "id": "community:robzee84",
+      "kind": "community",
+      "mode": "dark",
+      "name": "RobZee84",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRjIAAABXRUJQVlA4ICYAAABQAQCdASoKAAYAA4BaJZQABAAAAP7yOuLbF9lq0w6hHH5R7JZAAA==",
+        "image": "/assets/themes/robzee84.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/robzee84-d659be404e8eadd8-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/robzee84-d659be404e8eadd8-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/robzee84-d659be404e8eadd8-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/robzee84-d659be404e8eadd8-1920.webp",
+            "width": 1920
+          }
+        ]
+      },
+      "repository": "https://github.com/robzolkos/omarchy-robzee84-theme",
+      "slug": "robzee84",
+      "wallpaper": "linear-gradient(#000000, #000000)"
+    },
+    {
+      "colors": {
+        "accent": "#9ccfd8",
+        "background": "#232136",
+        "blue": "#9ccfd8",
+        "brightBlue": "#9ccfd8",
+        "brightCyan": "#ea9a97",
+        "brightForeground": "#e0def4",
+        "brightGreen": "#3e8fb0",
+        "brightMagenta": "#c4a7e7",
+        "brightRed": "#eb6f92",
+        "brightYellow": "#f6c177",
+        "brown": "#8a6a5c",
+        "cyan": "#ea9a97",
+        "darkBackground": "#1a1828",
+        "darkForeground": "#6e6a86",
+        "darkerBackground": "#13121d",
+        "foreground": "#e0def4",
+        "green": "#3e8fb0",
+        "lightForeground": "#908caa",
+        "lighterBackground": "#393552",
+        "magenta": "#c4a7e7",
+        "muted": "#56526e",
+        "orange": "#f0a07a",
+        "red": "#eb6f92",
+        "selection": "#44415a",
+        "yellow": "#f6c177"
+      },
+      "id": "community:rose-pine-moon",
+      "kind": "community",
+      "mode": "dark",
+      "name": "Rose Pine Moon",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRioAAABXRUJQVlA4IB4AAAAwAQCdASoKAAYAA4BaJYwAA3AA/vBxo6OrzsH4AAA=",
+        "image": "/assets/themes/rose-pine-moon.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/rose-pine-moon-b73a72917059a8db-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/rose-pine-moon-b73a72917059a8db-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/rose-pine-moon-b73a72917059a8db-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/rose-pine-moon-b73a72917059a8db-1800.webp",
+            "width": 1800
+          }
+        ]
+      },
+      "repository": "https://github.com/Memnoc/omarchy-rose-pine-moon-theme",
+      "slug": "rose-pine-moon",
+      "wallpaper": "linear-gradient(#232136, #232136)"
+    },
+    {
+      "colors": {
+        "accent": "#76634c",
+        "background": "#f5e6d3",
+        "blue": "#76634c",
+        "brightBlue": "#76634c",
+        "brightCyan": "#76634c",
+        "brightForeground": "#35302a",
+        "brightGreen": "#76634c",
+        "brightMagenta": "#76634c",
+        "brightRed": "#76634c",
+        "brightYellow": "#76634c",
+        "brown": "#76634c",
+        "cyan": "#76634c",
+        "darkBackground": "#f5e6d3",
+        "darkForeground": "#35302a",
+        "darkerBackground": "#f5e6d3",
+        "foreground": "#35302a",
+        "green": "#76634c",
+        "lightForeground": "#35302a",
+        "lighterBackground": "#f5e6d3",
+        "magenta": "#76634c",
+        "muted": "#35302a",
+        "orange": "#76634c",
+        "red": "#76634c",
+        "selection": "#76634c",
+        "yellow": "#76634c"
+      },
+      "id": "community:rose-of-dune",
+      "kind": "community",
+      "mode": "light",
+      "name": "Rose of Dune",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAADQAQCdASoKAAYAA4BaJQBOgB6Md1UygAD+53v0DTOhqz+vbEfJ+l6qyYwIAAAA",
+        "image": "/assets/themes/rose-of-dune.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/rose-of-dune-81d439c91056fc58-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/rose-of-dune-81d439c91056fc58-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/rose-of-dune-81d439c91056fc58-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/rose-of-dune-81d439c91056fc58-1920.webp",
+            "width": 1920
+          }
+        ]
+      },
+      "repository": "https://github.com/HANCORE-linux/omarchy-roseofdune-theme",
+      "slug": "rose-of-dune",
+      "wallpaper": "linear-gradient(#f5e6d3, #f5e6d3)"
+    },
+    {
+      "colors": {
+        "accent": "#525e5a",
+        "background": "#050505",
+        "blue": "#525e5a",
+        "brightBlue": "#525e5a",
+        "brightCyan": "#525e5a",
+        "brightForeground": "#d6d0c5",
+        "brightGreen": "#525e5a",
+        "brightMagenta": "#525e5a",
+        "brightRed": "#525e5a",
+        "brightYellow": "#525e5a",
+        "brown": "#525e5a",
+        "cyan": "#525e5a",
+        "darkBackground": "#050505",
+        "darkForeground": "#d6d0c5",
+        "darkerBackground": "#050505",
+        "foreground": "#d6d0c5",
+        "green": "#525e5a",
+        "lightForeground": "#d6d0c5",
+        "lighterBackground": "#050505",
+        "magenta": "#525e5a",
+        "muted": "#d6d0c5",
+        "orange": "#525e5a",
+        "red": "#525e5a",
+        "selection": "#525e5a",
+        "yellow": "#525e5a"
+      },
+      "id": "community:ryu",
+      "kind": "community",
+      "mode": "dark",
+      "name": "Ryu",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAADwAQCdASoKAAYAA4BaJZQC7ADdqmDiMgAA/uKUh7SFGp/qKwJ9/a/CLmYnULpl/O2PyhHApVk8nCZRQEAzFG2og14gAA==",
+        "image": "/assets/themes/ryu.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/ryu-778151050d3cb887-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/ryu-778151050d3cb887-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/ryu-778151050d3cb887-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/ryu-778151050d3cb887-1920.webp",
+            "width": 1920
+          }
+        ]
+      },
+      "repository": "https://github.com/HANCORE-linux/omarchy-ryu-theme",
+      "slug": "ryu",
+      "wallpaper": "linear-gradient(#050505, #050505)"
+    },
+    {
+      "colors": {
+        "accent": "#d9a56c",
+        "background": "#0d0509",
+        "blue": "#d9a56c",
+        "brightBlue": "#ebb97e",
+        "brightCyan": "#fbd2ab",
+        "brightForeground": "#ffffff",
+        "brightGreen": "#ffb5b4",
+        "brightMagenta": "#e3c5ab",
+        "brightRed": "#ff7a8a",
+        "brightYellow": "#e6ba94",
+        "brown": "#853641",
+        "cyan": "#e8c099",
+        "darkBackground": "#060204",
+        "darkForeground": "#c6afba",
+        "darkerBackground": "#000000",
+        "foreground": "#f0eaed",
+        "green": "#f29b9a",
+        "lightForeground": "#f8f6f7",
+        "lighterBackground": "#230e18",
+        "magenta": "#d1b399",
+        "muted": "#7a5c66",
+        "orange": "#ff8e7c",
+        "red": "#e85f6f",
+        "selection": "#230e18",
+        "yellow": "#d4a882"
+      },
+      "id": "community:sakura",
+      "kind": "community",
+      "mode": "dark",
+      "name": "Sakura",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRjQAAABXRUJQVlA4ICgAAACwAQCdASoKAAYAA4BaJZQAAxZgo87oAP70SdmhMvugcynIFfsbh5AA",
+        "image": "/assets/themes/sakura.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/sakura-6a4649be447082c0-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/sakura-6a4649be447082c0-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/sakura-6a4649be447082c0-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/sakura-6a4649be447082c0-1920.webp",
+            "width": 1920
+          }
+        ]
+      },
+      "repository": "https://github.com/bjarneo/omarchy-sakura-theme",
+      "slug": "sakura",
+      "wallpaper": "linear-gradient(#0d0509, #0d0509)"
+    },
+    {
+      "colors": {
+        "accent": "#f23888",
+        "background": "#0b0d11",
+        "blue": "#67dd82",
+        "brightBlue": "#8bf0a1",
+        "brightCyan": "#8bb0a4",
+        "brightForeground": "#f0b7ca",
+        "brightGreen": "#86bf86",
+        "brightMagenta": "#ffd0dc",
+        "brightRed": "#ff6aa7",
+        "brightYellow": "#e6d3b4",
+        "brown": "#6c5f4b",
+        "cyan": "#6f9485",
+        "darkBackground": "#0b0d11",
+        "darkForeground": "#f0b7ca",
+        "darkerBackground": "#0b0d11",
+        "foreground": "#f0b7ca",
+        "green": "#5aa15d",
+        "lightForeground": "#f0b7ca",
+        "lighterBackground": "#0b0d11",
+        "magenta": "#f0b7ca",
+        "muted": "#678270",
+        "orange": "#d7be96",
+        "red": "#f23888",
+        "selection": "#f23888",
+        "yellow": "#d7be96"
+      },
+      "id": "community:sakura-mochi",
+      "kind": "community",
+      "mode": "dark",
+      "name": "Sakura Mochi",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRjQAAABXRUJQVlA4ICgAAACwAQCdASoKAAYAA4BaJZwAAudGRZ4AAP74VN4c1vwjIXxRnynlEAAA",
+        "image": "/assets/themes/sakura-mochi.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/sakura-mochi-c8f371f6fcec4846-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/sakura-mochi-c8f371f6fcec4846-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/sakura-mochi-c8f371f6fcec4846-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/sakura-mochi-c8f371f6fcec4846-1920.webp",
+            "width": 1920
+          }
+        ]
+      },
+      "repository": "https://github.com/OldJobobo/omarchy-sakura-mochi-theme",
+      "slug": "sakura-mochi",
+      "wallpaper": "linear-gradient(#0b0d11, #0b0d11)"
+    },
+    {
+      "colors": {
+        "accent": "#b2fff3",
+        "background": "#05080a",
+        "blue": "#b2fff3",
+        "brightBlue": "#b2fff3",
+        "brightCyan": "#b2fff3",
+        "brightForeground": "#fff6ff",
+        "brightGreen": "#b2fff3",
+        "brightMagenta": "#b2fff3",
+        "brightRed": "#b2fff3",
+        "brightYellow": "#b2fff3",
+        "brown": "#b2fff3",
+        "cyan": "#b2fff3",
+        "darkBackground": "#05080a",
+        "darkForeground": "#fff6ff",
+        "darkerBackground": "#05080a",
+        "foreground": "#fff6ff",
+        "green": "#b2fff3",
+        "lightForeground": "#fff6ff",
+        "lighterBackground": "#05080a",
+        "magenta": "#b2fff3",
+        "muted": "#fff6ff",
+        "orange": "#b2fff3",
+        "red": "#b2fff3",
+        "selection": "#b2fff3",
+        "yellow": "#b2fff3"
+      },
+      "id": "community:saga",
+      "kind": "community",
+      "mode": "dark",
+      "name": "Saga",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAAAQAgCdASoKAAYAA4BaJZQCdAEWUOZYe9oAAP7mC91AWJisOT0ccRXRFYE/K2OA+BazY5r7xFtjMwOFZc3G/AQXxT+AAA==",
+        "image": "/assets/themes/saga.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/saga-37dafe1d51aad285-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/saga-37dafe1d51aad285-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/saga-37dafe1d51aad285-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/saga-37dafe1d51aad285-1920.webp",
+            "width": 1920
+          }
+        ]
+      },
+      "repository": "https://github.com/HANCORE-linux/omarchy-saga-theme",
+      "slug": "saga",
+      "wallpaper": "linear-gradient(#05080a, #05080a)"
+    },
+    {
+      "colors": {
+        "accent": "#f7c3c6",
+        "background": "#060d1f",
+        "blue": "#f7c3c6",
+        "brightBlue": "#f7c3c6",
+        "brightCyan": "#f7c3c6",
+        "brightForeground": "#e0f7fa",
+        "brightGreen": "#f7c3c6",
+        "brightMagenta": "#f7c3c6",
+        "brightRed": "#f7c3c6",
+        "brightYellow": "#f7c3c6",
+        "brown": "#f7c3c6",
+        "cyan": "#f7c3c6",
+        "darkBackground": "#060d1f",
+        "darkForeground": "#e0f7fa",
+        "darkerBackground": "#060d1f",
+        "foreground": "#e0f7fa",
+        "green": "#f7c3c6",
+        "lightForeground": "#e0f7fa",
+        "lighterBackground": "#060d1f",
+        "magenta": "#f7c3c6",
+        "muted": "#e0f7fa",
+        "orange": "#f7c3c6",
+        "red": "#f7c3c6",
+        "selection": "#f7c3c6",
+        "yellow": "#f7c3c6"
+      },
+      "id": "community:sapphire",
+      "kind": "community",
+      "mode": "dark",
+      "name": "Sapphire",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRkAAAABXRUJQVlA4IDQAAABwAQCdASoKAAYAA4BaJYwCw7F1AAD+8jjma8XzE/4b7EgZZRuYWITnBqnYcx9NHWjgAAAA",
+        "image": "/assets/themes/sapphire.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/sapphire-1566f75a04bad836-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/sapphire-1566f75a04bad836-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/sapphire-1566f75a04bad836-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/sapphire-1566f75a04bad836-1920.webp",
+            "width": 1920
+          }
+        ]
+      },
+      "repository": "https://github.com/HANCORE-linux/omarchy-sapphire-theme",
+      "slug": "sapphire",
+      "wallpaper": "linear-gradient(#060d1f, #060d1f)"
+    },
+    {
+      "colors": {
+        "accent": "#d1ffb0",
+        "background": "#00110b",
+        "blue": "#d1ffb0",
+        "brightBlue": "#d1ffb0",
+        "brightCyan": "#d1ffb0",
+        "brightForeground": "#e6f6f0",
+        "brightGreen": "#d1ffb0",
+        "brightMagenta": "#d1ffb0",
+        "brightRed": "#d1ffb0",
+        "brightYellow": "#d1ffb0",
+        "brown": "#d1ffb0",
+        "cyan": "#d1ffb0",
+        "darkBackground": "#00110b",
+        "darkForeground": "#e6f6f0",
+        "darkerBackground": "#00110b",
+        "foreground": "#e6f6f0",
+        "green": "#d1ffb0",
+        "lightForeground": "#e6f6f0",
+        "lighterBackground": "#00110b",
+        "magenta": "#d1ffb0",
+        "muted": "#e6f6f0",
+        "orange": "#d1ffb0",
+        "red": "#d1ffb0",
+        "selection": "#d1ffb0",
+        "yellow": "#d1ffb0"
+      },
+      "id": "community:shades-of-jade",
+      "kind": "community",
+      "mode": "dark",
+      "name": "Shades of Jade",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACwAQCdASoKAAYAA4BaJYwAAluyo+GQAP7177KCGt8IQVbbz6b4Ep3pn3FKCAAA",
+        "image": "/assets/themes/shades-of-jade.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/shades-of-jade-b82bafca75794cdb-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/shades-of-jade-b82bafca75794cdb-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/shades-of-jade-b82bafca75794cdb-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/shades-of-jade-b82bafca75794cdb-1920.webp",
+            "width": 1920
+          }
+        ]
+      },
+      "repository": "https://github.com/HANCORE-linux/omarchy-shadesofjade-theme",
+      "slug": "shades-of-jade",
+      "wallpaper": "linear-gradient(#00110b, #00110b)"
+    },
+    {
+      "colors": {
+        "accent": "#bd4924",
+        "background": "#1c0e00",
+        "blue": "#bd4924",
+        "brightBlue": "#bd4924",
+        "brightCyan": "#bd4924",
+        "brightForeground": "#e7aa5a",
+        "brightGreen": "#bd4924",
+        "brightMagenta": "#bd4924",
+        "brightRed": "#bd4924",
+        "brightYellow": "#bd4924",
+        "brown": "#bd4924",
+        "cyan": "#bd4924",
+        "darkBackground": "#1c0e00",
+        "darkForeground": "#e7aa5a",
+        "darkerBackground": "#1c0e00",
+        "foreground": "#e7aa5a",
+        "green": "#bd4924",
+        "lightForeground": "#e7aa5a",
+        "lighterBackground": "#1c0e00",
+        "magenta": "#bd4924",
+        "muted": "#e7aa5a",
+        "orange": "#bd4924",
+        "red": "#bd4924",
+        "selection": "#bd4924",
+        "yellow": "#bd4924"
+      },
+      "id": "community:space-monkey",
+      "kind": "community",
+      "mode": "dark",
+      "name": "Space Monkey",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACwAQCdASoKAAcAA4BaJYwCdADx+HEAAP7zA6uE+jxC7wvtk+cWnzGFe/ZjASgA",
+        "image": "/assets/themes/space-monkey.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/space-monkey-15200f0f585d8ca8-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/space-monkey-15200f0f585d8ca8-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/space-monkey-15200f0f585d8ca8-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/space-monkey-15200f0f585d8ca8-1920.webp",
+            "width": 1920
+          }
+        ]
+      },
+      "repository": "https://github.com/TyRichards/omarchy-space-monkey-theme",
+      "slug": "space-monkey",
+      "wallpaper": "linear-gradient(#1c0e00, #1c0e00)"
+    },
+    {
+      "colors": {
+        "accent": "#0a0a0a",
+        "background": "#ffffff",
+        "blue": "#0a0a0a",
+        "brightBlue": "#0a0a0a",
+        "brightCyan": "#0a0a0a",
+        "brightForeground": "#000000",
+        "brightGreen": "#0a0a0a",
+        "brightMagenta": "#0a0a0a",
+        "brightRed": "#0a0a0a",
+        "brightYellow": "#0a0a0a",
+        "brown": "#606060",
+        "cyan": "#0a0a0a",
+        "darkBackground": "#f2f2f2",
+        "darkForeground": "#565656",
+        "darkerBackground": "#e6e6e6",
+        "foreground": "#0a0a0a",
+        "green": "#0a0a0a",
+        "lightForeground": "#000000",
+        "lighterBackground": "#f7f7f7",
+        "magenta": "#0a0a0a",
+        "muted": "#919191",
+        "orange": "#0a0a0a",
+        "red": "#0a0a0a",
+        "selection": "#f7f7f7",
+        "yellow": "#0a0a0a"
+      },
+      "id": "community:snow",
+      "kind": "community",
+      "mode": "light",
+      "name": "Snow",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRjAAAABXRUJQVlA4ICQAAAAwAQCdASoKAAYAA4BaJaQAA3AA/vD31SJBAmiPb79KafjVQAA=",
+        "image": "/assets/themes/snow.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/snow-e017e08b012ac61d-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/snow-e017e08b012ac61d-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/snow-e017e08b012ac61d-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/snow-e017e08b012ac61d-1920.webp",
+            "width": 1920
+          }
+        ]
+      },
+      "repository": "https://github.com/bjarneo/omarchy-snow-theme",
+      "slug": "snow",
+      "wallpaper": "linear-gradient(#ffffff, #ffffff)"
+    },
+    {
+      "colors": {
+        "accent": "#888888",
+        "background": "#000000",
+        "blue": "#888888",
+        "brightBlue": "#888888",
+        "brightCyan": "#888888",
+        "brightForeground": "#ffffff",
+        "brightGreen": "#888888",
+        "brightMagenta": "#888888",
+        "brightRed": "#888888",
+        "brightYellow": "#888888",
+        "brown": "#888888",
+        "cyan": "#888888",
+        "darkBackground": "#000000",
+        "darkForeground": "#ffffff",
+        "darkerBackground": "#000000",
+        "foreground": "#ffffff",
+        "green": "#888888",
+        "lightForeground": "#ffffff",
+        "lighterBackground": "#000000",
+        "magenta": "#888888",
+        "muted": "#ffffff",
+        "orange": "#888888",
+        "red": "#888888",
+        "selection": "#888888",
+        "yellow": "#888888"
+      },
+      "id": "community:snow-black",
+      "kind": "community",
+      "mode": "dark",
+      "name": "Snow Black",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAACwAQCdASoKAAYAA4BaJaQAAp1fsibAAP7jhTCR79uDBac7fa7oy3msn+k7HVjKqG3w7qr1CqW0oigAAAA=",
+        "image": "/assets/themes/snow-black.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/snow-black-3f8c356624d9369f-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/snow-black-3f8c356624d9369f-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/snow-black-3f8c356624d9369f-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/snow-black-3f8c356624d9369f-1920.webp",
+            "width": 1920
+          }
+        ]
+      },
+      "repository": "https://github.com/ankur311sudo/snow_black",
+      "slug": "snow-black",
+      "wallpaper": "linear-gradient(#000000, #000000)"
+    },
+    {
+      "colors": {
+        "accent": "#baba00",
+        "background": "#000519",
+        "blue": "#3873c8",
+        "brightBlue": "#4b8df2",
+        "brightCyan": "#00a4b8",
+        "brightForeground": "#f6faf6",
+        "brightGreen": "#5ee7b1",
+        "brightMagenta": "#498df4",
+        "brightRed": "#becf43",
+        "brightYellow": "#becf3d",
+        "brown": "#6f7a02",
+        "cyan": "#008697",
+        "darkBackground": "#000208",
+        "darkForeground": "#767c77",
+        "darkerBackground": "#000103",
+        "foreground": "#d1dad3",
+        "green": "#56ca9c",
+        "lightForeground": "#e7ede8",
+        "lighterBackground": "#05152c",
+        "magenta": "#3673ca",
+        "muted": "#4e5d70",
+        "orange": "#a2b232",
+        "red": "#a2b238",
+        "selection": "#102858",
+        "yellow": "#a2b23d"
+      },
+      "id": "community:starry-night",
+      "kind": "community",
+      "mode": "dark",
+      "name": "Starry Night",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAADwAQCdASoKAAYAA4BaJYwCdAEQFSp81gAA/vW6RWSqEbFGu8/CvRTSqHsPU4AA",
+        "image": "/assets/themes/starry-night.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/starry-night-e1916518cc669bbc-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/starry-night-e1916518cc669bbc-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/starry-night-e1916518cc669bbc-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/starry-night-e1916518cc669bbc-1920.webp",
+            "width": 1920
+          }
+        ]
+      },
+      "repository": "https://github.com/juangalt/omarchy-starry-night-theme",
+      "slug": "starry-night",
+      "wallpaper": "linear-gradient(#000519, #000519)"
+    },
+    {
+      "colors": {
+        "accent": "#f0913f",
+        "background": "#05090a",
+        "blue": "#8299aa",
+        "brightBlue": "#9db4c4",
+        "brightCyan": "#96c1be",
+        "brightForeground": "#f4faf8",
+        "brightGreen": "#a1c0aa",
+        "brightMagenta": "#cda6b2",
+        "brightRed": "#e88a75",
+        "brightYellow": "#dcc294",
+        "brown": "#8d6144",
+        "cyan": "#7ba6a3",
+        "darkBackground": "#030607",
+        "darkForeground": "#5d7271",
+        "darkerBackground": "#010304",
+        "foreground": "#c3d2d0",
+        "green": "#86a68f",
+        "lightForeground": "#d8e4e1",
+        "lighterBackground": "#0e1719",
+        "magenta": "#b58c99",
+        "muted": "#617877",
+        "orange": "#f0913f",
+        "red": "#d2705c",
+        "selection": "#1c2f33",
+        "yellow": "#c9a878"
+      },
+      "id": "community:starsend",
+      "kind": "community",
+      "mode": "dark",
+      "name": "Starsend",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAADwAQCdASoKAAYAA4BaJYgCdAEO884coIAA/vWbP4Gxuk9ioY+6Q1djPr0H97pGLeKhw7rFmC/Fo7+g8AA=",
+        "image": "/assets/themes/starsend.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/starsend-829fe330915ccb56-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/starsend-829fe330915ccb56-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/starsend-829fe330915ccb56-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/starsend-829fe330915ccb56-1800.webp",
+            "width": 1800
+          }
+        ]
+      },
+      "repository": "https://github.com/r-bart/omarchy-starsend-theme",
+      "slug": "starsend",
+      "wallpaper": "linear-gradient(#05090a, #05090a)"
+    },
+    {
+      "colors": {
+        "accent": "#33a1ff",
+        "background": "#0f0f19",
+        "blue": "#33a1ff",
+        "brightBlue": "#33a1ff",
+        "brightCyan": "#33a1ff",
+        "brightForeground": "#ededfe",
+        "brightGreen": "#33a1ff",
+        "brightMagenta": "#33a1ff",
+        "brightRed": "#33a1ff",
+        "brightYellow": "#33a1ff",
+        "brown": "#33a1ff",
+        "cyan": "#33a1ff",
+        "darkBackground": "#0f0f19",
+        "darkForeground": "#ededfe",
+        "darkerBackground": "#0f0f19",
+        "foreground": "#ededfe",
+        "green": "#33a1ff",
+        "lightForeground": "#ededfe",
+        "lighterBackground": "#0f0f19",
+        "magenta": "#33a1ff",
+        "muted": "#ededfe",
+        "orange": "#33a1ff",
+        "red": "#33a1ff",
+        "selection": "#33a1ff",
+        "yellow": "#33a1ff"
+      },
+      "id": "community:sunset-drive",
+      "kind": "community",
+      "mode": "dark",
+      "name": "Sunset Drive",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRoAAAABXRUJQVlA4WAoAAAAQAAAACQAABQAAQUxQSC4AAAABT0CYbeSPeRL77aYREVEPZ8AgJCmH8AyPEEEI2TxCBiHHENH/ANSf7RpAnWQPVlA4ICwAAADQAQCdASoKAAYAA4BaJYwCdAEO/ijw4AD+9qoi0NcJXUNd2ZRKtzbKhIAAAA==",
+        "image": "/assets/themes/sunset-drive.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/sunset-drive-8f478e27a74eda91-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/sunset-drive-8f478e27a74eda91-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/sunset-drive-8f478e27a74eda91-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/sunset-drive-8f478e27a74eda91-1920.webp",
+            "width": 1920
+          }
+        ]
+      },
+      "repository": "https://github.com/tahayvr/omarchy-sunset-drive-theme",
+      "slug": "sunset-drive",
+      "wallpaper": "linear-gradient(#0f0f19, #0f0f19)"
+    },
+    {
+      "colors": {
+        "accent": "#d9a862",
+        "background": "#0c1626",
+        "blue": "#6e93bb",
+        "brightBlue": "#8fb0d4",
+        "brightCyan": "#a8ccce",
+        "brightForeground": "#f2e8d5",
+        "brightGreen": "#a8c48a",
+        "brightMagenta": "#c9a3c4",
+        "brightRed": "#e07a5f",
+        "brightYellow": "#f0d4a0",
+        "brown": "#7a5e37",
+        "cyan": "#7fa8ab",
+        "darkBackground": "#09111e",
+        "darkForeground": "#9f9f9e",
+        "darkerBackground": "#070c15",
+        "foreground": "#d8cbb4",
+        "green": "#93b56f",
+        "lightForeground": "#e5dac5",
+        "lighterBackground": "#17243a",
+        "magenta": "#ab7fa8",
+        "muted": "#5e6e87",
+        "orange": "#dd8b57",
+        "red": "#db684c",
+        "selection": "#26364e",
+        "yellow": "#d9a862"
+      },
+      "id": "community:terminus",
+      "kind": "community",
+      "mode": "dark",
+      "name": "Terminus",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAAAQAgCdASoKAAYAA4BaJZACdIExGAoCzvXoAP70Vhtr69lKWEWbMvy01ugmTRbYIMSOyeoouSGM2nfjIAA=",
+        "image": "/assets/themes/terminus.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/terminus-36f8a78e21d294f6-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/terminus-36f8a78e21d294f6-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/terminus-36f8a78e21d294f6-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/terminus-36f8a78e21d294f6-1800.webp",
+            "width": 1800
+          }
+        ]
+      },
+      "repository": "https://github.com/r-bart/omarchy-terminus-theme",
+      "slug": "terminus",
+      "wallpaper": "linear-gradient(#0c1626, #0c1626)"
+    },
+    {
+      "colors": {
+        "accent": "#7aa2f7",
+        "background": "#000000",
+        "blue": "#7aa2f7",
+        "brightBlue": "#7aa2f7",
+        "brightCyan": "#7aa2f7",
+        "brightForeground": "#a9b1d6",
+        "brightGreen": "#7aa2f7",
+        "brightMagenta": "#7aa2f7",
+        "brightRed": "#7aa2f7",
+        "brightYellow": "#7aa2f7",
+        "brown": "#7aa2f7",
+        "cyan": "#7aa2f7",
+        "darkBackground": "#000000",
+        "darkForeground": "#a9b1d6",
+        "darkerBackground": "#000000",
+        "foreground": "#a9b1d6",
+        "green": "#7aa2f7",
+        "lightForeground": "#a9b1d6",
+        "lighterBackground": "#000000",
+        "magenta": "#7aa2f7",
+        "muted": "#a9b1d6",
+        "orange": "#7aa2f7",
+        "red": "#7aa2f7",
+        "selection": "#7aa2f7",
+        "yellow": "#7aa2f7"
+      },
+      "id": "community:tokyo-night-oled",
+      "kind": "community",
+      "mode": "dark",
+      "name": "Tokyo Night OLED",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRiwAAABXRUJQVlA4ICAAAAAwAQCdASoKAAYAA4BaJaQAA3AA/vSTncA0Ipv14AAAAA==",
+        "image": "/assets/themes/tokyo-night-oled.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/tokyo-night-oled-b8a8ae316ee88f72-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/tokyo-night-oled-b8a8ae316ee88f72-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/tokyo-night-oled-b8a8ae316ee88f72-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/tokyo-night-oled-b8a8ae316ee88f72-1920.webp",
+            "width": 1920
+          }
+        ]
+      },
+      "repository": "https://github.com/Justin-De-Sio/omarchy-tokyoled-theme",
+      "slug": "tokyo-night-oled",
+      "wallpaper": "linear-gradient(#000000, #000000)"
+    },
+    {
+      "colors": {
+        "accent": "#c87d2a",
+        "background": "#292025",
+        "blue": "#c87d2a",
+        "brightBlue": "#df9850",
+        "brightCyan": "#c2d5d0",
+        "brightForeground": "#fff4d8",
+        "brightGreen": "#b9c97f",
+        "brightMagenta": "#ddb0b8",
+        "brightRed": "#e58a70",
+        "brightYellow": "#e4c56d",
+        "brown": "#644b26",
+        "cyan": "#9eb8b2",
+        "darkBackground": "#292025",
+        "darkForeground": "#fff4d8",
+        "darkerBackground": "#292025",
+        "foreground": "#fff4d8",
+        "green": "#9fad68",
+        "lightForeground": "#fff4d8",
+        "lighterBackground": "#292025",
+        "magenta": "#c98c97",
+        "muted": "#a58c82",
+        "orange": "#c8964b",
+        "red": "#cf7358",
+        "selection": "#6b5650",
+        "yellow": "#c8964b"
+      },
+      "id": "community:waffle-cat",
+      "kind": "community",
+      "mode": "dark",
+      "name": "Waffle Cat",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAADwAQCdASoKAAYAA4BaJYgCdAD5hr/WdyAA/tFb7k4rJ1A424QN4UauM22sdHXg4TxB674sPZNdcJLgWLKhuGhOgjYAAA==",
+        "image": "/assets/themes/waffle-cat.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/waffle-cat-792422aaeae8f458-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/waffle-cat-792422aaeae8f458-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/waffle-cat-792422aaeae8f458-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/waffle-cat-792422aaeae8f458-1920.webp",
+            "width": 1920
+          }
+        ]
+      },
+      "repository": "https://github.com/OldJobobo/omarchy-waffle-cat-theme",
+      "slug": "waffle-cat",
+      "wallpaper": "linear-gradient(#292025, #292025)"
+    },
+    {
+      "colors": {
+        "accent": "#005c32",
+        "background": "#dedbc8",
+        "blue": "#005c32",
+        "brightBlue": "#005c32",
+        "brightCyan": "#005c32",
+        "brightForeground": "#0c0c14",
+        "brightGreen": "#005c32",
+        "brightMagenta": "#005c32",
+        "brightRed": "#005c32",
+        "brightYellow": "#005c32",
+        "brown": "#005c32",
+        "cyan": "#005c32",
+        "darkBackground": "#dedbc8",
+        "darkForeground": "#0c0c14",
+        "darkerBackground": "#dedbc8",
+        "foreground": "#0c0c14",
+        "green": "#005c32",
+        "lightForeground": "#0c0c14",
+        "lighterBackground": "#dedbc8",
+        "magenta": "#005c32",
+        "muted": "#0c0c14",
+        "orange": "#005c32",
+        "red": "#005c32",
+        "selection": "#005c32",
+        "yellow": "#005c32"
+      },
+      "id": "community:white-gold",
+      "kind": "community",
+      "mode": "light",
+      "name": "White Gold",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRjgAAABXRUJQVlA4ICwAAABwAQCdASoKAAYAA4BaJTB1owARYAD+7nAHQx+KbzY7/w6dfT/tWjiMM+BgAA==",
+        "image": "/assets/themes/white-gold.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/white-gold-6fc7a6f3cb748b4e-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/white-gold-6fc7a6f3cb748b4e-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/white-gold-6fc7a6f3cb748b4e-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/white-gold-6fc7a6f3cb748b4e-1920.webp",
+            "width": 1920
+          }
+        ]
+      },
+      "repository": "https://github.com/HANCORE-linux/omarchy-whitegold-theme",
+      "slug": "white-gold",
+      "wallpaper": "linear-gradient(#dedbc8, #dedbc8)"
+    },
+    {
+      "colors": {
+        "accent": "#0078d4",
+        "background": "#181818",
+        "blue": "#0078d4",
+        "brightBlue": "#0078d4",
+        "brightCyan": "#4daafc",
+        "brightForeground": "#ffffff",
+        "brightGreen": "#2ea043",
+        "brightMagenta": "#c586c0",
+        "brightRed": "#f85149",
+        "brightYellow": "#bb8009",
+        "brown": "#5e4005",
+        "cyan": "#4daafc",
+        "darkBackground": "#181818",
+        "darkForeground": "#ffffff",
+        "darkerBackground": "#181818",
+        "foreground": "#ffffff",
+        "green": "#2ea043",
+        "lightForeground": "#ffffff",
+        "lighterBackground": "#181818",
+        "magenta": "#c586c0",
+        "muted": "#616161",
+        "orange": "#bb8009",
+        "red": "#f85149",
+        "selection": "#0078d4",
+        "yellow": "#bb8009"
+      },
+      "id": "community:windows-dark-mode",
+      "kind": "community",
+      "mode": "dark",
+      "name": "Windows Dark Mode",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRjYAAABXRUJQVlA4ICoAAACQAQCdASoKAAYAA4BaJQBOhxAAMQAA/vD9a/RtdYO6pCdMb2JSBZttGAA=",
+        "image": "/assets/themes/windows-dark-mode.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/windows-dark-mode-1883b61420698c3b-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/windows-dark-mode-1883b61420698c3b-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/windows-dark-mode-1883b61420698c3b-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/windows-dark-mode-1883b61420698c3b-1920.webp",
+            "width": 1920
+          }
+        ]
+      },
+      "repository": "https://github.com/oldjobobo/omarchy-windows-dark-mode-theme",
+      "slug": "windows-dark-mode",
+      "wallpaper": "linear-gradient(#181818, #181818)"
+    },
+    {
+      "colors": {
+        "accent": "#9ba4bb",
+        "background": "#13201b",
+        "blue": "#9ba4bb",
+        "brightBlue": "#c0c9e7",
+        "brightCyan": "#a5c9ca",
+        "brightForeground": "#e0d7c5",
+        "brightGreen": "#91a58c",
+        "brightMagenta": "#aa9d7e",
+        "brightRed": "#aa9e7b",
+        "brightYellow": "#c3b798",
+        "brown": "#5b5547",
+        "cyan": "#83a2a3",
+        "darkBackground": "#0e1814",
+        "darkForeground": "#a19785",
+        "darkerBackground": "#0a100e",
+        "foreground": "#d6c9b1",
+        "green": "#6f806d",
+        "lightForeground": "#dcd1bd",
+        "lighterBackground": "#2b3632",
+        "magenta": "#857961",
+        "muted": "#616865",
+        "orange": "#978d77",
+        "red": "#85795f",
+        "selection": "#d6c9b1",
+        "yellow": "#9d917a"
+      },
+      "id": "community:winslow",
+      "kind": "community",
+      "mode": "dark",
+      "name": "Winslow",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRi4AAABXRUJQVlA4ICIAAACQAQCdASoKAAYAA4BaJZwAAudP3WAA/vECLkN1jiZehAAA",
+        "image": "/assets/themes/winslow.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/winslow-410b8c2c677ec3af-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/winslow-410b8c2c677ec3af-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/winslow-410b8c2c677ec3af-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/winslow-410b8c2c677ec3af-1800.webp",
+            "width": 1800
+          }
+        ]
+      },
+      "repository": "https://github.com/chipkoziara/omarchy-winslow-theme",
+      "slug": "winslow",
+      "wallpaper": "linear-gradient(#13201b, #13201b)"
+    },
+    {
+      "colors": {
+        "accent": "#e09355",
+        "background": "#191510",
+        "blue": "#79a5cc",
+        "brightBlue": "#9bbcdd",
+        "brightCyan": "#84cebf",
+        "brightForeground": "#f4e9d7",
+        "brightGreen": "#b3ce80",
+        "brightMagenta": "#dda5b8",
+        "brightRed": "#e0755a",
+        "brightYellow": "#e9c07c",
+        "brown": "#96603c",
+        "cyan": "#63b8a6",
+        "darkBackground": "#131009",
+        "darkForeground": "#8b7a62",
+        "darkerBackground": "#0d0b07",
+        "foreground": "#d3c0a8",
+        "green": "#9cba64",
+        "lightForeground": "#e2d3bd",
+        "lighterBackground": "#272018",
+        "magenta": "#cd8ba4",
+        "muted": "#867658",
+        "orange": "#e09355",
+        "red": "#db6c4f",
+        "selection": "#3a2f22",
+        "yellow": "#d9ab5e"
+      },
+      "id": "community:vault",
+      "kind": "community",
+      "mode": "dark",
+      "name": "Vault",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRkIAAABXRUJQVlA4IDYAAADwAQCdASoKAAYAA4BaJQBOj+ACyBuGhAAA/u8X1/2DcpuSSckRjm6qqE+wJaBE+QpUNQYwAAA=",
+        "image": "/assets/themes/vault.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/vault-08508676a140c408-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/vault-08508676a140c408-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/vault-08508676a140c408-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/vault-08508676a140c408-1800.webp",
+            "width": 1800
+          }
+        ]
+      },
+      "repository": "https://github.com/r-bart/omarchy-vault-theme",
+      "slug": "vault",
+      "wallpaper": "linear-gradient(#191510, #191510)"
+    },
+    {
+      "colors": {
+        "accent": "#9099a5",
+        "background": "#0a101f",
+        "blue": "#9099a5",
+        "brightBlue": "#9099a5",
+        "brightCyan": "#9099a5",
+        "brightForeground": "#ffffff",
+        "brightGreen": "#9099a5",
+        "brightMagenta": "#9099a5",
+        "brightRed": "#9099a5",
+        "brightYellow": "#9099a5",
+        "brown": "#9099a5",
+        "cyan": "#9099a5",
+        "darkBackground": "#0a101f",
+        "darkForeground": "#ffffff",
+        "darkerBackground": "#0a101f",
+        "foreground": "#ffffff",
+        "green": "#9099a5",
+        "lightForeground": "#ffffff",
+        "lighterBackground": "#0a101f",
+        "magenta": "#9099a5",
+        "muted": "#ffffff",
+        "orange": "#9099a5",
+        "red": "#9099a5",
+        "selection": "#9099a5",
+        "yellow": "#9099a5"
+      },
+      "id": "community:velvet-night",
+      "kind": "community",
+      "mode": "dark",
+      "name": "Velvet Night",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRjQAAABXRUJQVlA4ICgAAADQAQCdASoKAAYAA4BaJZQCdAEPAKmnwAD+9DnnSFC+Q2TWcNs9LAAA",
+        "image": "/assets/themes/velvet-night.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/velvet-night-84deca5668354f3b-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/velvet-night-84deca5668354f3b-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/velvet-night-84deca5668354f3b-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/velvet-night-84deca5668354f3b-1920.webp",
+            "width": 1920
+          }
+        ]
+      },
+      "repository": "https://github.com/HANCORE-linux/omarchy-velvetnight-theme",
+      "slug": "velvet-night",
+      "wallpaper": "linear-gradient(#0a101f, #0a101f)"
+    },
+    {
+      "colors": {
+        "accent": "#862020",
+        "background": "#121212",
+        "blue": "#862020",
+        "brightBlue": "#862020",
+        "brightCyan": "#862020",
+        "brightForeground": "#d4d4d4",
+        "brightGreen": "#862020",
+        "brightMagenta": "#862020",
+        "brightRed": "#862020",
+        "brightYellow": "#862020",
+        "brown": "#862020",
+        "cyan": "#862020",
+        "darkBackground": "#121212",
+        "darkForeground": "#d4d4d4",
+        "darkerBackground": "#121212",
+        "foreground": "#d4d4d4",
+        "green": "#862020",
+        "lightForeground": "#d4d4d4",
+        "lighterBackground": "#121212",
+        "magenta": "#862020",
+        "muted": "#d4d4d4",
+        "orange": "#862020",
+        "red": "#862020",
+        "selection": "#862020",
+        "yellow": "#862020"
+      },
+      "id": "community:vhs-80",
+      "kind": "community",
+      "mode": "dark",
+      "name": "VHS 80",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4WAoAAAAQAAAACQAABQAAQUxQSBQAAAABD9D/iAiQCVhs9M/skyGi/8lZAVZQOCA4AAAAsAEAnQEqCgAGAAOAWiWcAALnDSnC0AD+76Ii404lJiR2hvfLPzAog8DMUO1qve0wD5BNTAJAAAA=",
+        "image": "/assets/themes/vhs-80.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/vhs-80-40a763b1258e6ab3-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/vhs-80-40a763b1258e6ab3-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/vhs-80-40a763b1258e6ab3-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/vhs-80-40a763b1258e6ab3-1280.webp",
+            "width": 1280
+          }
+        ]
+      },
+      "repository": "https://github.com/tahayvr/omarchy-vhs80-theme",
+      "slug": "vhs-80",
+      "wallpaper": "linear-gradient(#121212, #121212)"
+    },
+    {
+      "colors": {
+        "accent": "#8fe0fa",
+        "background": "#0f1416",
+        "blue": "#76c7e3",
+        "brightBlue": "#8fe0fa",
+        "brightCyan": "#4fa3a6",
+        "brightForeground": "#dce5e9",
+        "brightGreen": "#8be086",
+        "brightMagenta": "#9083b9",
+        "brightRed": "#e03f32",
+        "brightYellow": "#e0af68",
+        "brown": "#37868b",
+        "cyan": "#37868b",
+        "darkBackground": "#0b1012",
+        "darkForeground": "#8e969a",
+        "darkerBackground": "#070b0d",
+        "foreground": "#dce5e9",
+        "green": "#8be086",
+        "lightForeground": "#abb2bf",
+        "lighterBackground": "#151b1e",
+        "magenta": "#9083b9",
+        "muted": "#8e969a",
+        "orange": "#e03f32",
+        "red": "#e05f64",
+        "selection": "#5c6370",
+        "yellow": "#e0af68"
+      },
+      "id": "community:vulkanite",
+      "kind": "community",
+      "mode": "dark",
+      "name": "Vulkanite",
+      "preview": {
+        "blurDataURL": "data:image/webp;base64,UklGRi4AAABXRUJQVlA4ICIAAABQAQCdASoKAAYAA4BaJZwABDOAAP7ztmMmg+91H3QEaUIA",
+        "image": "/assets/themes/vulkanite.webp",
+        "renditions": [
+          {
+            "path": "/assets/themes/community/vulkanite-19d526334ba1f50c-480.webp",
+            "width": 480
+          },
+          {
+            "path": "/assets/themes/community/vulkanite-19d526334ba1f50c-768.webp",
+            "width": 768
+          },
+          {
+            "path": "/assets/themes/community/vulkanite-19d526334ba1f50c-1200.webp",
+            "width": 1200
+          },
+          {
+            "path": "/assets/themes/community/vulkanite-19d526334ba1f50c-1920.webp",
+            "width": 1920
+          }
+        ]
+      },
+      "repository": "https://github.com/kyerpotts/omarchy-vulkanite-theme",
+      "slug": "vulkanite",
+      "wallpaper": "linear-gradient(#0f1416, #0f1416)"
+    }
+  ],
+  "version": 1
+}

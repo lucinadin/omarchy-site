@@ -1,0 +1,37 @@
+# Omarchy
+
+> Beautiful, Fun & Agentic Linux by DHH.
+
+Omarchy is an opinionated Arch and Hyprland Linux distribution built as one coherent, malleable system.
+
+## Documentation
+
+- [Start the Omarchy Manual](https://omarchy.org/manual/index.md): The introduction and first chapter.
+- [Manual table of contents](https://omarchy.org/manual/toc/index.md): Installation, navigation, applications, customization, troubleshooting, and every shipped hotkey.
+- [Omarchy News](https://omarchy.org/news/index.md): Announcements, releases, and foundation updates.
+- [Full website corpus](https://omarchy.org/llms-full.txt): The complete manual and news archive in one Markdown document.
+
+## Website
+
+- [Omarchy AIR](https://omarchy.org/air/): A six-month residency for artists working on themes, plugins, and everything else that makes Omarchy beautiful.
+- [The Omarchy Brand](https://omarchy.org/brand/): The official Omarchy logo and wordmark, and the terms for using them.
+- [The Omacom Foundation](https://omarchy.org/foundation/): The nonprofit foundation that holds the trademarks, funds the infrastructure, and supports the projects and people Omarchy depends on.
+- [Omarchy Meetups](https://omarchy.org/meetups/): Omarchy meetups around the world, plus the guidelines for running one.
+- [The Story of Omakub](https://omarchy.org/omakub/): The story of Omakub, the omakase developer setup for Ubuntu that led to Omarchy.
+- [Omacom Foundation Patrons](https://omarchy.org/patrons/): The foundation funding Omarchy.
+- [Omarchy Patron Badges](https://omarchy.org/patrons/badges/): Digital rally credentials for every Omarchy patron: a badge, a social card, and wallpapers for each tier.
+- [Security at Omarchy](https://omarchy.org/security/): How to responsibly report a security vulnerability in Omarchy.
+- [Security Credits](https://omarchy.org/security/credits/): The people who reported security issues in Omarchy privately and gave us the chance to fix them.
+- [Omacom Foundation Sponsorships](https://omarchy.org/sponsorships/): The open-source projects the Omacom Foundation sponsors: Hyprland, Quickshell, and mise.
+- [The Omarchy Teams](https://omarchy.org/teams/): The teams guiding Omarchy.
+- [Omarchy Themes](https://omarchy.org/themes/): The official and community-made themes for Omarchy.
+- [Omarchy Workstations](https://omarchy.org/workstations/): Omarchy workstations shared by the community.
+
+## Project
+
+- [Become an Omarchy patron](https://donate.omarchy.org): Support the Omacom Foundation and claim a patron badge.
+- [Get the ISO](https://iso.omarchy.org/omarchy-4.0.2.iso): Download the latest Omarchy ISO image.
+- [Omarchy on GitHub](https://github.com/omacom/omarchy): The source code for Omarchy on GitHub.
+- [Omarchy Plugins](https://omarchyplugins.com/): Plugins made for Omarchy.
+- [Omarchy Discord](https://discord.gg/tXFUdasqhY): Join the Omarchy community on Discord.
+- [Omarchy Merch](https://supply.37signals.com/collections/omarchy): Official Omarchy shirts, hats, and other merchandise.

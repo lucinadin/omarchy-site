@@ -1,0 +1,234 @@
+:root {
+  --duration-exit: 150ms;
+  --duration-enter: 210ms;
+  --duration-move: 400ms;
+}
+
+/* Shared motion primitives */
+
+@keyframes view-transition-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes view-transition-slide {
+  from {
+    translate: var(--slide-offset);
+  }
+  to {
+    translate: 0;
+  }
+}
+
+@keyframes view-transition-slide-y {
+  from {
+    transform: translateY(var(--slide-y-offset, 10px));
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes view-transition-dialog-in {
+  from {
+    opacity: 0;
+    transform: translateY(0.5rem) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes view-transition-dialog-out {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(0.3rem) scale(0.985);
+  }
+}
+
+/* Route navigation */
+
+/* Restore history scroll before capturing the incoming viewport. */
+:root:active-view-transition-type(history-forward),
+:root:active-view-transition-type(history-back) {
+  scroll-behavior: auto;
+}
+
+::view-transition-group(.navigation-forward),
+::view-transition-group(.navigation-back),
+:root:active-view-transition-type(history-forward)::view-transition-group(root),
+:root:active-view-transition-type(history-back)::view-transition-group(root) {
+  animation-duration: var(--duration-move);
+}
+
+::view-transition-group(.content-crossfade) {
+  animation-duration: calc(var(--duration-exit) + var(--duration-enter));
+}
+
+::view-transition-image-pair(.content-crossfade) {
+  isolation: isolate;
+}
+
+::view-transition-old(.content-crossfade) {
+  animation: var(--duration-exit) ease-in both view-transition-fade reverse;
+  mix-blend-mode: normal;
+}
+
+::view-transition-new(.content-crossfade) {
+  animation: var(--duration-enter) ease-out var(--duration-exit) both view-transition-fade;
+  mix-blend-mode: normal;
+}
+
+::view-transition-old(.navigation-forward),
+:root:active-view-transition-type(history-forward)::view-transition-old(root) {
+  display: block;
+  --slide-offset: -60px;
+  animation:
+    var(--duration-exit) ease-in both view-transition-fade reverse,
+    var(--duration-move) ease-in-out both view-transition-slide reverse;
+}
+
+::view-transition-new(.navigation-forward),
+:root:active-view-transition-type(history-forward)::view-transition-new(root) {
+  --slide-offset: 60px;
+  animation:
+    var(--duration-enter) ease-out var(--duration-exit) both view-transition-fade,
+    var(--duration-move) ease-in-out both view-transition-slide;
+}
+
+::view-transition-old(.navigation-back),
+:root:active-view-transition-type(history-back)::view-transition-old(root) {
+  display: block;
+  --slide-offset: 60px;
+  animation:
+    var(--duration-exit) ease-in both view-transition-fade reverse,
+    var(--duration-move) ease-in-out both view-transition-slide reverse;
+}
+
+::view-transition-new(.navigation-back),
+:root:active-view-transition-type(history-back)::view-transition-new(root) {
+  --slide-offset: -60px;
+  animation:
+    var(--duration-enter) ease-out var(--duration-exit) both view-transition-fade,
+    var(--duration-move) ease-in-out both view-transition-slide;
+}
+
+/* Suspense handoff */
+
+::view-transition-old(.slide-down) {
+  animation:
+    var(--duration-exit) ease-out both view-transition-fade reverse,
+    var(--duration-exit) ease-out both view-transition-slide-y reverse;
+}
+
+::view-transition-new(.slide-up) {
+  animation:
+    var(--duration-enter) ease-in var(--duration-exit) both view-transition-fade,
+    var(--duration-move) ease-in both view-transition-slide-y;
+}
+
+/* Shared elements */
+
+::view-transition-group(.news-title-morph) {
+  animation-duration: var(--duration-move);
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+::view-transition-image-pair(.news-title-morph) {
+  isolation: isolate;
+}
+
+::view-transition-old(.news-title-morph),
+::view-transition-new(.news-title-morph) {
+  mix-blend-mode: normal;
+}
+
+::view-transition-group(.workstation-image-expand) {
+  animation-duration: 360ms;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  z-index: 221;
+}
+
+::view-transition-image-pair(.workstation-image-expand) {
+  isolation: isolate;
+}
+
+::view-transition-old(.workstation-image-expand),
+::view-transition-new(.workstation-image-expand) {
+  mix-blend-mode: normal;
+}
+
+/* Dialogs and backdrops */
+
+::view-transition-new(.dialog-scale-in) {
+  animation: var(--duration-enter) cubic-bezier(0.2, 0.8, 0.2, 1) both view-transition-dialog-in;
+}
+
+::view-transition-old(.dialog-scale-out) {
+  animation: var(--duration-exit) ease-in both view-transition-dialog-out;
+}
+
+::view-transition-group(.dialog-scale-in),
+::view-transition-group(.dialog-scale-out) {
+  z-index: 220;
+}
+
+::view-transition-group(.workstation-backdrop-in),
+::view-transition-group(.workstation-backdrop-out) {
+  z-index: 220;
+}
+
+::view-transition-new(.workstation-backdrop-in) {
+  animation: 180ms ease-out both view-transition-fade;
+}
+
+::view-transition-old(.workstation-backdrop-out) {
+  animation: 150ms ease-in both view-transition-fade reverse;
+}
+
+/* Stable application chrome */
+
+::view-transition-group(site-header) {
+  animation: none;
+  z-index: 192;
+}
+
+::view-transition-old(site-header) {
+  display: none;
+}
+
+::view-transition-new(site-header) {
+  animation: none;
+}
+
+/* Browser overlay policy */
+
+::view-transition {
+  pointer-events: none;
+}
+
+::view-transition-old(root) {
+  display: none;
+}
+
+::view-transition-new(root) {
+  animation: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(*),
+  ::view-transition-new(*),
+  ::view-transition-group(*) {
+    animation-delay: 0s !important;
+    animation-duration: 0s !important;
+  }
+}

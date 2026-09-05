@@ -1,0 +1,36 @@
+{
+  "$schema": "https://unpkg.com/knip@6/schema.json",
+  "entry": ["cn.config.ts", "**/*.{test,test-d,spec,spec-d}.?(c|m)[jt]s?(x)", "**/*.type-test.ts"],
+  "include": [
+    "files",
+    "dependencies",
+    "devDependencies",
+    "optionalPeerDependencies",
+    "unlisted",
+    "binaries",
+    "unresolved",
+    "exports",
+    "nsExports",
+    "types",
+    "nsTypes",
+    "enumMembers",
+    "namespaceMembers",
+    "duplicates",
+    "catalog",
+    "catalogReferences",
+    "cycles",
+  ],
+  "includeEntryExports": true,
+  // Same-file references do not make an export part of the application's module API.
+  "ignoreExportsUsedInFile": true,
+  "ignoreBinaries": ["magick"],
+  "ignoreIssues": {
+    // The cn CLI loads this configuration through its default export.
+    "cn.config.ts": ["exports"],
+    // Type-test exports are compile-time assertions kept alive by the unused-symbol lint rule.
+    "**/*.type-test.ts": ["exports", "types"],
+  },
+  "rules": {
+    "cycles": "error",
+  },
+}

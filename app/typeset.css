@@ -1,0 +1,236 @@
+.typeset {
+  --typeset-font-body: var(--font-jetbrains-mono);
+  --typeset-font-heading: var(--font-jetbrains-mono);
+  --typeset-font-mono: var(--font-jetbrains-mono);
+  --typeset-flow: 1.15em;
+
+  color: var(--foreground);
+  font-family: var(--typeset-font-body);
+  font-size: var(--text-body);
+  font-weight: 300;
+  letter-spacing: -0.012em;
+  line-height: var(--leading-copy);
+}
+
+.typeset > * + * {
+  margin-block-start: var(--typeset-flow);
+}
+
+.typeset :where(p, ul, ol, blockquote) {
+  max-width: 70ch;
+}
+
+.typeset :where(h1, h2, h3, h4, h5, h6) {
+  color: var(--bright-foreground);
+  font-family: var(--typeset-font-heading);
+  font-weight: 400;
+  letter-spacing: -0.035em;
+  line-height: var(--leading-tight);
+  scroll-margin-top: 6rem;
+  text-wrap: balance;
+}
+
+.typeset :where(h1) {
+  font-size: var(--text-title-xl);
+  font-weight: 300;
+}
+
+.typeset :where(h2) {
+  font-size: var(--text-title-md);
+}
+
+.typeset :where(h3) {
+  font-size: var(--text-title-sm);
+  font-weight: 500;
+}
+
+.typeset :where(h4, h5, h6) {
+  font-size: var(--text-body);
+  font-weight: 500;
+}
+
+.typeset > :where(h2, h3, h4, h5, h6):not(:first-child) {
+  margin-block-start: 2.4rem;
+}
+
+.typeset :where(a) {
+  color: var(--link);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--link) 45%, transparent);
+  text-decoration-thickness: 0.055em;
+  text-underline-offset: 0.2em;
+}
+
+.typeset :where(a:hover) {
+  color: var(--bright-foreground);
+  text-decoration-color: currentColor;
+}
+
+.typeset :where(strong, b) {
+  color: var(--bright-foreground);
+  font-weight: 500;
+}
+
+.typeset :where(code, pre, kbd) {
+  font-family: var(--typeset-font-mono);
+  letter-spacing: -0.015em;
+}
+
+.typeset :where(code) {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--bright-foreground);
+  font-size: var(--text-small);
+  font-weight: 400;
+  padding: 0.08em 0.32em;
+}
+
+.typeset :where(pre) {
+  background: var(--dark-background);
+  border: 1px solid var(--border);
+  font-size: var(--text-small);
+  font-weight: 400;
+  line-height: var(--leading-copy);
+  overflow-x: auto;
+  padding: 1.25rem;
+}
+
+.typeset :where(pre code) {
+  background: transparent;
+  border: 0;
+  color: inherit;
+  font-size: inherit;
+  padding: 0;
+}
+
+.typeset :where(blockquote) {
+  border-inline-start: 1px solid color-mix(in srgb, var(--primary) 68%, var(--border));
+  color: var(--muted-foreground);
+  font-size: var(--text-body);
+  line-height: var(--leading-copy);
+  padding-inline-start: 1rem;
+}
+
+.typeset:where(figure),
+.typeset :where(figure) {
+  margin-inline: 0;
+}
+
+.typeset :where(img) {
+  border: 1px solid var(--border);
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+.typeset:where(figure) > :where(img, picture),
+.typeset :where(figure > img, figure > picture) {
+  width: 100%;
+}
+
+.typeset :where(p:has(> img)) {
+  color: var(--muted-foreground);
+  font-size: var(--text-small);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: var(--leading-ui);
+  max-width: none;
+}
+
+.typeset :where(.manual__heading-link) {
+  color: var(--muted-foreground);
+  display: inline-flex;
+  font-size: var(--text-meta);
+  font-weight: 500;
+  justify-content: center;
+  letter-spacing: 0;
+  line-height: var(--leading-none);
+  margin-inline-start: 0.35rem;
+  opacity: 0.48;
+  text-decoration: none;
+  transform: translateY(-0.08em);
+  transition:
+    color 150ms ease,
+    opacity 150ms ease;
+  vertical-align: 0.08em;
+}
+
+.typeset :where(h2, h3, h4, h5, h6):hover :where(.manual__heading-link),
+.typeset :where(.manual__heading-link:hover, .manual__heading-link:focus-visible) {
+  color: var(--primary);
+  opacity: 1;
+}
+
+.typeset :where(.manual__heading-link:focus-visible) {
+  outline: 2px solid var(--ring);
+  outline-offset: 0.2rem;
+}
+
+.typeset :where(ul, ol) {
+  padding-inline-start: 1.5em;
+}
+
+.typeset :where(li)::marker {
+  color: var(--primary);
+  font-weight: 400;
+}
+
+.typeset :where(li + li) {
+  margin-block-start: 0.38em;
+}
+
+.typeset :where(.typeset-scroll) {
+  max-width: 100%;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  scrollbar-width: thin;
+}
+
+.typeset :where(table) {
+  border-collapse: collapse;
+  font-size: var(--text-small);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: var(--leading-ui);
+  width: 100%;
+}
+
+.typeset :where(th, td) {
+  border-block-end: 1px solid var(--border);
+  padding: 0.7rem 0.75rem;
+  text-align: start;
+  vertical-align: top;
+}
+
+.typeset :where(th) {
+  color: var(--bright-foreground);
+  font-weight: 500;
+}
+
+.typeset :where(hr) {
+  border: 0;
+  border-block-start: 1px solid var(--border);
+}
+
+.typeset :where(figcaption) {
+  color: var(--muted-foreground);
+  font-size: var(--text-small);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: var(--leading-ui);
+  margin-block-start: 0.75rem;
+  max-width: 70ch;
+  text-wrap: pretty;
+}
+
+.typeset-manual {
+  --typeset-flow: 1.15em;
+}
+
+.typeset-news {
+  --typeset-flow: 1.35em;
+}
+
+.typeset-news :where(blockquote) {
+  font-style: italic;
+}

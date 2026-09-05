@@ -1,0 +1,260 @@
+{
+  "themes": [
+    {
+      "name": "Amberbyte",
+      "reason": "Repository has no colors.toml",
+      "repository": "https://github.com/tahfizhabib/omarchy-amberbyte-theme"
+    },
+    {
+      "name": "Archwave",
+      "reason": "Repository has no colors.toml",
+      "repository": "https://github.com/davidguttman/archwave"
+    },
+    {
+      "name": "Artzen",
+      "reason": "Repository has no colors.toml",
+      "repository": "https://github.com/tahfizhabib/omarchy-artzen-theme"
+    },
+    {
+      "name": "All Hallow's Eve",
+      "reason": "Repository has no colors.toml",
+      "repository": "https://github.com/guilhermetk/omarchy-all-hallows-eve-theme"
+    },
+    {
+      "name": "Ayaka",
+      "reason": "Repository has no colors.toml",
+      "repository": "https://github.com/abhijeet-swami/omarchy-ayaka-theme"
+    },
+    {
+      "name": "Azure Glow",
+      "reason": "Repository has no colors.toml",
+      "repository": "https://github.com/Hydradevx/omarchy-azure-glow-theme"
+    },
+    {
+      "name": "Bauhaus",
+      "reason": "Bauhaus resolved to a different GitHub repository: https://github.com/mwaltzer/omarchy-bauhaus-theme",
+      "repository": "https://github.com/somerocketeer/omarchy-bauhaus-theme"
+    },
+    {
+      "name": "Blue Ridge Dark",
+      "reason": "Repository has no colors.toml",
+      "repository": "https://github.com/hipsterusername/omarchy-blueridge-dark-theme"
+    },
+    {
+      "name": "Citrus Cynapse",
+      "reason": "Repository has no colors.toml",
+      "repository": "https://github.com/Grey-007/citrus-cynapse"
+    },
+    {
+      "name": "Crimson Gold",
+      "reason": "Repository is inside the 48-hour quiet period until 2026-09-05T05:43:26.000Z",
+      "repository": "https://github.com/knappkevin/omarchy-crimson-gold-theme"
+    },
+    {
+      "name": "Darcula",
+      "reason": "Repository has no colors.toml",
+      "repository": "https://github.com/noahljungberg/omarchy-darcula-theme"
+    },
+    {
+      "name": "Drac",
+      "reason": "Repository has no colors.toml",
+      "repository": "https://github.com/ShehabShaef/omarchy-drac-theme"
+    },
+    {
+      "name": "Dracula",
+      "reason": "Repository has no supported preview image",
+      "repository": "https://github.com/catlee/omarchy-dracula-theme"
+    },
+    {
+      "name": "Eldritch",
+      "reason": "GitHub could not inspect https://github.com/eldritch-theme/omarchy",
+      "repository": "https://github.com/eldritch-theme/omarchy"
+    },
+    {
+      "name": "Forest Green",
+      "reason": "Repository has no colors.toml",
+      "repository": "https://github.com/abhijeet-swami/omarchy-forest-green-theme"
+    },
+    {
+      "name": "Gold Rush",
+      "reason": "Repository has no supported preview image",
+      "repository": "https://github.com/tahayvr/omarchy-gold-rush-theme"
+    },
+    {
+      "name": "Green Garden",
+      "reason": "Repository has no colors.toml",
+      "repository": "https://github.com/kalk-ak/omarchy-green-garden-theme"
+    },
+    {
+      "name": "Gruvu",
+      "reason": "GitHub could not inspect https://github.com/ankur311sudo/gruvu",
+      "repository": "https://github.com/ankur311sudo/gruvu"
+    },
+    {
+      "name": "Infernium",
+      "reason": "Repository has no colors.toml",
+      "repository": "https://github.com/RiO7MAKK3R/omarchy-infernium-dark-theme"
+    },
+    {
+      "name": "Japan Night",
+      "reason": "Repository has no supported preview image",
+      "repository": "https://github.com/devgtv/omarchy-japan-night-theme"
+    },
+    {
+      "name": "Map Quest",
+      "reason": "Repository has no colors.toml",
+      "repository": "https://github.com/ItsABigIgloo/omarchy-mapquest-theme"
+    },
+    {
+      "name": "Mars",
+      "reason": "Repository has no colors.toml",
+      "repository": "https://github.com/steve-lohmeyer/omarchy-mars-theme"
+    },
+    {
+      "name": "Matrix",
+      "reason": "Repository is inside the 48-hour quiet period until 2026-09-05T07:39:53.000Z",
+      "repository": "https://github.com/BVisagie/omarchy-matrix-theme"
+    },
+    {
+      "name": "Milky Matcha",
+      "reason": "Repository has no colors.toml",
+      "repository": "https://github.com/hipsterusername/omarchy-milkmatcha-light-theme"
+    },
+    {
+      "name": "Monochrome",
+      "reason": "Repository has no colors.toml",
+      "repository": "https://github.com/Swarnim114/omarchy-monochrome-theme"
+    },
+    {
+      "name": "Monokai",
+      "reason": "Repository has no supported preview image",
+      "repository": "https://github.com/bjarneo/omarchy-monokai-theme"
+    },
+    {
+      "name": "Nagai Poolside",
+      "reason": "Nagai Poolside resolved to a different GitHub repository: https://github.com/mwaltzer/omarchy-nagai-poolside-theme",
+      "repository": "https://github.com/somerocketeer/omarchy-nagai-poolside-theme"
+    },
+    {
+      "name": "Neo Sploosh",
+      "reason": "Repository has no colors.toml",
+      "repository": "https://github.com/monoooki/omarchy-neo-sploosh-theme"
+    },
+    {
+      "name": "Neovoid",
+      "reason": "Repository has no colors.toml",
+      "repository": "https://github.com/RiO7MAKK3R/omarchy-neovoid-theme"
+    },
+    {
+      "name": "Omacarchy",
+      "reason": "Repository has no colors.toml",
+      "repository": "https://github.com/RiO7MAKK3R/omarchy-omacarchy-theme"
+    },
+    {
+      "name": "Pandora",
+      "reason": "Repository has no colors.toml",
+      "repository": "https://github.com/imbypass/omarchy-pandora-theme"
+    },
+    {
+      "name": "Pina",
+      "reason": "Repository has no supported preview image",
+      "repository": "https://github.com/bjarneo/omarchy-pina-theme"
+    },
+    {
+      "name": "Pink Blood",
+      "reason": "Repository has no colors.toml",
+      "repository": "https://github.com/ITSZXY/pink-blood-omarchy-theme"
+    },
+    {
+      "name": "Pulsar",
+      "reason": "Repository has no supported preview image",
+      "repository": "https://github.com/bjarneo/omarchy-pulsar-theme"
+    },
+    {
+      "name": "Purple Moon",
+      "reason": "Repository has no colors.toml",
+      "repository": "https://github.com/Grey-007/purple-moon"
+    },
+    {
+      "name": "Red Monarch",
+      "reason": "Red Monarch resolved to a different GitHub repository: https://github.com/kamatealip/omarchy-red-monarch-theme",
+      "repository": "https://github.com/kamatealif/omarchy-red-monarch-theme"
+    },
+    {
+      "name": "RetroPC",
+      "reason": "Repository has no colors.toml",
+      "repository": "https://github.com/rondilley/omarchy-retropc-theme"
+    },
+    {
+      "name": "Rose Pine Dark",
+      "reason": "Repository has no supported preview image",
+      "repository": "https://github.com/guilhermetk/omarchy-rose-pine-dark"
+    },
+    {
+      "name": "Solarized",
+      "reason": "Repository has no colors.toml",
+      "repository": "https://github.com/Gazler/omarchy-solarized-theme"
+    },
+    {
+      "name": "Solarized Light",
+      "reason": "Repository has no colors.toml",
+      "repository": "https://github.com/dfrico/omarchy-solarized-light-theme"
+    },
+    {
+      "name": "Solarized Osaka",
+      "reason": "Repository has no colors.toml",
+      "repository": "https://github.com/motorsss/omarchy-solarizedosaka-theme"
+    },
+    {
+      "name": "Sunset",
+      "reason": "Repository has no colors.toml",
+      "repository": "https://github.com/rondilley/omarchy-sunset-theme"
+    },
+    {
+      "name": "Super Game Bro",
+      "reason": "Repository has no colors.toml",
+      "repository": "https://github.com/TyRichards/omarchy-super-game-bro-theme"
+    },
+    {
+      "name": "Synthwave '84",
+      "reason": "Synthwave '84 resolved to a different GitHub repository: https://github.com/omacom/omarchy-synthwave84-theme",
+      "repository": "https://github.com/omacom-io/omarchy-synthwave84-theme"
+    },
+    {
+      "name": "Temerald",
+      "reason": "Repository has no colors.toml",
+      "repository": "https://github.com/Ahmad-Mtr/omarchy-temerald-theme"
+    },
+    {
+      "name": "Tycho",
+      "reason": "Repository has no colors.toml",
+      "repository": "https://github.com/leonardobetti/omarchy-tycho"
+    },
+    {
+      "name": "Waveform Dark",
+      "reason": "Repository has no colors.toml",
+      "repository": "https://github.com/hipsterusername/omarchy-waveform-dark-theme"
+    },
+    {
+      "name": "Van Gogh",
+      "reason": "Repository has no supported preview image",
+      "repository": "https://github.com/Nirmal314/omarchy-van-gogh-theme"
+    },
+    {
+      "name": "Venice from Above",
+      "reason": "Venice from Above resolved to a different GitHub repository: https://github.com/mattbbia/venice-from-above",
+      "repository": "https://github.com/mattbbia/venice-from-above-omarchy"
+    },
+    {
+      "name": "Vesper",
+      "reason": "Repository has no colors.toml",
+      "repository": "https://github.com/thmoee/omarchy-vesper-theme"
+    },
+    {
+      "name": "Void",
+      "reason": "Repository has no supported preview image",
+      "repository": "https://github.com/vyrx-dev/omarchy-void-theme"
+    }
+  ],
+  "version": 1
+}

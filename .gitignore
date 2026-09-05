@@ -1,0 +1,15 @@
+.next/
+node_modules/
+/cn-tables.ts
+out/
+.repos/
+.idea/
+.claude/
+*.tsbuildinfo
+*.DS_Store
+release/
+.codex/
+.env*
+!.env.example
+.vercel/
+dev-vault/
