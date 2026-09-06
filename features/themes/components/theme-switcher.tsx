@@ -3,9 +3,11 @@
 import { useEffect, useRef, useState, type KeyboardEvent as ReactKeyboardEvent } from "react";
 
 import { Button, buttonVariants } from "@/components/ui/button";
+import { Image } from "@/components/ui/image";
 import { Kbd } from "@/components/ui/kbd";
-import { SegmentedControl, SegmentedControlItem } from "@/components/ui/segmented-control";
+import { ThemePickerGallery } from "@/features/themes/components/theme-picker-gallery";
 import { ThemePreviewImage } from "@/features/themes/components/theme-preview-image";
+import { usePickerScroll } from "@/features/themes/use-picker-scroll";
 import {
   CheckIcon,
   ChevronLeftIcon,
@@ -16,17 +18,28 @@ import {
   ShareIcon,
 } from "@/icons";
 import { notifySite } from "@/lib/site-notification-events";
+import {
+  automaticBackground,
+  getBackgroundSnapshot,
+  persistBackground,
+  previewBackground,
+  resolveBackground,
+  type BackgroundPreference,
+} from "@/lib/themes/background";
 import { getCommunityThemeOptions, loadCommunityThemeOptions } from "@/lib/themes/client-catalog";
-import { omarchyThemes } from "@/lib/themes/official";
+import { defaultThemeId, omarchyThemes } from "@/lib/themes/official";
 import {
   applyDocumentTheme,
   getAppliedThemeId,
+  getThemeById,
   persistThemePreference,
   previewTheme,
   type ThemeTransitionOrigin,
 } from "@/lib/themes/theme-runtime";
 import { shareThemeLink } from "@/lib/themes/theme-share-client";
-import type { OmarchyTheme, OmarchyThemeOption, ThemeKind } from "@/lib/themes/themes";
+import type { OmarchyTheme, ThemeKind } from "@/lib/themes/themes";
+import { wallpapers } from "@/lib/themes/wallpapers";
+import { isEditableTarget } from "@/lib/ui/editable-target";
 import { Modal } from "@/lib/ui/modal";
 import { unreachable } from "@/lib/validation";
 import { useThemePreferenceRequest } from "@/providers";
@@ -39,65 +52,36 @@ export type ThemeSwitcherProps = {
   portalContainer: HTMLElement | null;
 };
 
-const previewOffsets = [-4, -3, -2, -1, 0, 1, 2, 3, 4] as const;
+const pickerRows = ["community", "official", "backgrounds"] as const;
+type PickerRow = (typeof pickerRows)[number];
+type BackgroundOption = { id: string; name: string; preference: BackgroundPreference };
 
-type ThemePickerSession = {
-  initialTheme: OmarchyTheme;
-  previewedThemeId: string;
-  selectedThemeId: string;
-};
+const pickerKeyActions = new Map<string, "previous" | "next" | "preview" | "commit">([
+  ["ArrowLeft", "previous"],
+  ["ArrowRight", "next"],
+  [" ", "preview"],
+  ["Enter", "commit"],
+]);
 
-function cyclicTheme(themes: readonly OmarchyThemeOption[], activeIndex: number, offset: number) {
-  const index = (activeIndex + offset + themes.length) % themes.length;
-  return themes[index];
-}
-
-type ThemePickerKeyboardAction =
-  | { kind: "cancel" }
-  | { direction: -1 | 1; kind: "select-adjacent" }
-  | { kind: "preview"; theme: OmarchyThemeOption }
-  | { kind: "commit"; theme: OmarchyThemeOption };
-
-function isThemePickerToggle(event: ReactKeyboardEvent<HTMLElement>) {
-  return (
-    event.code === "Space" && event.ctrlKey && event.shiftKey && !event.altKey && event.metaKey
-  );
-}
-
-function themePickerKeyboardAction(
-  event: ReactKeyboardEvent<HTMLElement>,
-  activeTheme: OmarchyThemeOption | undefined,
-  query: string
-): ThemePickerKeyboardAction | null {
-  if (event.key === "Escape" || isThemePickerToggle(event)) return { kind: "cancel" };
+function pickerKeyboardAction(event: ReactKeyboardEvent<HTMLElement>) {
+  if (event.key === "Escape") return "cancel";
+  if (isEditableTarget(event.target)) return null;
+  if (event.code === "Space" && event.ctrlKey && event.shiftKey && event.metaKey && !event.altKey)
+    return "cancel";
   if (event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return null;
-
+  if (event.key === "ArrowUp") return "up";
+  if (event.key === "ArrowDown") return "down";
   const target = event.target;
-  const isTextInput = target instanceof HTMLInputElement;
-  const isAction =
-    target instanceof HTMLElement && target.closest("button, a[href], input, select") !== null;
-  if (event.key === "ArrowLeft" && !isAction) {
-    return { direction: -1, kind: "select-adjacent" };
-  }
-  if (event.key === "ArrowRight" && !isAction) {
-    return { direction: 1, kind: "select-adjacent" };
-  }
-  if (event.key === " " && activeTheme && !isAction && (!isTextInput || query.trim() === "")) {
-    return { kind: "preview", theme: activeTheme };
-  }
-  if (event.key === "Enter" && activeTheme && !isAction) {
-    return { kind: "commit", theme: activeTheme };
-  }
-  return null;
+  if (!(target instanceof HTMLElement)) return null;
+  if (target.closest("button, a[href]") && !target.closest(".home-theme-picker__carousel"))
+    return null;
+  return pickerKeyActions.get(event.key) ?? null;
 }
 
 function getElementCenter(element: HTMLElement | null): ThemeTransitionOrigin | undefined {
   if (!element) return undefined;
   const bounds = element.getBoundingClientRect();
-  return {
-    x: bounds.left + bounds.width / 2,
-    y: bounds.top + bounds.height / 2,
-  };
+  return { x: bounds.left + bounds.width / 2, y: bounds.top + bounds.height / 2 };
 }
 
 type ThemePickerFooterProps = {
@@ -116,238 +100,268 @@ function ThemePickerFooter({
   query,
 }: ThemePickerFooterProps) {
   return (
-    <footer className="border-border grid grid-cols-[32px_minmax(0,1fr)_auto_32px] items-center gap-2 border-t px-2 py-[0.35rem] [@media(max-width:620px)]:grid-cols-[32px_minmax(0,1fr)_32px]">
-      <button
+    <footer className="border-border grid grid-cols-[auto_minmax(0,1fr)_auto_auto] items-center gap-2 border-t p-2">
+      <Button
         aria-label="Previous theme"
-        className="border-border bg-surface text-foreground [&:hover]:bg-primary [&:hover]:text-primary-foreground inline-flex size-8 cursor-pointer items-center justify-center border p-0 disabled:cursor-default disabled:opacity-50 [&_svg]:size-[13px]"
         disabled={count === 0}
         onClick={() => onSelectAdjacent(-1)}
-        type="button"
+        size="icon"
+        variant="secondary"
       >
-        <ChevronLeftIcon />
-      </button>
-      <label className="border-border bg-background grid h-8 min-w-0 grid-cols-[auto_minmax(0,1fr)] items-center gap-2 border px-[0.55rem] py-0">
-        <SearchIcon aria-hidden="true" className="text-primary size-[11px]" />
+        <ChevronLeftIcon className="size-4" />
+      </Button>
+      <label className="border-border bg-background flex h-10 min-w-0 items-center gap-2 border px-3">
+        <SearchIcon aria-hidden="true" className="text-primary size-3.5 shrink-0" />
         <span className="sr-only">Filter themes</span>
         <input
-          className="text-micro/ui text-bright-foreground w-full min-w-0 border-0 bg-transparent p-0 outline-none"
+          className="text-small text-bright-foreground w-full min-w-0 border-0 bg-transparent p-0 outline-none"
           onChange={(event) => onQueryChange(event.target.value)}
           placeholder="Type to filter themes"
           type="search"
           value={query}
         />
       </label>
-      <span className="text-micro/ui text-muted-foreground whitespace-nowrap [@media(max-width:620px)]:hidden">
+      <span className="text-meta text-muted-foreground whitespace-nowrap tabular-nums">
         {count ? `${activeIndex + 1} / ${count}` : "0 / 0"}
       </span>
-      <button
+      <Button
         aria-label="Next theme"
-        className="border-border bg-surface text-foreground [&:hover]:bg-primary [&:hover]:text-primary-foreground inline-flex size-8 cursor-pointer items-center justify-center border p-0 disabled:cursor-default disabled:opacity-50 [&_svg]:size-[13px]"
         disabled={count === 0}
         onClick={() => onSelectAdjacent(1)}
-        type="button"
+        size="icon"
+        variant="secondary"
       >
-        <ChevronRightIcon />
-      </button>
+        <ChevronRightIcon className="size-4" />
+      </Button>
     </footer>
   );
 }
 
 export function ThemeSwitcher({
-  initialTheme: initialThemeValue,
-  initialSelection = initialThemeValue,
+  initialTheme,
+  initialSelection = initialTheme,
   onClose,
   placement,
   portalContainer,
 }: ThemeSwitcherProps) {
   const { requestTheme } = useThemePreferenceRequest();
-  const activePreviewRef = useRef<HTMLElement>(null);
+  const activePreviewRef = useRef<HTMLButtonElement>(null);
   const closingRef = useRef(false);
   const settledRef = useRef(false);
-  const [collection, setCollection] = useState<ThemeKind>(initialSelection.kind);
-  const [communityThemes, setCommunityThemes] = useState<readonly OmarchyThemeOption[] | null>(
-    getCommunityThemeOptions
-  );
-  const [loadingCommunityThemes, setLoadingCommunityThemes] = useState(
-    initialSelection.kind === "community" && communityThemes === null
-  );
-  const [query, setQuery] = useState("");
-  const [themeSession, setThemeSession] = useState<ThemePickerSession>({
-    initialTheme: initialThemeValue,
-    previewedThemeId: initialThemeValue.id,
-    selectedThemeId: initialSelection.id,
+  const [backgroundSession, setBackgroundSession] = useState(() => {
+    const initial = getBackgroundSnapshot();
+    return { initial, selected: initial };
   });
-  const { initialTheme, previewedThemeId, selectedThemeId } = themeSession;
-  const themes: readonly OmarchyThemeOption[] =
-    collection === "official" ? omarchyThemes : (communityThemes ?? []);
+  const { initial: initialBackground, selected: background } = backgroundSession;
+  const [row, setRow] = useState<PickerRow>(initialSelection.kind);
+  const [selectedIds, setSelectedIds] = useState<Record<ThemeKind, string>>({
+    community: initialSelection.kind === "community" ? initialSelection.id : "",
+    official: initialSelection.kind === "official" ? initialSelection.id : defaultThemeId,
+  });
+  const [selectedThemeId, setSelectedThemeId] = useState(initialSelection.id);
+  const [previewedThemeId, setPreviewedThemeId] = useState(initialTheme.id);
+  const [communityThemes, setCommunityThemes] = useState(getCommunityThemeOptions);
+  const [communityError, setCommunityError] = useState(false);
+  const [query, setQuery] = useState("");
   const filter = query.trim().toLowerCase();
-  const filteredThemes = filter
-    ? themes.filter((theme) => theme.name.toLowerCase().includes(filter))
-    : themes;
-  const activeIndex = Math.max(
-    0,
-    filteredThemes.findIndex((theme) => theme.id === selectedThemeId)
-  );
-  const activeTheme = filteredThemes[activeIndex];
+  const matches = (item: { name: string }) => item.name.toLowerCase().includes(filter);
+  const official = omarchyThemes.filter(matches);
+  const community = (communityThemes ?? []).filter(matches);
+  const selectedTheme = getThemeById(selectedThemeId) ?? initialSelection;
+  const previewedTheme = getThemeById(previewedThemeId) ?? initialTheme;
+  const backgroundOptions: BackgroundOption[] = [
+    ...omarchyThemes.map((theme) => ({
+      id: theme.id,
+      name: theme.name,
+      preference: { kind: "wallpaper" as const, themeId: theme.id },
+    })),
+    {
+      id: "solid",
+      name: "Solid color",
+      preference: {
+        kind: "solid",
+        color: background.kind === "solid" ? background.color : previewedTheme.colors.background,
+      },
+    },
+  ];
+  const backgrounds = backgroundOptions.filter(matches);
+  const resolvedBackground = resolveBackground(background, selectedTheme.id);
+  const backgroundId =
+    resolvedBackground?.kind === "wallpaper" ? resolvedBackground.themeId : "solid";
+  const indices = {
+    community: Math.max(
+      0,
+      community.findIndex((theme) => theme.id === selectedIds.community)
+    ),
+    official: Math.max(
+      0,
+      official.findIndex((theme) => theme.id === selectedIds.official)
+    ),
+    backgrounds: Math.max(
+      0,
+      backgrounds.findIndex((item) => item.id === backgroundId)
+    ),
+  };
+  const activeTheme =
+    row === "backgrounds" ? undefined : { community, official }[row][indices[row]];
+  const activeBackground = backgrounds[indices.backgrounds];
+  const activeItems = { community, official, backgrounds }[row];
+  const gridRef = usePickerScroll({
+    activeIndex: pickerRows.indexOf(row),
+    axis: "y",
+    onSelect: (index) => {
+      const next = pickerRows[index];
+      if (next) activateRow(next);
+    },
+  });
 
   useEffect(
     () => () => {
-      if (!settledRef.current && getAppliedThemeId() !== initialTheme.id) {
-        applyDocumentTheme(initialTheme);
-      }
+      if (settledRef.current) return;
+      previewBackground(initialBackground);
+      if (getAppliedThemeId() !== initialTheme.id) applyDocumentTheme(initialTheme);
     },
-    [initialTheme]
+    [initialTheme, initialBackground]
   );
 
+  useEffect(() => {
+    if (communityThemes) return;
+    let cancelled = false;
+    void loadCommunityThemeOptions()
+      .then((loaded) => {
+        if (!cancelled) setCommunityThemes(loaded);
+      })
+      .catch(() => {
+        if (!cancelled) {
+          setCommunityError(true);
+          notifySite("Community themes could not be loaded");
+        }
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [communityThemes]);
+
+  const activateRow = (next: PickerRow) => {
+    setRow(next);
+    if (next === "backgrounds") return;
+    const theme = (next === "official" ? official : community)[indices[next]];
+    if (theme) setSelectedThemeId(theme.id);
+  };
+
+  const selectTheme = (kind: ThemeKind, id: string) => {
+    setRow(kind);
+    setSelectedIds((current) => ({ ...current, [kind]: id }));
+    setSelectedThemeId(id);
+  };
+  const selectBackground = (id: string) => {
+    const option = backgroundOptions.find((item) => item.id === id);
+    if (option) {
+      setRow("backgrounds");
+      setBackgroundSession((current) => ({ ...current, selected: option.preference }));
+    }
+  };
+  const updateQuery = (value: string) => {
+    setQuery(value);
+    if (row !== "backgrounds" || !value.trim()) return;
+    const match = backgroundOptions.find((item) =>
+      item.name.toLowerCase().includes(value.trim().toLowerCase())
+    );
+    if (match) setBackgroundSession((current) => ({ ...current, selected: match.preference }));
+  };
   const selectAdjacent = (direction: -1 | 1) => {
-    if (filteredThemes.length === 0) return;
-    const nextThemeId = cyclicTheme(filteredThemes, activeIndex, direction).id;
-    setThemeSession((current) => ({ ...current, selectedThemeId: nextThemeId }));
+    if (!activeItems.length) return;
+    const index = (indices[row] + direction + activeItems.length) % activeItems.length;
+    const item = activeItems[index];
+    if (row === "backgrounds") selectBackground(item.id);
+    else selectTheme(row, item.id);
   };
-
-  const getActiveOrigin = () => getElementCenter(activePreviewRef.current);
-
-  const previewSelectedTheme = (theme: OmarchyTheme, origin = getActiveOrigin()) => {
-    if (theme.id === previewedThemeId) return;
-    previewTheme(theme, origin);
-    setThemeSession((current) => ({ ...current, previewedThemeId: theme.id }));
+  const previewSelection = () => {
+    if (row === "backgrounds") {
+      if (activeBackground)
+        previewBackground(
+          background.kind === "automatic" ? automaticBackground : activeBackground.preference
+        );
+    } else if (activeTheme) {
+      previewBackground(background);
+      previewTheme(activeTheme, getElementCenter(activePreviewRef.current));
+      setPreviewedThemeId(activeTheme.id);
+    }
   };
-
-  const closeWithTheme = (theme: OmarchyTheme, persist: boolean, origin = getActiveOrigin()) => {
+  const closeWithSelection = (persist: boolean) => {
     if (closingRef.current) return;
+    const theme = persist ? (activeTheme ?? previewedTheme) : initialTheme;
     closingRef.current = true;
     requestTheme({
-      origin,
+      origin: getElementCenter(activePreviewRef.current),
       themeId: theme.id,
       transitionType: persist ? "theme-apply" : "theme-revert",
       update: () => {
-        if (persist) persistThemePreference(theme);
+        if (persist) {
+          persistThemePreference(theme);
+          persistBackground(background);
+        } else previewBackground(initialBackground);
         settledRef.current = true;
         onClose();
       },
     });
   };
 
-  const cancelAndClose = () => closeWithTheme(initialTheme, false);
-  const commitAndClose = (theme: OmarchyTheme, origin?: ThemeTransitionOrigin) =>
-    closeWithTheme(theme, true, origin);
-
-  const selectCollection = (nextCollection: ThemeKind) => {
-    setCollection(nextCollection);
-    setQuery("");
-
-    if (nextCollection === "official") {
-      setLoadingCommunityThemes(false);
-      const selectedTheme =
-        initialSelection.kind === "official" ? initialSelection : omarchyThemes[0];
-      setThemeSession((current) => ({ ...current, selectedThemeId: selectedTheme.id }));
-    } else {
-      setLoadingCommunityThemes(communityThemes === null);
-      if (communityThemes) {
-        const selected =
-          communityThemes.find((theme) => theme.id === initialSelection.id) ?? communityThemes[0];
-        setThemeSession((current) => ({ ...current, selectedThemeId: selected.id }));
-      }
-    }
-  };
-
-  useEffect(() => {
-    if (collection !== "community" || communityThemes) return;
-
-    let cancelled = false;
-    void loadCommunityThemeOptions()
-      .then((loadedThemes) => {
-        if (cancelled) return;
-        setCommunityThemes(loadedThemes);
-        setThemeSession((current) => ({
-          ...current,
-          selectedThemeId: (
-            loadedThemes.find((theme) => theme.id === current.selectedThemeId) ??
-            loadedThemes.find((theme) => theme.id === initialSelection.id) ??
-            loadedThemes[0]
-          ).id,
-        }));
-        setLoadingCommunityThemes(false);
-      })
-      .catch(() => {
-        if (cancelled) return;
-        setCollection("official");
-        setThemeSession((current) => ({ ...current, selectedThemeId: omarchyThemes[0].id }));
-        setLoadingCommunityThemes(false);
-        notifySite("Community themes could not be loaded");
-      });
-
-    return () => {
-      cancelled = true;
-    };
-  }, [collection, communityThemes, initialSelection.id]);
-
-  const updateQuery = (nextQuery: string) => {
-    setQuery(nextQuery);
-    const normalizedQuery = nextQuery.trim().toLowerCase();
-    const firstMatch = themes.find((theme) => theme.name.toLowerCase().includes(normalizedQuery));
-    if (firstMatch) {
-      setThemeSession((current) => ({ ...current, selectedThemeId: firstMatch.id }));
-    }
-  };
-
   return (
     <Modal
       ariaLabel="Switch Omarchy theme"
-      className="fixed top-1/2 left-1/2 z-[211] grid h-[min(88%,36rem)] w-[min(1060px,calc(100%-2rem))] -translate-x-1/2 -translate-y-1/2 grid-rows-[42px_minmax(0,1fr)_48px] overflow-hidden border border-[color-mix(in_srgb,var(--foreground)_38%,var(--border))] bg-[color-mix(in_srgb,var(--dark-background)_97%,transparent)] data-[placement=desktop]:absolute data-[placement=desktop]:z-[3] [@media(max-width:620px)]:h-[min(82%,32rem)]"
+      className="home-theme-picker border-border bg-popover fixed top-1/2 left-1/2 z-[211] grid -translate-x-1/2 -translate-y-1/2 overflow-hidden border data-[placement=desktop]:absolute data-[placement=desktop]:z-[3]"
       data-placement={placement}
       initialFocus="content"
       onKeyDownCapture={(event) => {
-        const action = themePickerKeyboardAction(event, activeTheme, query);
+        const action = pickerKeyboardAction(event);
         if (!action) return;
-
         event.preventDefault();
-        switch (action.kind) {
+        event.stopPropagation();
+        switch (action) {
           case "cancel":
-            event.stopPropagation();
-            cancelAndClose();
+            closeWithSelection(false);
             break;
-          case "select-adjacent":
-            selectAdjacent(action.direction);
+          case "up":
+          case "down": {
+            if (event.repeat) break;
+            const offset = action === "up" ? -1 : 1;
+            activateRow(
+              pickerRows[
+                Math.max(0, Math.min(pickerRows.length - 1, pickerRows.indexOf(row) + offset))
+              ]
+            );
+            break;
+          }
+          case "previous":
+            selectAdjacent(-1);
+            break;
+          case "next":
+            selectAdjacent(1);
             break;
           case "preview":
-            previewSelectedTheme(action.theme);
+            previewSelection();
             break;
           case "commit":
-            commitAndClose(action.theme);
+            closeWithSelection(true);
             break;
           default:
             return unreachable(action);
         }
       }}
       onOpenChange={(open) => {
-        if (!open) cancelAndClose();
+        if (!open) closeWithSelection(false);
       }}
       open
       overlayClassName="fixed inset-0 z-[210] m-0 flex h-full max-h-none w-full max-w-none items-center justify-center border-0 bg-[color-mix(in_srgb,var(--darker-background)_82%,transparent)] p-0 backdrop-blur-[3px] data-[placement=desktop]:absolute data-[placement=desktop]:z-[2] [&::backdrop]:bg-transparent"
       overlayProps={{ "data-placement": placement }}
       portalContainer={portalContainer}
     >
-      <header className="border-border grid grid-cols-[minmax(0,1fr)_auto] items-center border-b py-0 pr-[0.4rem] pl-3">
-        <div className="flex min-w-0 items-center gap-[0.55rem]">
-          <SegmentedControl
-            aria-label="Theme collection"
-            onValueChange={(nextCollection) => {
-              if (nextCollection === "official" || nextCollection === "community") {
-                void selectCollection(nextCollection);
-              }
-            }}
-            value={collection}
-          >
-            <SegmentedControlItem value="official">Official</SegmentedControlItem>
-            <SegmentedControlItem value="community">Community</SegmentedControlItem>
-          </SegmentedControl>
-          <strong className="text-meta text-bright-foreground truncate font-medium">
-            {activeTheme?.name ??
-              (loadingCommunityThemes ? "Loading community themes…" : "No matches")}
-          </strong>
-        </div>
-        <nav aria-label="Theme actions" className="flex items-center gap-[0.15rem]">
+      <header className="border-border flex items-center justify-between gap-2 border-b p-2">
+        <span className="text-small flex min-w-0 items-center gap-2 font-medium">
+          <Kbd>↑ ↓</Kbd> Themes & backgrounds
+        </span>
+        <nav aria-label="Theme actions" className="flex items-center gap-1">
           {activeTheme ? (
             <>
               <Button
@@ -378,7 +392,7 @@ export function ThemeSwitcher({
           ) : null}
           <Button
             aria-label="Close theme switcher"
-            onClick={cancelAndClose}
+            onClick={() => closeWithSelection(false)}
             size="compactIcon"
             variant="ghost"
           >
@@ -387,108 +401,126 @@ export function ThemeSwitcher({
         </nav>
       </header>
 
-      <div className="home-theme-picker__carousel">
-        {filteredThemes.length > 0 ? (
-          previewOffsets.map((offset) => {
-            const theme = cyclicTheme(filteredThemes, activeIndex, offset);
-            const active = offset === 0;
-
-            if (active) {
-              const previewing = theme.id === previewedThemeId;
-
-              return (
-                <figure
-                  aria-label={`${theme.name} theme preview`}
-                  className="home-theme-picker__preview"
-                  data-distance={Math.abs(offset)}
-                  data-offset={offset}
-                  key={`${theme.id}-${offset}`}
-                  ref={activePreviewRef}
-                >
-                  <ThemePreviewImage
-                    alt=""
-                    fill
-                    loading="eager"
-                    sizes="(max-width: 800px) 78vw, 720px"
-                    preview={theme.preview}
-                  />
-                  <div className="absolute bottom-[0.55rem] left-1/2 z-[2] flex -translate-x-1/2 items-center gap-[0.45rem] whitespace-nowrap [&_kbd]:min-h-[18px] [&_kbd]:border-[color-mix(in_srgb,currentColor_32%,transparent)] [&_kbd]:bg-[color-mix(in_srgb,currentColor_10%,transparent)] [&_kbd]:px-[0.35rem] [&_kbd]:text-current [&_svg]:size-2.5">
-                    <button
-                      aria-keyshortcuts="Space"
-                      className="text-micro/ui text-bright-foreground [&:is(:hover,:focus-visible):not(:disabled)]:border-bright-foreground inline-flex min-h-[30px] cursor-pointer items-center gap-[0.35rem] border border-[color-mix(in_srgb,var(--foreground)_46%,var(--border))] bg-[color-mix(in_srgb,var(--background)_88%,transparent)] px-[0.55rem] py-[0.32rem] disabled:cursor-default disabled:opacity-[0.78]"
-                      data-previewing={previewing}
-                      disabled={previewing}
-                      onClick={(event) =>
-                        previewSelectedTheme(theme, {
-                          x: event.clientX,
-                          y: event.clientY,
-                        })
-                      }
-                      type="button"
-                    >
-                      <Kbd>Space</Kbd>
-                      {previewing ? (
-                        <>
-                          <CheckIcon aria-hidden="true" /> Previewing
-                        </>
-                      ) : (
-                        "Preview"
-                      )}
-                    </button>
-                    <button
-                      aria-keyshortcuts="Enter"
-                      className="border-primary bg-primary text-micro/ui text-primary-foreground [&:is(:hover,:focus-visible):not(:disabled)]:border-bright-foreground inline-flex min-h-[30px] cursor-pointer items-center gap-[0.35rem] border px-[0.55rem] py-[0.32rem]"
-                      onClick={(event) =>
-                        commitAndClose(theme, {
-                          x: event.clientX,
-                          y: event.clientY,
-                        })
-                      }
-                      type="button"
-                    >
-                      <Kbd>Enter</Kbd>
-                      Use theme
-                    </button>
-                  </div>
-                </figure>
-              );
-            }
-
-            return (
-              <button
-                aria-label={`Select ${theme.name}`}
-                className="home-theme-picker__preview"
-                data-distance={Math.abs(offset)}
-                data-offset={offset}
-                key={`${theme.id}-${offset}`}
-                onClick={() =>
-                  setThemeSession((current) => ({
-                    ...current,
-                    selectedThemeId: theme.id,
-                  }))
-                }
-                type="button"
+      <div className="home-theme-picker__grid" ref={gridRef}>
+        <ThemePickerGallery
+          active={row === "community"}
+          activeIndex={indices.community}
+          activePreviewRef={activePreviewRef}
+          index={0}
+          items={community}
+          label="Community"
+          onActivate={() => activateRow("community")}
+          onSelect={(id) => selectTheme("community", id)}
+          renderPreview={(theme, loading) => (
+            <ThemePreviewImage
+              alt=""
+              fill
+              loading={loading}
+              sizes="(max-width: 640px) 66vw, 512px"
+              preview={theme.preview}
+            />
+          )}
+          status={
+            communityError
+              ? "Unavailable"
+              : communityThemes
+                ? "No matches"
+                : "Loading community themes…"
+          }
+        />
+        <ThemePickerGallery
+          active={row === "official"}
+          activeIndex={indices.official}
+          activePreviewRef={activePreviewRef}
+          index={1}
+          items={official}
+          label="Official"
+          onActivate={() => activateRow("official")}
+          onSelect={(id) => selectTheme("official", id)}
+          renderPreview={(theme, loading) => (
+            <ThemePreviewImage
+              alt=""
+              fill
+              loading={loading}
+              sizes="(max-width: 640px) 66vw, 512px"
+              preview={theme.preview}
+            />
+          )}
+        />
+        <ThemePickerGallery
+          active={row === "backgrounds"}
+          activeIndex={indices.backgrounds}
+          activePreviewRef={activePreviewRef}
+          index={2}
+          items={backgrounds}
+          label="Backgrounds"
+          onActivate={() => setRow("backgrounds")}
+          onSelect={selectBackground}
+          renderPreview={(item, loading) =>
+            item.preference.kind === "wallpaper" ? (
+              <Image
+                alt=""
+                fill
+                loading={loading}
+                placeholder="blur"
+                sizes="(max-width: 640px) 66vw, 512px"
+                src={wallpapers[item.preference.themeId]}
+              />
+            ) : (
+              <span
+                className="home-theme-picker__solid"
+                style={{
+                  backgroundColor:
+                    item.preference.kind === "solid"
+                      ? item.preference.color
+                      : selectedTheme.colors.background,
+                }}
               >
-                <ThemePreviewImage
-                  alt=""
-                  fill
-                  loading="lazy"
-                  sizes="160px"
-                  preview={theme.preview}
-                />
-              </button>
-            );
-          })
-        ) : (
-          <p aria-live="polite" className="text-meta text-muted-foreground m-auto">
-            {loadingCommunityThemes ? "Loading verified community themes…" : "No themes match"}
-          </p>
-        )}
+                Solid color
+              </span>
+            )
+          }
+        />
+      </div>
+
+      <div className="home-theme-picker__actions">
+        {row === "backgrounds" ? (
+          <Button
+            aria-pressed={background.kind === "automatic"}
+            onClick={() => {
+              setBackgroundSession((current) => ({ ...current, selected: automaticBackground }));
+              previewBackground(automaticBackground);
+            }}
+            size="compact"
+            variant="secondary"
+          >
+            {background.kind === "automatic" ? <CheckIcon aria-hidden="true" /> : null} Automatic
+          </Button>
+        ) : null}
+        <Button
+          aria-keyshortcuts="Space"
+          disabled={!activeItems.length}
+          onClick={previewSelection}
+          size="compact"
+          variant="secondary"
+        >
+          <Kbd>Space</Kbd>
+          {row !== "backgrounds" && activeTheme?.id === previewedThemeId ? "Previewing" : "Preview"}
+        </Button>
+        <Button
+          aria-keyshortcuts="Enter"
+          disabled={!activeItems.length}
+          onClick={() => closeWithSelection(true)}
+          size="compact"
+        >
+          <Kbd>Enter</Kbd>
+          {row === "backgrounds" ? "Use background" : "Use theme"}
+        </Button>
       </div>
 
       <ThemePickerFooter
-        activeIndex={activeIndex}
-        count={filteredThemes.length}
+        activeIndex={indices[row]}
+        count={activeItems.length}
         onQueryChange={updateQuery}
         onSelectAdjacent={selectAdjacent}
         query={query}

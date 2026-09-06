@@ -10,10 +10,6 @@ function subscribe(onChange: () => void) {
   return () => window.removeEventListener(themeAppliedEvent, onChange);
 }
 
-function getServerSnapshot() {
-  return defaultThemeId;
-}
-
-export function useAppliedTheme() {
-  return useSyncExternalStore(subscribe, getAppliedThemeId, getServerSnapshot);
+export function useAppliedTheme(serverThemeId: string | null = defaultThemeId) {
+  return useSyncExternalStore(subscribe, getAppliedThemeId, () => serverThemeId);
 }

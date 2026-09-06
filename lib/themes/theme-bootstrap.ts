@@ -1,3 +1,6 @@
+import type { StaticImageData } from "next/image";
+
+import { backgroundPreferenceKey } from "@/lib/themes/background";
 import { defaultThemeId, omarchyThemes } from "@/lib/themes/official";
 import {
   defaultThemeSkewAngle,
@@ -11,6 +14,8 @@ import { getThemeStyle, type ThemeMode } from "@/lib/themes/themes";
 type BootstrapTheme = [mode: ThemeMode, values: string[]];
 
 type ThemeBootstrapConfig = {
+  backgroundStorageKey: string;
+  wallpapers: Partial<Record<string, Pick<StaticImageData, "src" | "blurDataURL">>>;
   defaultTheme: string;
   properties: string[];
   skewAngle: {
@@ -30,7 +35,9 @@ function serializeForInlineScript(value: ThemeBootstrapConfig) {
     .replace(/\u2029/gu, "\\u2029");
 }
 
-function createBootstrapConfig(): ThemeBootstrapConfig {
+function createBootstrapConfig(
+  wallpapers: ThemeBootstrapConfig["wallpapers"]
+): ThemeBootstrapConfig {
   const themes: Record<string, BootstrapTheme> = {};
   const properties = Object.keys(getThemeStyle(omarchyThemes[0]));
 
@@ -39,6 +46,8 @@ function createBootstrapConfig(): ThemeBootstrapConfig {
   }
 
   return {
+    wallpapers,
+    backgroundStorageKey: backgroundPreferenceKey,
     defaultTheme: defaultThemeId,
     properties,
     skewAngle: {
@@ -52,8 +61,8 @@ function createBootstrapConfig(): ThemeBootstrapConfig {
   };
 }
 
-function createThemeBootstrapScript() {
-  const config = serializeForInlineScript(createBootstrapConfig());
+export function getThemeBootstrapScript(wallpapers: ThemeBootstrapConfig["wallpapers"] = {}) {
+  const config = serializeForInlineScript(createBootstrapConfig(wallpapers));
 
   return String.raw`(function(config){
     var root=document.documentElement;
@@ -98,26 +107,33 @@ function createThemeBootstrapScript() {
     root.style.colorScheme=theme[0];
     root.style.setProperty("--theme-skew-angle",skewAngle+"deg");
     for(var index=0;index<config.properties.length;index+=1)root.style.setProperty(config.properties[index],theme[1][index]);
-    var wallpaperIndex=config.properties.indexOf("--desktop-wallpaper");
-    if(window.location&&window.location.pathname==="/"&&wallpaperIndex>=0){
-      var wallpaperMatch=/^url\("([^"]+)"\)$/.exec(theme[1][wallpaperIndex]);
-      if(wallpaperMatch){
-        var wallpaperPreload=document.createElement("link");
-        wallpaperPreload.rel="preload";
-        wallpaperPreload.as="image";
-        wallpaperPreload.href=wallpaperMatch[1];
-        wallpaperPreload.setAttribute("fetchpriority","high");
-        document.head.append(wallpaperPreload);
+    var wallpaperId=themeId;
+    var solidColor=null;
+    try {
+      var savedBackground=JSON.parse(window.localStorage.getItem(config.backgroundStorageKey)||"null");
+      if(savedBackground&&savedBackground.kind==="wallpaper"&&Object.prototype.hasOwnProperty.call(config.themes,savedBackground.themeId)){
+        wallpaperId=savedBackground.themeId;
+      }else if(savedBackground&&savedBackground.kind==="solid"&&/^#[0-9a-f]{6}$/.test(savedBackground.color)){
+        wallpaperId=null;
+        solidColor=savedBackground.color;
       }
+    } catch (error) {}
+    var wallpaper=wallpaperId?config.wallpapers[wallpaperId]:null;
+    var wallpaperProperty=config.properties.indexOf("--desktop-wallpaper");
+    if(solidColor)root.style.setProperty("--wallpaper-blur","linear-gradient("+solidColor+","+solidColor+")");
+    else if(!wallpaper&&wallpaperProperty>=0)root.style.setProperty("--wallpaper-blur",theme[1][wallpaperProperty]);
+    if(wallpaper&&window.location&&window.location.pathname==="/"){
+      if(wallpaper.blurDataURL)root.style.setProperty("--wallpaper-blur",'url("'+wallpaper.blurDataURL+'")');
+      var wallpaperPreload=document.createElement("link");
+      wallpaperPreload.rel="preload";
+      wallpaperPreload.as="image";
+      wallpaperPreload.href=wallpaper.src;
+      wallpaperPreload.type="image/webp";
+      wallpaperPreload.setAttribute("fetchpriority","high");
+      document.head.append(wallpaperPreload);
     }
     var themeColor=document.querySelector('meta[name="theme-color"]');
     var backgroundIndex=config.properties.indexOf("--background");
     if(themeColor&&backgroundIndex>=0)themeColor.setAttribute("content",theme[1][backgroundIndex]);
   })(${config});`;
-}
-
-const themeBootstrapScript = createThemeBootstrapScript();
-
-export function getThemeBootstrapScript() {
-  return themeBootstrapScript;
 }

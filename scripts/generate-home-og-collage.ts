@@ -71,7 +71,7 @@ function getWallpaperPath(themeId: OmarchyThemeId) {
   const registered = omarchyThemes.some((theme) => theme.id === themeId);
   if (!registered) throw new Error(`Unknown Omarchy theme: ${themeId}`);
 
-  return resolvePath(projectRoot, "public", getOfficialThemeWallpaper(themeId).replace(/^\//u, ""));
+  return resolvePath(projectRoot, getOfficialThemeWallpaper(themeId));
 }
 
 async function renderPanel(panel: Panel, panelOutput: string) {

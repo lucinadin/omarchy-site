@@ -12,6 +12,7 @@ import {
 import { notifySite } from "@/lib/site-notification-events";
 import { siteSearchEvent } from "@/lib/site-search-events";
 import { getAppliedThemeId, getSavedTheme, getThemeById } from "@/lib/themes/theme-runtime";
+import type { OmarchyTheme } from "@/lib/themes/themes";
 import { useThemePreferenceRequest } from "@/providers";
 
 function loadHomeThemeSurface() {
@@ -22,14 +23,15 @@ export function HomeCommandRuntime() {
   const { cancelPendingTheme } = useThemePreferenceRequest();
   const requestRef = useRef(0);
   const openingRef = useRef(false);
-  const [isOpen, setIsOpen] = useState(false);
+  const [initialTheme, setInitialTheme] = useState<OmarchyTheme | null>(null);
+  const isOpen = initialTheme !== null;
   const [themeSurface, setThemeSurface] = useState<ComponentType<ThemeSwitcherProps> | null>(null);
   const [portalHost, setPortalHost] = useHomeDesktopPortalHost(isOpen);
 
   const close = () => {
     requestRef.current += 1;
     openingRef.current = false;
-    setIsOpen(false);
+    setInitialTheme(null);
     setPortalHost(null);
   };
 
@@ -49,7 +51,7 @@ export function HomeCommandRuntime() {
       openingRef.current = false;
       setPortalHost(nextPortalHost);
       setThemeSurface(() => module.ThemeSwitcher);
-      setIsOpen(true);
+      setInitialTheme(getThemeById(getAppliedThemeId()) ?? getSavedTheme());
     } catch {
       if (requestRef.current !== request) return;
       close();
@@ -102,12 +104,11 @@ export function HomeCommandRuntime() {
     };
   }, [isOpen]);
 
-  if (!isOpen) return null;
+  if (!initialTheme) return null;
 
   const placement = portalHost ? "desktop" : "viewport";
   if (themeSurface) {
     const ThemeSurface = themeSurface;
-    const initialTheme = getThemeById(getAppliedThemeId()) ?? getSavedTheme();
     return (
       <ThemeSurface
         initialTheme={initialTheme}

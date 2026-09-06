@@ -12,6 +12,7 @@ import { SecretLabRuntime } from "@/features/effects/components/secret-lab-runti
 import { getLogoCapabilityBootstrapScript } from "@/lib/effects/logo/capability-bootstrap";
 import { siteBrand, siteTagline, siteTitle } from "@/lib/site-brand";
 import { getThemeBootstrapScript } from "@/lib/themes/theme-bootstrap";
+import { wallpapers } from "@/lib/themes/wallpapers";
 import { LogoEffectsProvider, ScreenEffectsProvider, ThemePreferenceProvider } from "@/providers";
 import "@wterm/react/css";
 
@@ -64,7 +65,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           {getLogoCapabilityBootstrapScript()}
         </script>
         <script data-omarchy-theme-bootstrap suppressHydrationWarning>
-          {getThemeBootstrapScript()}
+          {getThemeBootstrapScript(wallpapers)}
         </script>
         <link href="/llms.txt" rel="describedby" type="text/markdown" />
       </head>

@@ -18,7 +18,7 @@ export function isCommunityThemeIdentity(
   );
 }
 
-function isHexColor(value: JsonValue | undefined): value is string {
+export function isHexColor(value: JsonValue | undefined): value is string {
   return typeof value === "string" && hexColorPattern.test(value);
 }
 

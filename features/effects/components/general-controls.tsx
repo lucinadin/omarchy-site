@@ -7,9 +7,18 @@ import {
   EffectButton,
   EffectSection,
   RangeControl,
+  ToggleControl,
   type ChoiceOption,
 } from "@/features/effects/components/effect-control";
 import { resetPatronBadgeGlareSettings } from "@/lib/effects/patron-badges/glare-settings";
+import {
+  getWallpaperParallaxSnapshot,
+  getServerWallpaperParallaxSnapshot,
+  subscribeWallpaperParallax,
+  setWallpaperParallaxSettings,
+  resetWallpaperParallaxSettings,
+  wallpaperParallaxLimits,
+} from "@/lib/effects/wallpaper/settings";
 import {
   getRenderQualitySnapshot,
   getServerRenderQualitySnapshot,
@@ -41,7 +50,14 @@ export function GeneralControls() {
     getServerRenderQualitySnapshot
   );
 
+  const parallax = useSyncExternalStore(
+    subscribeWallpaperParallax,
+    getWallpaperParallaxSnapshot,
+    getServerWallpaperParallaxSnapshot
+  );
+
   const resetGeneralSettings = () => {
+    resetWallpaperParallaxSettings();
     resetGeneral();
     resetRenderQualityPreference();
   };
@@ -64,6 +80,41 @@ export function GeneralControls() {
           onChange={onThemeSkewAngleChange}
           step={0.1}
           value={themeSkewAngle}
+        />
+      </EffectSection>
+
+      <EffectSection label="Wallpaper parallax">
+        <ToggleControl
+          checked={parallax.enabled}
+          label="Parallax"
+          onChange={(enabled) => setWallpaperParallaxSettings({ enabled })}
+        />
+        <RangeControl
+          format={(value) => `${value}px`}
+          label="Pointer depth"
+          maximum={wallpaperParallaxLimits.pointer.maximum}
+          minimum={wallpaperParallaxLimits.pointer.minimum}
+          onChange={(pointer) => setWallpaperParallaxSettings({ pointer })}
+          step={1}
+          value={parallax.pointer}
+        />
+        <RangeControl
+          format={(value) => `${value}px`}
+          label="Scroll depth"
+          maximum={wallpaperParallaxLimits.scroll.maximum}
+          minimum={wallpaperParallaxLimits.scroll.minimum}
+          onChange={(scroll) => setWallpaperParallaxSettings({ scroll })}
+          step={1}
+          value={parallax.scroll}
+        />
+        <RangeControl
+          format={(value) => `${value}ms`}
+          label="Pointer smoothing"
+          maximum={wallpaperParallaxLimits.smoothing.maximum}
+          minimum={wallpaperParallaxLimits.smoothing.minimum}
+          onChange={(smoothing) => setWallpaperParallaxSettings({ smoothing })}
+          step={10}
+          value={parallax.smoothing}
         />
       </EffectSection>
 

@@ -1,5 +1,4 @@
-import Image from "next/image";
-
+import { Image } from "@/components/ui/image";
 import type { ThemePreview } from "@/lib/themes/themes";
 
 export function ThemePreviewImage({

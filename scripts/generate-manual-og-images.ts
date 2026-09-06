@@ -24,7 +24,7 @@ const manualMdxDirectory = resolve(projectRoot, "content/manual");
 const regularFont = resolve(scriptDirectory, "og/fonts/JetBrainsMono-Regular.ttf");
 const boldFont = resolve(scriptDirectory, "og/fonts/JetBrainsMono-Bold.ttf");
 const wordmark = resolve(projectRoot, "public/assets/brand/omarchy-wordmark.svg");
-const wallpaper = resolve(projectRoot, "public/assets/images/theme-wallpapers/tokyo-night.webp");
+const wallpaper = resolve(projectRoot, "assets/theme-wallpapers/tokyo-night.webp");
 
 async function getManualPages(): Promise<ManualPage[]> {
   const [source, contentFiles] = await Promise.all([

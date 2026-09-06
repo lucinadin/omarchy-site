@@ -30,10 +30,6 @@ type ThemeColorValues = readonly [
   brightMagenta: string,
 ];
 
-function officialThemeWallpaper(themeId: string) {
-  return `/assets/images/theme-wallpapers/${themeId}.webp`;
-}
-
 function officialThemePreview(themeId: string) {
   return officialThemePreviewsInImages.has(themeId)
     ? `/assets/images/themes/${themeId}-preview.webp`
@@ -113,7 +109,7 @@ const theme = <const Id extends string>(
     preview: { image: officialThemePreview(id) },
     repository: officialThemeRepository(id),
     slug: id,
-    wallpaper: `url("${officialThemeWallpaper(id)}")`,
+    wallpaper: "none",
   };
 };
 
@@ -719,5 +715,5 @@ export type OmarchyThemeId = (typeof omarchyThemes)[number]["id"];
 export const defaultThemeId: OmarchyThemeId = "tokyo-night";
 
 export function getOfficialThemeWallpaper(themeId: OmarchyThemeId) {
-  return officialThemeWallpaper(themeId);
+  return `assets/theme-wallpapers/${themeId}.webp`;
 }

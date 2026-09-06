@@ -28,6 +28,7 @@
     "sync:news:check": "bun scripts/sync-upstream-news.ts --check",
     "sync:themes": "bun scripts/sync-community-themes.ts",
     "sync:themes:check": "bun scripts/sync-community-themes.ts --check",
+    "optimize:wallpapers": "bun scripts/optimize-wallpapers.ts",
     "start": "next start",
     "audit:logo-effects": "bun scripts/audit-logo-effects.ts",
     "audit:knip": "knip --no-progress --treat-config-hints-as-errors --treat-tag-hints-as-errors",
@@ -68,16 +69,16 @@
     "@types/mdx": "^2.0.14",
     "@types/node": "26.4.1",
     "@types/react": "19.2.18",
-    "@types/react-dom": "19.2.5",
+    "@types/react-dom": "19.2.7",
     "@webgpu/types": "0.1.72",
     "knip": "6.34.0",
     "oxfmt": "0.66.0",
     "oxlint": "1.81.0",
-    "postcss": "^8.5.26",
+    "postcss": "^8.5.28",
     "sharp": "0.35.4",
     "tailwindcss": "4.3.3",
     "typescript": "7.0.2",
-    "ultracite": "7.10.7"
+    "ultracite": "7.10.8"
   },
   "packageManager": "bun@1.4.0"
 }

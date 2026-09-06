@@ -233,53 +233,72 @@ describe("theme runtime controls", () => {
     assert.equal(themeColor.content, background);
   });
 
-  test("preloads the selected official wallpaper on the homepage", () => {
-    const links: {
-      as?: string;
-      attributes: Map<string, string>;
-      href?: string;
-      rel?: string;
-    }[] = [];
-    // The production value is an inline bootstrap string; executing that string is the behavior under test.
-    // oxlint-disable-next-line no-new-func
-    const bootstrap = new Function("window", "document", getThemeBootstrapScript());
-    bootstrap(
-      {
-        localStorage: { getItem: () => null },
-        location: { pathname: "/" },
+  test("preloads only the selected wallpaper on the homepage, with its blur placeholder", () => {
+    const wallpapers = {
+      "tokyo-night": {
+        src: "/_next/static/media/tokyo.webp",
+        blurDataURL: "data:image/webp;base64,default",
       },
-      {
-        createElement(tagName: string) {
-          assert.equal(tagName, "link");
-          const link = {
-            attributes: new Map<string, string>(),
-            setAttribute(name: string, value: string) {
-              this.attributes.set(name, value);
-            },
-          };
-          links.push(link);
-          return link;
-        },
-        documentElement: {
-          dataset: { theme: "" },
-          style: { colorScheme: "", setProperty() {} },
-        },
-        head: {
-          append(link: (typeof links)[number]) {
-            assert.equal(link, links[0]);
+      nord: { src: "/_next/static/media/nord.webp", blurDataURL: "data:image/webp;base64,saved" },
+    };
+    for (const { savedTheme, pathname, expected } of [
+      { savedTheme: null, pathname: "/", expected: wallpapers["tokyo-night"] },
+      { savedTheme: "nord", pathname: "/", expected: wallpapers.nord },
+      { savedTheme: "nord", pathname: "/themes/", expected: null },
+    ]) {
+      const links: {
+        as?: string;
+        href?: string;
+        rel?: string;
+        type?: string;
+        attributes: Map<string, string>;
+      }[] = [];
+      const properties = new Map<string, string>();
+      // The production value is an inline bootstrap string; executing it is the behavior under test.
+      // oxlint-disable-next-line no-new-func
+      const bootstrap = new Function("window", "document", getThemeBootstrapScript(wallpapers));
+      bootstrap(
+        {
+          localStorage: {
+            getItem: (key: string) => (key === themePreferenceKey ? savedTheme : null),
           },
+          location: { pathname },
         },
-        querySelector() {
-          return null;
-        },
+        {
+          createElement(tagName: string) {
+            assert.equal(tagName, "link");
+            const link = {
+              attributes: new Map<string, string>(),
+              setAttribute(name: string, value: string) {
+                this.attributes.set(name, value);
+              },
+            };
+            links.push(link);
+            return link;
+          },
+          documentElement: {
+            dataset: { theme: "" },
+            style: {
+              colorScheme: "",
+              setProperty: (name: string, value: string) => properties.set(name, value),
+            },
+          },
+          head: { append() {} },
+          querySelector() {
+            return null;
+          },
+        }
+      );
+      assert.equal(links.length, expected ? 1 : 0);
+      if (expected) {
+        assert.equal(links[0].rel, "preload");
+        assert.equal(links[0].as, "image");
+        assert.equal(links[0].type, "image/webp");
+        assert.equal(links[0].href, expected.src);
+        assert.equal(links[0].attributes.get("fetchpriority"), "high");
+        assert.equal(properties.get("--wallpaper-blur"), `url("${expected.blurDataURL}")`);
       }
-    );
-
-    assert.equal(links.length, 1);
-    assert.equal(links[0].rel, "preload");
-    assert.equal(links[0].as, "image");
-    assert.equal(links[0].href, `/assets/images/theme-wallpapers/${defaultThemeId}.webp`);
-    assert.equal(links[0].attributes.get("fetchpriority"), "high");
+    }
   });
 
   test("uses React transitions without consulting the manual document API", () => {

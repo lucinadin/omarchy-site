@@ -4,6 +4,7 @@ import { Activity, lazy, Suspense, useEffect, useRef, useState, type ReactNode }
 
 import { HomeDesktopShortcutHints } from "@/components/home/home-desktop-shortcut-hints";
 import { HomeEmptyWorkspace } from "@/components/home/home-empty-workspace";
+import { HomeWallpaper } from "@/components/home/home-wallpaper";
 import { ScreenOverlayTarget } from "@/features/effects/components/screen-overlay-target";
 import { useAppliedTheme } from "@/hooks";
 import {
@@ -30,6 +31,7 @@ import {
   type WorkspaceId,
 } from "@/lib/home-desktop-layout";
 import { requestSiteSearch } from "@/lib/site-search-events";
+import { defaultThemeId } from "@/lib/themes/official";
 import {
   cycleThemePreference,
   getThemeById,
@@ -61,7 +63,7 @@ export function HomeDesktopShell({ children }: { children: ReactNode }) {
   const [initialTerminalWorkspace, setInitialTerminalWorkspace] =
     useState<DesktopWorkspaceId | null>(null);
   const [mediaPluginEnabled, setMediaPluginEnabled] = useState(false);
-  const activeThemeId = useAppliedTheme();
+  const activeThemeId = useAppliedTheme(null);
 
   useEffect(() => {
     const updateClock = () => setBarTime(formatDesktopClock(clockFormat));
@@ -195,7 +197,7 @@ export function HomeDesktopShell({ children }: { children: ReactNode }) {
             showTerminalShortcut={activeWorkspace !== 1}
           />
         ) : null}
-        <div aria-hidden="true" className="home-desktop__wallpaper" />
+        <HomeWallpaper themeId={activeThemeId} />
         <div
           aria-hidden="true"
           className="from-background/75 via-background/60 pointer-events-none absolute inset-0 z-0 bg-linear-to-t via-[60%] to-transparent to-[80%] sm:hidden"
@@ -225,7 +227,7 @@ export function HomeDesktopShell({ children }: { children: ReactNode }) {
             >
               <DeferredDesktopWorkspaces
                 activeWorkspace={activeWorkspace}
-                activeThemeId={activeThemeId}
+                activeThemeId={activeThemeId ?? defaultThemeId}
                 barPosition={barPosition}
                 barTransparent={barTransparent}
                 barVisible={barVisible}

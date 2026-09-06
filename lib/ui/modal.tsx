@@ -1,7 +1,7 @@
 "use client";
 
 import {
-  useEffect,
+  useLayoutEffect,
   useRef,
   type DialogHTMLAttributes,
   type HTMLAttributes,
@@ -69,7 +69,7 @@ export function Modal({
   const returnFocusRef = useRef<HTMLElement | null>(null);
   const portalTarget = portalContainer ?? (typeof document === "undefined" ? null : document.body);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (!open) return;
 
     const content = contentRef.current;
@@ -80,15 +80,13 @@ export function Modal({
       document.activeElement instanceof HTMLElement ? document.activeElement : null;
     const releaseIsolation = isolateModal(portal);
 
-    const focusFrame = requestAnimationFrame(() => {
-      const focusable = focusableElements(content);
-      const requestedFocus =
-        initialFocus === "content"
-          ? content
-          : focusable.find((element) => element.hasAttribute("autofocus"));
-      const focusTarget = requestedFocus ?? focusable[0] ?? content;
-      focusTarget.focus({ preventScroll: true });
-    });
+    const focusable = focusableElements(content);
+    const requestedFocus =
+      initialFocus === "content"
+        ? content
+        : focusable.find((element) => element.hasAttribute("autofocus"));
+    const focusTarget = requestedFocus ?? focusable[0] ?? content;
+    focusTarget.focus({ preventScroll: true });
 
     const containFocus = (event: FocusEvent) => {
       if (content.closest("[inert]")) return;
@@ -99,7 +97,6 @@ export function Modal({
     document.addEventListener("focusin", containFocus);
 
     return () => {
-      cancelAnimationFrame(focusFrame);
       document.removeEventListener("focusin", containFocus);
       releaseIsolation();
       if (returnFocusRef.current?.isConnected)
