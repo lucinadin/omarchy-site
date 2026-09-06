@@ -189,7 +189,7 @@ export function PrimaryNavigation() {
       </button>
 
       <Sheet onOpenChange={setIsMobileOpen} open={isMobileOpen}>
-        <SheetContent ariaLabel="Navigation menu">
+        <SheetContent ariaLabel="Navigation menu" data-site-navigation="">
           <SheetHeader>
             <SheetTitle>Menu</SheetTitle>
             <SheetDescription className="sr-only">Navigate the Omarchy website.</SheetDescription>

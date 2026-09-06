@@ -28,6 +28,10 @@ test("backgrounds follow the theme only while automatic", () => {
   const solid: BackgroundPreference = { kind: "solid", color: "#123456" };
   assert.deepEqual(resolveBackground(solid, "white"), solid);
   assert.deepEqual(resolveBackground(solid, "community:aura"), solid);
+  assert.deepEqual(resolveBackground({ kind: "experiment" }, "white"), { kind: "experiment" });
+  assert.deepEqual(resolveBackground({ kind: "experiment" }, "community:aura"), {
+    kind: "experiment",
+  });
 });
 
 test("background storage accepts only known wallpapers and six-digit colors", () => {
@@ -46,6 +50,7 @@ test("background storage accepts only known wallpapers and six-digit colors", ()
     automaticBackground,
     { kind: "wallpaper", themeId: "nord" },
     { kind: "solid", color: "#123456" },
+    { kind: "experiment" },
   ]) {
     assert.deepEqual(parseBackgroundPreference(JSON.stringify(value)), value);
   }
@@ -57,6 +62,11 @@ test("first paint respects pinned wallpaper, solid color, automatic and invalid 
     nord: { src: "/nord.webp", blurDataURL: "data:image/webp;base64,nord" },
   };
   for (const { saved, expectedImage, expectedBlur } of [
+    {
+      saved: '{"kind":"experiment"}',
+      expectedImage: undefined,
+      expectedBlur: "linear-gradient(#1a1b26,#1a1b26)",
+    },
     {
       saved: '{"kind":"wallpaper","themeId":"nord"}',
       expectedImage: "/nord.webp",

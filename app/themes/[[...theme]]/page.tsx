@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 import {
   PageHeader,
-  PageHeaderBody,
+  PageHeaderDescription,
   PageHeaderEyebrow,
   PageHeaderTitle,
 } from "@/components/site/page-header";
@@ -90,12 +90,10 @@ export default async function ThemesPage({ params }: PageProps<"/themes/[[...the
           <PageHeader>
             <PageHeaderEyebrow>Built into Omarchy</PageHeaderEyebrow>
             <PageHeaderTitle>Themes</PageHeaderTitle>
-            <PageHeaderBody className="typeset">
-              <p>
-                Omarchy is yours to shape. Start with one of twenty-two complete themes, grab a
-                favorite from the community, or make your own. Bend the whole machine to your taste.
-              </p>
-            </PageHeaderBody>
+            <PageHeaderDescription>
+              Omarchy is yours to shape. Start with one of twenty-two complete themes, grab a
+              favorite from the community, or make your own. Bend the whole machine to your taste.
+            </PageHeaderDescription>
           </PageHeader>
 
           <section className="mt-fluid-section" aria-labelledby="official-themes-heading">

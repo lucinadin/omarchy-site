@@ -2,6 +2,7 @@
 
 import { useSyncExternalStore } from "react";
 
+import { HomeExperimentBackground } from "@/components/home/home-experiment-background";
 import { Image } from "@/components/ui/image";
 import { startWallpaperParallax } from "@/lib/effects/wallpaper/parallax";
 import {
@@ -27,6 +28,7 @@ export function HomeWallpaper({ themeId }: { themeId: string | null }) {
       <div aria-hidden="true" className="home-desktop__wallpaper bg-(image:--wallpaper-blur)" />
     );
   }
+  if (background?.kind === "experiment") return <HomeExperimentBackground />;
   if (background?.kind === "solid") {
     return (
       <div

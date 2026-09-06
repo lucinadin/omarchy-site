@@ -1,10 +1,31 @@
 import { LOGO_BOOT_STORAGE_KEYS, LOGO_EFFECT_STORAGE_KEYS } from "@/lib/effects/logo/lifecycle";
+import { LOGO_PREVIEW_DATA_URL, LOGO_PREVIEW_MAX_LENGTH } from "@/lib/effects/logo/preview";
 
 const logoRendererWatchdogMs = 3_000;
 
 function createLogoCapabilityBootstrapScript() {
   return `(function(){
     var root=document.documentElement;
+    try {
+      var preview=JSON.parse(window.localStorage.getItem(${JSON.stringify(LOGO_EFFECT_STORAGE_KEYS.preview)}));
+      if(preview&&preview.version===1&&
+        preview.theme===root.dataset.theme&&
+        typeof preview.state==="string"&&
+        preview.state===window.localStorage.getItem(${JSON.stringify(LOGO_EFFECT_STORAGE_KEYS.state)})&&
+        typeof preview.image==="string"&&preview.image.length<=${LOGO_PREVIEW_MAX_LENGTH}&&
+        ${LOGO_PREVIEW_DATA_URL}.test(preview.image)){
+        var previewBackground='url("'+preview.image+'")';
+        root.style.setProperty("--logo-preview",previewBackground);
+        root.style.setProperty("--logo-preview-fill","transparent");
+        var previewImage=new window.Image();
+        previewImage.addEventListener("error",function(){
+          if(root.style.getPropertyValue("--logo-preview")!==previewBackground)return;
+          root.style.removeProperty("--logo-preview");
+          root.style.removeProperty("--logo-preview-fill");
+        },{once:true});
+        previewImage.src=preview.image;
+      }
+    } catch (error) {}
     try {
       var storage=window.localStorage;
       var keys=${JSON.stringify(LOGO_BOOT_STORAGE_KEYS)};

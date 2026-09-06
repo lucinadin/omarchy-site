@@ -10,6 +10,7 @@ import {
   ToggleControl,
   type ChoiceOption,
 } from "@/features/effects/components/effect-control";
+import { resetExperimentSettings } from "@/lib/effects/experiment/settings";
 import { resetPatronBadgeGlareSettings } from "@/lib/effects/patron-badges/glare-settings";
 import {
   getWallpaperParallaxSnapshot,
@@ -27,7 +28,14 @@ import {
   subscribeRenderQuality,
   type RenderQualityPreference,
 } from "@/lib/rendering/quality-preference";
+import { automaticBackground, persistBackground } from "@/lib/themes/background";
+import { omarchyThemes } from "@/lib/themes/official";
 import { maximumThemeSkewAngle, minimumThemeSkewAngle } from "@/lib/themes/theme-constants";
+import {
+  getAppliedThemeId,
+  getThemeTransitionOrigin,
+  saveThemePreference,
+} from "@/lib/themes/theme-runtime";
 import { useLogoEffects, useScreenEffects } from "@/providers";
 
 const RENDER_QUALITY_OPTIONS: readonly ChoiceOption<RenderQualityPreference>[] = [
@@ -38,6 +46,7 @@ const RENDER_QUALITY_OPTIONS: readonly ChoiceOption<RenderQualityPreference>[] =
 
 export function GeneralControls() {
   const {
+    randomize,
     resetGeneral,
     resetLogo,
     themeSkewAngle,
@@ -66,11 +75,27 @@ export function GeneralControls() {
     resetLogo();
     resetScreen();
     resetPatronBadgeGlareSettings();
+    resetExperimentSettings();
+    persistBackground(automaticBackground);
     resetGeneralSettings();
   };
 
   return (
     <>
+      <EffectSection label="Shortcuts">
+        <EffectButton onClick={randomize}>Random logo</EffectButton>
+        <EffectButton
+          onClick={(event) => {
+            const candidates = omarchyThemes.filter((theme) => theme.id !== getAppliedThemeId());
+            const theme = candidates[Math.floor(Math.random() * candidates.length)];
+            if (theme) saveThemePreference(theme, getThemeTransitionOrigin(event));
+          }}
+          title="Choose another official theme"
+        >
+          Random theme
+        </EffectButton>
+      </EffectSection>
+
       <EffectSection label="Site motion">
         <RangeControl
           format={(value) => `${value.toFixed(1)}°`}
@@ -140,6 +165,7 @@ export function GeneralControls() {
           <EffectButton onClick={resetLogo}>Reset logo</EffectButton>
           <EffectButton onClick={resetScreen}>Reset screen</EffectButton>
           <EffectButton onClick={resetPatronBadgeGlareSettings}>Reset badges</EffectButton>
+          <EffectButton onClick={resetExperimentSettings}>Reset Experiment</EffectButton>
           <EffectButton onClick={resetGeneralSettings}>Reset general</EffectButton>
           <EffectButton className="col-span-2" onClick={resetEverything}>
             Reset everything

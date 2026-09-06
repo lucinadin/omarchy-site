@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 import {
   EffectActionButton,
@@ -13,13 +13,12 @@ import { LogoPlaybackIdleControls } from "@/features/effects/components/logo-pla
 import { CopyIcon, DicesIcon, RefreshIcon, ShuffleIcon } from "@/icons";
 import { writeClipboardText } from "@/lib/browser-sharing";
 import { resolveLogoEffectFallbackColor } from "@/lib/effects/logo/color-bindings";
-import type { LoadedLogoEffectDefinition } from "@/lib/effects/logo/definition";
 import {
   materializeLogoEffectExport,
   resolveActiveLogoEffect,
   serializeLogoEffectExport,
 } from "@/lib/effects/logo/effect-state";
-import { loadLogoEffect, logoEffectUsesSeed, LOGO_EFFECTS } from "@/lib/effects/logo/registry";
+import { logoEffectUsesSeed, LOGO_EFFECTS } from "@/lib/effects/logo/registry";
 import { notifySite } from "@/lib/site-notification-events";
 import { useLogoEffects } from "@/providers";
 
@@ -30,6 +29,7 @@ const LOGO_EFFECT_OPTIONS = LOGO_EFFECTS.map((effect) => ({
 
 export function LogoEffectsControls() {
   const {
+    activeDefinition,
     activeEffect,
     adoptEffectDocument,
     effectDocument,
@@ -38,29 +38,6 @@ export function LogoEffectsControls() {
     restart: onRestart,
     selectEffect: onSelectionChange,
   } = useLogoEffects();
-  const [loadedDefinition, setLoadedDefinition] = useState<LoadedLogoEffectDefinition | null>(null);
-
-  useEffect(() => {
-    let cancelled = false;
-    void loadLogoEffect(activeEffect)
-      .then((effectModule) => {
-        if (cancelled || effectModule.logoEffect.id !== activeEffect) {
-          return;
-        }
-        setLoadedDefinition(effectModule.logoEffect);
-      })
-      .catch((error) => {
-        if (cancelled) return;
-        setLoadedDefinition(null);
-        console.error(`Unable to load the ${activeEffect} logo controls`, error);
-      });
-
-    return () => {
-      cancelled = true;
-    };
-  }, [activeEffect]);
-
-  const activeDefinition = loadedDefinition?.id === activeEffect ? loadedDefinition : null;
   const resolved =
     activeDefinition === null
       ? null

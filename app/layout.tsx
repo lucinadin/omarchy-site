@@ -61,11 +61,11 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       suppressHydrationWarning
     >
       <head>
-        <script data-omarchy-logo-capability-bootstrap suppressHydrationWarning>
-          {getLogoCapabilityBootstrapScript()}
-        </script>
         <script data-omarchy-theme-bootstrap suppressHydrationWarning>
           {getThemeBootstrapScript(wallpapers)}
+        </script>
+        <script data-omarchy-logo-capability-bootstrap suppressHydrationWarning>
+          {getLogoCapabilityBootstrapScript()}
         </script>
         <link href="/llms.txt" rel="describedby" type="text/markdown" />
       </head>

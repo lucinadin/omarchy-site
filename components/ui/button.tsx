@@ -17,7 +17,7 @@ export const buttonVariants = cva(
       size: {
         default: "text-small h-12 min-h-11 px-5",
         compact: "text-small h-10 min-h-10 px-3",
-        hero: "text-meta h-[42px] min-h-[42px] min-w-0 flex-[1_1_9rem] px-3.5 sm:flex-none",
+        hero: "text-small h-11 min-h-11 min-w-0 px-3",
         icon: "text-small h-10 min-h-10 w-10 shrink-0 px-0",
         compactIcon: "size-[30px] min-h-[30px] shrink-0 p-0 [&_svg]:size-[13px]",
       },

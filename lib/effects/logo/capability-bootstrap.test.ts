@@ -3,6 +3,7 @@ import { describe, test } from "node:test";
 
 import { getLogoCapabilityBootstrapScript } from "@/lib/effects/logo/capability-bootstrap";
 import { LOGO_BOOT_STORAGE_KEYS, LOGO_EFFECT_STORAGE_KEYS } from "@/lib/effects/logo/lifecycle";
+import { LOGO_PREVIEW_MAX_LENGTH } from "@/lib/effects/logo/preview";
 
 type BootstrapMark = { dataset: Record<string, string> };
 
@@ -16,6 +17,7 @@ type BootstrapOptions = {
   localStorage?: BootstrapStorage;
   marks?: BootstrapMark[];
   prefersReducedMotion?: boolean;
+  theme?: string;
 };
 
 function createStorage(entries: Record<string, string> = {}) {
@@ -32,8 +34,19 @@ function runBootstrap({
   localStorage = createStorage().storage,
   marks = [],
   prefersReducedMotion = false,
+  theme = "tokyo-night",
 }: BootstrapOptions = {}) {
-  const root: BootstrapMark = { dataset: {} };
+  const styles = new Map<string, string>();
+  const dataset: BootstrapMark["dataset"] = { theme };
+  const root = {
+    dataset,
+    style: {
+      getPropertyValue: (property: string) => styles.get(property) ?? "",
+      removeProperty: (property: string) => styles.delete(property),
+      setProperty: (property: string, value: string) => styles.set(property, value),
+    },
+  };
+  let decodeError: (() => void) | undefined;
   let watchdog: (() => void) | undefined;
   let watchdogSelector: string | undefined;
   // The production value is an inline bootstrap string; executing that string is the behavior under test.
@@ -54,6 +67,13 @@ function runBootstrap({
     },
     { gpu },
     {
+      Image: class extends EventTarget {
+        src = "";
+        constructor() {
+          super();
+          decodeError = () => this.dispatchEvent(new Event("error"));
+        }
+      },
       localStorage,
       matchMedia: () => ({ matches: prefersReducedMotion }),
       setTimeout(callback: () => void) {
@@ -63,12 +83,81 @@ function runBootstrap({
   );
   return {
     root,
+    styles,
+    failPreviewDecode: () => decodeError?.(),
     runWatchdog: () => watchdog?.(),
     watchdogSelector: () => watchdogSelector,
   };
 }
 
 describe("logo capability bootstrap", () => {
+  test("restores a matching preview before the renderer starts", () => {
+    const state = '{"activeEffectId":"wipe","preview":{"seed":1}}';
+    const image = "data:image/png;base64,iVBORw0KGgo=";
+    const local = createStorage({
+      [LOGO_EFFECT_STORAGE_KEYS.state]: state,
+      [LOGO_EFFECT_STORAGE_KEYS.preview]: JSON.stringify({
+        image,
+        state,
+        theme: "tokyo-night",
+        version: 1,
+      }),
+    });
+    const { root, styles } = runBootstrap({ gpu: {}, localStorage: local.storage });
+    assert.equal(styles.get("--logo-preview"), `url("${image}")`);
+    assert.equal(styles.get("--logo-preview-fill"), "transparent");
+    assert.equal(root.dataset.logoReveal, "consumed");
+  });
+
+  test("ignores stale, oversized, and invalid preview data without hiding the fallback", () => {
+    const state = '{"activeEffectId":"wipe","preview":{"seed":1}}';
+    const preview = {
+      image: "data:image/png;base64,iVBORw0KGgo=",
+      state,
+      theme: "tokyo-night",
+      version: 1,
+    };
+    const invalidPreviews = [
+      "{corrupt",
+      "null",
+      JSON.stringify({ ...preview, version: 2 }),
+      JSON.stringify({ ...preview, theme: "osaka-jade" }),
+      JSON.stringify({ ...preview, state: "{}" }),
+      JSON.stringify({ ...preview, state: null }),
+      JSON.stringify({ ...preview, image: "https://example.com/logo.png" }),
+      JSON.stringify({ ...preview, image: 'data:image/png;base64,");url(https://example.com)' }),
+      JSON.stringify({
+        ...preview,
+        image: `data:image/png;base64,${"A".repeat(LOGO_PREVIEW_MAX_LENGTH)}`,
+      }),
+    ];
+    for (const invalid of invalidPreviews) {
+      const local = createStorage({
+        [LOGO_EFFECT_STORAGE_KEYS.state]: state,
+        [LOGO_EFFECT_STORAGE_KEYS.preview]: invalid,
+      });
+      const { styles } = runBootstrap({ gpu: {}, localStorage: local.storage });
+      assert.equal(styles.size, 0);
+    }
+  });
+
+  test("restores the SVG fallback when a cached PNG cannot be decoded", () => {
+    const state = "{}";
+    const local = createStorage({
+      [LOGO_EFFECT_STORAGE_KEYS.state]: state,
+      [LOGO_EFFECT_STORAGE_KEYS.preview]: JSON.stringify({
+        image: "data:image/png;base64,iVBORw0KGgo=",
+        state,
+        theme: "tokyo-night",
+        version: 1,
+      }),
+    });
+    const { styles, failPreviewDecode } = runBootstrap({ localStorage: local.storage });
+    assert.equal(styles.get("--logo-preview-fill"), "transparent");
+    failPreviewDecode();
+    assert.equal(styles.size, 0);
+  });
+
   test("persists the seen marker synchronously and restores on the next document", () => {
     const local = createStorage();
 

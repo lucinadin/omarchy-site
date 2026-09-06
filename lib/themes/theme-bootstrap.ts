@@ -111,7 +111,10 @@ export function getThemeBootstrapScript(wallpapers: ThemeBootstrapConfig["wallpa
     var solidColor=null;
     try {
       var savedBackground=JSON.parse(window.localStorage.getItem(config.backgroundStorageKey)||"null");
-      if(savedBackground&&savedBackground.kind==="wallpaper"&&Object.prototype.hasOwnProperty.call(config.themes,savedBackground.themeId)){
+      if(savedBackground&&savedBackground.kind==="experiment"){
+        wallpaperId=null;
+        solidColor=theme[1][config.properties.indexOf("--background")];
+      }else if(savedBackground&&savedBackground.kind==="wallpaper"&&Object.prototype.hasOwnProperty.call(config.themes,savedBackground.themeId)){
         wallpaperId=savedBackground.themeId;
       }else if(savedBackground&&savedBackground.kind==="solid"&&/^#[0-9a-f]{6}$/.test(savedBackground.color)){
         wallpaperId=null;

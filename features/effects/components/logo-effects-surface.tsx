@@ -10,7 +10,7 @@ import {
 } from "react";
 
 import { createLogoEffectColorResolver } from "@/lib/effects/logo/color-bindings";
-import { resolveActiveLogoEffect } from "@/lib/effects/logo/effect-state";
+import { resolveActiveLogoEffect, serializeLogoEffectState } from "@/lib/effects/logo/effect-state";
 import {
   consumeInitialLogoReveal,
   resolveLogoEffectPlaybackStartMode,
@@ -18,10 +18,11 @@ import {
 } from "@/lib/effects/logo/lifecycle";
 import { OMARCHY_MARK_PATH, OMARCHY_MARK_VIEW_BOX } from "@/lib/effects/logo/mark";
 import { subscribeLogoEffectReplay } from "@/lib/effects/logo/playback-command";
+import { saveLogoPreview } from "@/lib/effects/logo/preview";
 import { loadLogoEffect } from "@/lib/effects/logo/registry";
 import type { LogoEffectStartMode, LogoRendererController } from "@/lib/effects/logo/types";
 import { observeRenderActivity } from "@/lib/rendering/activity";
-import { showSecretLabLauncher, unlockSecretLab } from "@/lib/secret-lab-access";
+import { openSecretLab, unlockSecretLab } from "@/lib/secret-lab-access";
 import { themeAppliedEvent } from "@/lib/themes/theme-runtime";
 import { cn } from "@/lib/utils";
 import { useLogoEffects } from "@/providers";
@@ -118,6 +119,7 @@ export function LogoEffectsSurface({
   const lastPlayedEffectRef = useRef<LogoEffectPlaybackIdentity | null>(null);
   const canReplayRef = useRef(false);
   const pendingReplayRef = useRef(false);
+  const previewStateRef = useRef<string | null>(null);
   const [rendererReady, setRendererReady] = useState(false);
   const initialStartModeRef = useRef<LogoEffectStartMode | null>(null);
   const [themeRevision, setThemeRevision] = useState(0);
@@ -208,6 +210,12 @@ export function LogoEffectsSurface({
           canvas,
           stageRef.current,
           {
+            onSettledFrame() {
+              const state = previewStateRef.current;
+              if (!disposed && playbackKey === "primary" && state !== null) {
+                saveLogoPreview(canvas, state);
+              }
+            },
             onError(error) {
               if (disposed) return;
               initialStartModeRef.current = "settled";
@@ -365,6 +373,7 @@ export function LogoEffectsSurface({
           adoptEffectDocument(effectDocument, resolved.document);
         }
         host.dataset.effectBundle = resolved.prepared.bundleMarker;
+        previewStateRef.current = serializeLogoEffectState(resolved.document);
         startEffectAttempt((startMode) =>
           renderer.playPrepared(resolved.prepared, activeSeed, startMode)
         );
@@ -420,7 +429,7 @@ export function LogoEffectsSurface({
     secretLabTapCountRef.current = 0;
     lastSecretLabTapAtRef.current = 0;
     unlockSecretLab();
-    if (window.matchMedia("(width < 48rem)").matches) showSecretLabLauncher();
+    openSecretLab();
   };
 
   return (

@@ -20,6 +20,8 @@ export default {
       ],
     },
     classGroups: {
+      // cn 0.2.5 omits Tailwind's max-h-none from its default max-height group.
+      "max-h": [{ "max-h": ["none"] }],
       px: ["px-site-frame"],
       left: ["left-control-progress"],
       shadow: [{ shadow: ["overlay", "notification"] }],

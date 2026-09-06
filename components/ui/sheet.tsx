@@ -43,13 +43,13 @@ function SheetContent({
     <Modal
       ariaLabel={ariaLabel}
       className={cn(
-        "border-border bg-background text-foreground fixed inset-y-0 right-0 z-[80] flex h-dvh w-[min(28rem,100vw)] max-w-full animate-[sheet-from-right_220ms_cubic-bezier(0.22,1,0.36,1)_both] flex-col overflow-hidden border outline-none",
+        "border-border bg-background text-foreground fixed inset-y-0 right-0 z-[211] flex h-dvh w-[min(28rem,100vw)] max-w-full animate-[sheet-from-right_220ms_cubic-bezier(0.22,1,0.36,1)_both] flex-col overflow-hidden border outline-none",
         className
       )}
       data-slot="sheet-content"
       onOpenChange={onOpenChange}
       open={open}
-      overlayClassName="fixed inset-0 z-[70] animate-[modal-fade-in_180ms_ease_both] bg-[color-mix(in_srgb,var(--darker-background)_72%,transparent)] opacity-100 backdrop-blur-[3px]"
+      overlayClassName="fixed inset-0 z-[210] animate-[modal-fade-in_180ms_ease_both] bg-[color-mix(in_srgb,var(--darker-background)_72%,transparent)] opacity-100 backdrop-blur-[3px]"
       {...props}
     >
       {children}

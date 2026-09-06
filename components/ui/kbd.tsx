@@ -8,9 +8,10 @@ type KbdProps = Omit<ComponentProps<"kbd">, "className"> & {
 const kbdVariants = cva("inline-flex items-center border font-mono font-semibold", {
   variants: {
     variant: {
+      action: "text-meta/none min-h-6 border-current/30 bg-transparent px-1.5 text-current",
       default:
-        "border-border bg-surface-strong text-meta/none text-bright-foreground inset-shadow-keycap min-h-6 px-1.5",
-      hint: "border-foreground/15 bg-background/70 text-meta/none text-foreground/70 min-h-4 px-1",
+        "border-border bg-surface text-meta/none text-foreground inset-shadow-keycap min-h-6 px-1.5",
+      hint: "border-border bg-popover text-meta/none text-popover-foreground min-h-4 px-1",
     },
   },
   defaultVariants: {
@@ -23,9 +24,10 @@ const kbdSymbolVariants = cva(
   {
     variants: {
       variant: {
+        action: "text-meta/none size-6 min-h-0 border-current/30 bg-transparent p-0 text-current",
         default:
-          "border-border bg-surface-strong text-ui/none text-bright-foreground inset-shadow-keycap size-6 min-h-0 p-0",
-        hint: "border-foreground/15 bg-background/70 text-meta/none text-foreground/70 size-4 min-h-0 p-0",
+          "border-border bg-surface text-ui/none text-foreground inset-shadow-keycap size-6 min-h-0 p-0",
+        hint: "border-border bg-popover text-meta/none text-popover-foreground size-4 min-h-0 p-0",
       },
     },
     defaultVariants: {

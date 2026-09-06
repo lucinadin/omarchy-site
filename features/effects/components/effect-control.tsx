@@ -121,7 +121,8 @@ export function EffectSelect({
       ) : null}
       <select
         className={cn(
-          "h-full min-w-0 flex-1 cursor-pointer appearance-none border-0 bg-transparent p-0 pr-5 text-right font-[inherit] font-medium text-(color:--tuner-muted) capitalize [font-variant-numeric:tabular-nums] outline-none disabled:pointer-events-none disabled:cursor-not-allowed",
+          "h-full min-w-0 flex-1 cursor-pointer appearance-none border-0 bg-transparent p-0 pr-5 font-[inherit] font-medium text-(color:--tuner-muted) capitalize [font-variant-numeric:tabular-nums] outline-none disabled:pointer-events-none disabled:cursor-not-allowed",
+          label ? "text-right" : "text-left",
           className
         )}
         data-slot="effect-select"

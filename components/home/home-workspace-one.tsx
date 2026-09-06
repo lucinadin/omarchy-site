@@ -9,10 +9,10 @@ import { cn } from "@/lib/utils";
 
 export function HomeWorkspaceOne() {
   return (
-    <div className="gap-fluid-md p-fluid-xl relative isolate grid h-full min-h-0 grid-rows-[minmax(0,1fr)_auto] overflow-hidden before:pointer-events-none before:absolute before:inset-0 before:z-[-1] before:bg-[linear-gradient(to_bottom,color-mix(in_srgb,var(--background)_8%,transparent)_0%,color-mix(in_srgb,var(--background)_14%,transparent)_34%,color-mix(in_srgb,var(--background)_66%,transparent)_72%,color-mix(in_srgb,var(--background)_88%,transparent)_100%)] before:content-[''] max-md:overflow-auto [@media(max-height:700px)_and_(min-width:801px)]:gap-[0.85rem] [@media(max-height:700px)_and_(min-width:801px)]:px-[1.4rem] [@media(max-height:700px)_and_(min-width:801px)]:pt-[0.9rem] [@media(max-height:700px)_and_(min-width:801px)]:pb-[1.2rem] [@media(max-width:620px)]:grid-rows-[minmax(0,1fr)_auto] [@media(max-width:620px)]:gap-6 [@media(max-width:620px)]:overflow-y-auto [@media(max-width:620px)]:p-[1.2rem]">
-      <LogoEffectsSurface className="w-full min-w-0 self-center max-md:self-start [@media(max-height:700px)_and_(min-width:801px)]:mx-auto [@media(max-height:700px)_and_(min-width:801px)]:w-[92%]" />
+    <div className="gap-fluid-md p-fluid-xl relative isolate grid h-full min-h-0 grid-rows-[minmax(0,1fr)_auto] overflow-hidden before:pointer-events-none before:absolute before:inset-0 before:z-[-1] before:bg-[linear-gradient(to_bottom,color-mix(in_srgb,var(--background)_8%,transparent)_0%,color-mix(in_srgb,var(--background)_14%,transparent)_34%,color-mix(in_srgb,var(--background)_66%,transparent)_72%,color-mix(in_srgb,var(--background)_88%,transparent)_100%)] before:content-[''] max-md:gap-6 max-md:overflow-auto max-md:p-5 [@media(max-height:700px)]:lg:gap-3 [@media(max-height:700px)]:lg:px-6 [@media(max-height:700px)]:lg:pt-4 [@media(max-height:700px)]:lg:pb-5">
+      <LogoEffectsSurface className="w-full min-w-0 self-center max-md:self-start [@media(max-height:700px)]:lg:mx-auto [@media(max-height:700px)]:lg:w-11/12" />
 
-      <div className="gap-x-fluid-2xl grid grid-cols-[minmax(0,1.08fr)_minmax(15rem,0.92fr)] items-end gap-y-4 [grid-template-areas:'body_tagline'_'body_actions'] max-md:grid-cols-[minmax(0,1fr)_minmax(13rem,0.9fr)] [@media(max-width:620px)]:grid-cols-1 [@media(max-width:620px)]:items-start [@media(max-width:620px)]:gap-5 [@media(max-width:620px)]:[grid-template-areas:'tagline'_'body'_'actions']">
+      <div className="gap-x-fluid-2xl grid grid-cols-[minmax(0,1.08fr)_minmax(15rem,0.92fr)] items-end gap-y-4 [grid-template-areas:'body_tagline'_'body_actions'] max-md:grid-cols-1 max-md:items-start max-md:gap-5 max-md:[grid-template-areas:'tagline'_'body'_'actions']">
         <p className="text-body leading-display text-bright-foreground [&_a]:text-primary sm:text-title-sm text-shadow-readable m-0 max-w-[27ch] self-end font-light tracking-[-0.052em] text-balance [grid-area:tagline] [&_a]:decoration-[0.06em] [&_a]:underline-offset-[0.12em]">
           {siteBrand.descriptor} by <a href={siteBrand.authorUrl}>{siteBrand.author}</a>
         </p>
@@ -29,45 +29,54 @@ export function HomeWorkspaceOne() {
           </p>
         </div>
 
-        <div className="@container/hero-actions flex min-w-0 flex-row flex-wrap items-stretch gap-2 [grid-area:actions]">
+        <div className="@container/hero-actions grid min-w-0 grid-cols-[minmax(0,1fr)_minmax(0,1fr)_auto_auto] items-stretch gap-2 [grid-area:actions]">
           <a
-            className={buttonVariants({ size: "hero", variant: "primary" })}
+            className={cn(
+              buttonVariants({ size: "hero", variant: "primary" }),
+              "col-span-4 @md/hero-actions:col-span-1"
+            )}
             href={omarchyIsoDownloadUrl}
           >
-            <span className="min-w-0 truncate">Download the ISO</span>
-            <ArrowDownIcon aria-hidden="true" className="shrink-0" size={15} />
+            <span className="whitespace-nowrap">Download the ISO</span>
+            <ArrowDownIcon aria-hidden="true" className="size-4 shrink-0" />
           </a>
           <Link
-            className={buttonVariants({ size: "hero", variant: "secondary" })}
+            className={cn(
+              buttonVariants({ size: "hero", variant: "secondary" }),
+              "col-span-2 @md/hero-actions:col-span-1"
+            )}
             href="/manual/"
             transitionTypes={["site-route"]}
           >
-            <span className="min-w-0 truncate">Read the manual</span>
-            <ArrowRightIcon aria-hidden="true" className="shrink-0" size={15} />
+            <span className="whitespace-nowrap">Read the manual</span>
+            <ArrowRightIcon
+              aria-hidden="true"
+              className="hidden size-4 shrink-0 @md/hero-actions:block"
+            />
           </Link>
           <a
             aria-label="Donate to Omarchy"
             className={cn(
               buttonVariants({ size: "hero", variant: "secondary" }),
-              "hidden! @md/hero-actions:inline-flex!"
+              "w-11 px-0 @xl/hero-actions:w-auto @xl/hero-actions:px-3"
             )}
             href={omarchyDonateUrl}
             title="Donate to Omarchy"
           >
-            <HeartIcon aria-hidden="true" className="shrink-0" size={15} />
-            <span className="hidden min-w-0 truncate @xl/hero-actions:inline">Donate</span>
+            <HeartIcon aria-hidden="true" className="size-4 shrink-0" />
+            <span className="hidden @xl/hero-actions:inline">Donate</span>
           </a>
           <a
             aria-label="View Omarchy on GitHub"
             className={cn(
               buttonVariants({ size: "hero", variant: "secondary" }),
-              "hidden! @md/hero-actions:inline-flex!"
+              "w-11 px-0 @xl/hero-actions:w-auto @xl/hero-actions:px-3"
             )}
             href={omarchyGithubUrl}
             title="View Omarchy on GitHub"
           >
             <GitHubLogoIcon />
-            <span className="hidden min-w-0 truncate @xl/hero-actions:inline">GitHub</span>
+            <span className="hidden @xl/hero-actions:inline">GitHub</span>
           </a>
         </div>
       </div>

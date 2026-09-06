@@ -165,7 +165,7 @@ function packRuntime(
 export async function createLogoRenderer(
   canvas: HTMLCanvasElement,
   interactionTarget: HTMLElement | null,
-  callbacks: RendererLifecycleCallbacks,
+  callbacks: RendererLifecycleCallbacks & { onSettledFrame?: () => void },
   signal?: AbortSignal
 ): Promise<LogoRendererController> {
   assertWebGpuAvailable((message, options) => new LogoRendererUnsupportedError(message, options));
@@ -192,6 +192,7 @@ export async function createLogoRenderer(
   let currentRuntime: LogoEffectRuntimeCore | undefined;
   let currentSeed = 0;
   let hasRendered = false;
+  let previewPending = false;
   let liveGeneration = 0;
   let lastFrameAt = 0;
   let revealLoopPauseMs = 0;
@@ -411,6 +412,10 @@ export async function createLogoRenderer(
         colorAdjustment,
         instanceCount,
       });
+      if (previewPending && instanceCount > 0 && currentRuntime.status !== "revealing") {
+        previewPending = false;
+        callbacks.onSettledFrame?.();
+      }
       if (!hasRendered && logoFrameCanGoLive(instanceCount)) {
         hasRendered = true;
         const generation = liveGeneration;
@@ -672,6 +677,7 @@ export async function createLogoRenderer(
       terminate();
     },
     playPrepared(effect, seed, startMode = "reveal") {
+      previewPending = true;
       const previousPrepared = currentPreparedEffect;
       const canApply =
         previousPrepared !== undefined &&

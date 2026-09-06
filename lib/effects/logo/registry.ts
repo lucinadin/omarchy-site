@@ -271,6 +271,15 @@ export const LOGO_EFFECTS = [
 
 export type LogoEffectId = (typeof LOGO_EFFECTS)[number]["id"];
 
+export const FIRST_VISIT_LOGO_EFFECTS = [
+  "laseretch",
+  "matrix",
+  "rain",
+  "decrypt",
+  "beams",
+  "synthgrid",
+] as const satisfies readonly LogoEffectId[];
+
 export function parseLogoEffectId(value: string | null): LogoEffectId | null {
   return findCatalogId(LOGO_EFFECTS, value);
 }

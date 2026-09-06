@@ -1,5 +1,4 @@
 export const SECRET_LAB_OPEN_EVENT = "omarchy:secret-lab:open";
-export const SECRET_LAB_LAUNCHER_EVENT = "omarchy:secret-lab:launcher";
 export const SECRET_LAB_UNLOCKED_EVENT = "omarchy:secret-lab:unlocked";
 
 const SECRET_LAB_VISIBILITY_KEY = "omarchy.lab:v1:visible";
@@ -17,11 +16,6 @@ export function isSecretLabUnlocked() {
 export function openSecretLab() {
   if (typeof window === "undefined") return;
   window.dispatchEvent(new Event(SECRET_LAB_OPEN_EVENT));
-}
-
-export function showSecretLabLauncher() {
-  if (typeof window === "undefined") return;
-  window.dispatchEvent(new Event(SECRET_LAB_LAUNCHER_EVENT));
 }
 
 export function unlockSecretLab() {

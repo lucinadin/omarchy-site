@@ -2,6 +2,7 @@
 
 import { createContext, useContext, useEffect, useRef, useState, type ReactNode } from "react";
 
+import type { LoadedLogoEffectDefinition } from "@/lib/effects/logo/definition";
 import {
   applyLogoEffectDocumentRepair,
   createLogoEffectState,
@@ -30,10 +31,17 @@ import {
   type LogoInitialPlaybackClaim,
 } from "@/lib/effects/logo/lifecycle";
 import { requestLogoEffectReplay } from "@/lib/effects/logo/playback-command";
-import { LOGO_EFFECTS, parseLogoEffectId, type LogoEffectId } from "@/lib/effects/logo/registry";
+import {
+  FIRST_VISIT_LOGO_EFFECTS,
+  loadLogoEffect,
+  LOGO_EFFECTS,
+  parseLogoEffectId,
+  type LogoEffectId,
+} from "@/lib/effects/logo/registry";
 import type { LogoEffectStartMode } from "@/lib/effects/logo/types";
 import { parseJsonObject } from "@/lib/json";
 import { storageGet, storageRemove, storageSet } from "@/lib/settings/storage";
+import { notifySite } from "@/lib/site-notification-events";
 import { defaultThemeSkewAngle } from "@/lib/themes/theme-constants";
 import {
   getSavedThemeSkewAngle,
@@ -47,6 +55,7 @@ const DEFAULT_EFFECT_SEED = 0x0a4c_4f47;
 type LogoEffectDocumentUpdate = (document: LogoEffectState) => LogoEffectState;
 
 type LogoEffectsContextValue = {
+  activeDefinition: LoadedLogoEffectDefinition | null;
   activeEffect: LogoEffectId;
   activeSeed: number;
   adoptEffectDocument: (source: LogoEffectState, repaired: LogoEffectState) => void;
@@ -81,9 +90,12 @@ function randomUnit() {
   return randomUint32() / 4_294_967_296;
 }
 
-function chooseRandomEffect(currentEffect: LogoEffectId): LogoEffectId {
-  const candidates = LOGO_EFFECTS.filter((effect) => effect.id !== currentEffect);
-  return candidates[Math.floor(randomUnit() * candidates.length)]?.id ?? "laseretch";
+function chooseRandomEffect(currentEffect?: LogoEffectId): LogoEffectId {
+  const candidates =
+    currentEffect === undefined
+      ? FIRST_VISIT_LOGO_EFFECTS
+      : LOGO_EFFECTS.filter((effect) => effect.id !== currentEffect).map((effect) => effect.id);
+  return candidates[Math.floor(randomUnit() * candidates.length)] ?? "laseretch";
 }
 
 function readStoredLogoEffectState(key: string) {
@@ -98,6 +110,8 @@ function readStoredLogoEffectState(key: string) {
 }
 
 export function LogoEffectsProvider({ children }: { children: ReactNode }) {
+  const [activeDefinition, setActiveDefinition] = useState<LoadedLogoEffectDefinition | null>(null);
+  const selectionRequestRef = useRef(0);
   const [effectDocument, setEffectDocument] = useState(() =>
     createLogoEffectState("laseretch", DEFAULT_EFFECT_SEED)
   );
@@ -121,7 +135,8 @@ export function LogoEffectsProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     let cancelled = false;
-    queueMicrotask(() => {
+    const request = selectionRequestRef.current;
+    queueMicrotask(async () => {
       if (cancelled) return;
       const savedState = parseStoredLogoEffectState(readStoredLogoEffectState(EFFECT_STATE_KEY));
       const savedEffect = savedState ? parseLogoEffectId(savedState.activeEffectId) : null;
@@ -129,15 +144,26 @@ export function LogoEffectsProvider({ children }: { children: ReactNode }) {
         ? savedEffect
           ? savedState
           : selectLogoEffect(savedState, "laseretch")
-        : createLogoEffectState("laseretch", DEFAULT_EFFECT_SEED);
+        : createLogoEffectState(chooseRandomEffect(), randomUint32());
 
+      // Persist the first-visit choice before publishing it, including across remounts.
+      storageSet(EFFECT_STATE_KEY, serializeLogoEffectState(nextDocument));
       setEffectDocument(nextDocument);
       setThemeSkewAngle(getSavedThemeSkewAngle());
       setIsSelectionReady(true);
+      try {
+        const { logoEffect } = await loadLogoEffect(
+          parseLogoEffectId(nextDocument.activeEffectId) ?? "laseretch"
+        );
+        if (!cancelled && request === selectionRequestRef.current) setActiveDefinition(logoEffect);
+      } catch (error) {
+        if (!cancelled) console.error("Unable to load the saved logo effect", error);
+      }
     });
 
     return () => {
       cancelled = true;
+      selectionRequestRef.current += 1;
     };
   }, []);
 
@@ -154,8 +180,23 @@ export function LogoEffectsProvider({ children }: { children: ReactNode }) {
     setEffectDocument((current) => applyLogoEffectDocumentRepair(current, source, repaired));
   };
 
-  const selectEffectValue = (nextEffect: LogoEffectId) => {
-    updateEffectDocument((current) => selectLogoEffect(current, nextEffect));
+  const selectEffectValue = (nextEffect: LogoEffectId, update?: LogoEffectDocumentUpdate) => {
+    selectionRequestRef.current += 1;
+    const request = selectionRequestRef.current;
+    void loadLogoEffect(nextEffect)
+      .then(({ logoEffect }) => {
+        if (request !== selectionRequestRef.current) return;
+        // Publish the definition and selection together; controls never lose their content.
+        setActiveDefinition(logoEffect);
+        setEffectDocument((current) =>
+          update ? update(current) : selectLogoEffect(current, nextEffect)
+        );
+      })
+      .catch((error) => {
+        if (request !== selectionRequestRef.current) return;
+        console.error(`Unable to load the ${nextEffect} logo effect`, error);
+        notifySite("Could not load logo effect");
+      });
   };
 
   const updateIdle = (update: Partial<LogoEffectIdle>) => {
@@ -178,6 +219,7 @@ export function LogoEffectsProvider({ children }: { children: ReactNode }) {
   };
 
   const contextValue = {
+    activeDefinition,
     activeEffect,
     activeSeed: effectDocument.preview.seed,
     adoptEffectDocument,
@@ -190,7 +232,9 @@ export function LogoEffectsProvider({ children }: { children: ReactNode }) {
     reroll: () => setEffectDocument((current) => setLogoEffectPreviewSeed(current, randomUint32())),
     resetEffect: () => updateEffectDocument(resetLogoEffect),
     resetLogo: () =>
-      setEffectDocument((current) => resetLogo(current, "laseretch", DEFAULT_EFFECT_SEED)),
+      selectEffectValue("laseretch", (current) =>
+        resetLogo(current, "laseretch", DEFAULT_EFFECT_SEED)
+      ),
     resetGeneral: () => {
       setThemeSkewAngle(resetThemeSkewAngle());
     },

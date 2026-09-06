@@ -4,17 +4,20 @@ import type {
   ComponentPropsWithoutRef,
   CSSProperties,
   KeyboardEvent as ReactKeyboardEvent,
+  MouseEvent as ReactMouseEvent,
   PointerEvent as ReactPointerEvent,
 } from "react";
 import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 
 import { EffectButton } from "@/features/effects/components/effect-control";
+import { ExperimentControls } from "@/features/effects/components/experiment-controls";
 import { GeneralControls } from "@/features/effects/components/general-controls";
 import { LogoEffectsControls } from "@/features/effects/components/logo-effects-controls";
 import { PatronBadgeControls } from "@/features/effects/components/patron-badge-controls";
 import { ScreenEffectsControls } from "@/features/effects/components/screen-effects-controls";
 import { CloseIcon, MinusIcon, SlidersHorizontalIcon } from "@/icons";
+import { resetExperimentSettings } from "@/lib/effects/experiment/settings";
 import { resetPatronBadgeGlareSettings } from "@/lib/effects/patron-badges/glare-settings";
 import { cn } from "@/lib/utils";
 import { unreachable } from "@/lib/validation";
@@ -57,7 +60,7 @@ type DragSnapshot = SurfaceSize & {
 const DRAG_MARGIN = 8;
 const DRAG_THRESHOLD = 4;
 const SECRET_LAB_LAUNCHER_SIZE = 36;
-const SECRET_LAB_TABS = ["logo", "screen", "badges", "general"] as const;
+const SECRET_LAB_TABS = ["general", "logo", "screen", "experiment", "badges"] as const;
 
 type SecretLabTab = (typeof SECRET_LAB_TABS)[number];
 
@@ -74,6 +77,7 @@ function clampSurfacePosition(position: SurfacePosition, size: SurfaceSize): Sur
 function useDraggableSurface<T extends HTMLElement>() {
   const surfaceRef = useRef<T>(null);
   const dragRef = useRef<DragSnapshot | null>(null);
+  const suppressClickRef = useRef(false);
   const [isDragging, setIsDragging] = useState(false);
   const [position, setPosition] = useState<SurfacePosition | null>(null);
 
@@ -90,6 +94,7 @@ function useDraggableSurface<T extends HTMLElement>() {
     const bounds = surfaceRef.current?.getBoundingClientRect();
     if (!bounds) return;
 
+    suppressClickRef.current = false;
     event.currentTarget.setPointerCapture(event.pointerId);
     dragRef.current = {
       dragged: false,
@@ -113,6 +118,7 @@ function useDraggableSurface<T extends HTMLElement>() {
     }
     if (!drag.dragged) return;
 
+    suppressClickRef.current = true;
     setPosition(
       clampSurfacePosition(
         { left: event.clientX - drag.offsetX, top: event.clientY - drag.offsetY },
@@ -130,6 +136,14 @@ function useDraggableSurface<T extends HTMLElement>() {
     if (event.currentTarget.hasPointerCapture(event.pointerId)) {
       event.currentTarget.releasePointerCapture(event.pointerId);
     }
+  };
+
+  const onClickCapture = (event: ReactMouseEvent<HTMLElement>) => {
+    if (suppressClickRef.current && event.detail !== 0) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+    suppressClickRef.current = false;
   };
 
   useEffect(() => {
@@ -156,6 +170,8 @@ function useDraggableSurface<T extends HTMLElement>() {
 
   return {
     isDragging,
+    onClickCapture,
+    onLostPointerCapture: endDrag,
     onPointerCancel: endDrag,
     onPointerDown,
     onPointerMove,
@@ -175,16 +191,24 @@ export function SecretLabPanel({
   onViewChange: (view: SecretLabView) => void;
   view: SecretLabView;
 }) {
-  const [activeTab, setActiveTab] = useState<SecretLabTab>("logo");
+  const [activeTab, setActiveTab] = useState<SecretLabTab>(SECRET_LAB_TABS[0]);
   const { resetEffect, resetLogo } = useLogoEffects();
   const { resetScreen } = useScreenEffects();
   const {
+    isDragging: isLauncherDragging,
+    onClickCapture: suppressLauncherDragClick,
+    onLostPointerCapture: loseLauncherCapture,
+    onPointerCancel: cancelLauncherDrag,
+    onPointerDown: beginLauncherDrag,
+    onPointerMove: moveLauncher,
+    onPointerUp: endLauncherDrag,
     place: placeLauncher,
     style: launcherStyle,
     surfaceRef: launcherRef,
   } = useDraggableSurface<HTMLButtonElement>();
   const {
     isDragging: isPanelDragging,
+    onLostPointerCapture: losePanelCapture,
     onPointerCancel: cancelPanelDrag,
     onPointerDown: beginPanelDrag,
     onPointerMove: movePanel,
@@ -200,6 +224,9 @@ export function SecretLabPanel({
     if (!dialog || dialog.open) return;
     dialog.show();
     dialog.focus();
+    dialog
+      .querySelector('[role="tab"][aria-selected="true"]')
+      ?.scrollIntoView({ block: "nearest", inline: "nearest" });
   }, [panelRef, view]);
 
   const closePanel = () => {
@@ -252,9 +279,11 @@ export function SecretLabPanel({
     event.preventDefault();
     const nextTab = SECRET_LAB_TABS[(nextIndex + SECRET_LAB_TABS.length) % SECRET_LAB_TABS.length];
     setActiveTab(nextTab);
-    requestAnimationFrame(() =>
-      document.querySelector<HTMLButtonElement>(`#secret-lab-tab-${nextTab}`)?.focus()
-    );
+    requestAnimationFrame(() => {
+      const tab = document.querySelector<HTMLButtonElement>(`#secret-lab-tab-${nextTab}`);
+      tab?.focus({ preventScroll: true });
+      tab?.scrollIntoView({ block: "nearest", inline: "nearest" });
+    });
   };
 
   const resetActiveTab = () => {
@@ -267,6 +296,9 @@ export function SecretLabPanel({
         break;
       case "badges":
         resetPatronBadgeGlareSettings();
+        break;
+      case "experiment":
+        resetExperimentSettings();
         break;
       case "general":
         break;
@@ -282,8 +314,17 @@ export function SecretLabPanel({
             <button
               aria-label="Open Secret Lab"
               data-secret-lab="launcher"
-              className="border-border text-popover-foreground [&:is(:hover,:focus-visible)]:border-primary [&:is(:hover,:focus-visible)]:text-bright-foreground shadow-overlay focus-visible:inset-ring-primary fixed right-2.5 bottom-2.5 z-[200] flex size-9 cursor-pointer touch-manipulation items-center justify-center rounded-lg border bg-[color-mix(in_srgb,var(--popover)_94%,transparent)] p-0 [backdrop-filter:blur(14px)] focus-visible:inset-ring-1 [&_svg]:size-[15px] [&:is(:hover,:focus-visible)]:bg-[color-mix(in_srgb,var(--primary)_18%,var(--popover))] [&:is(:hover,:focus-visible)]:outline-none"
+              className={cn(
+                "border-border text-popover-foreground [&:is(:hover,:focus-visible)]:border-primary [&:is(:hover,:focus-visible)]:text-bright-foreground shadow-overlay focus-visible:inset-ring-primary fixed right-2.5 bottom-2.5 z-[200] flex size-9 cursor-grab touch-none items-center justify-center rounded-lg border bg-[color-mix(in_srgb,var(--popover)_94%,transparent)] p-0 [backdrop-filter:blur(14px)] select-none focus-visible:inset-ring-1 [&_svg]:size-[15px] [&:is(:hover,:focus-visible)]:bg-[color-mix(in_srgb,var(--primary)_18%,var(--popover))] [&:is(:hover,:focus-visible)]:outline-none",
+                isLauncherDragging && "cursor-grabbing"
+              )}
               onClick={expandLauncher}
+              onClickCapture={suppressLauncherDragClick}
+              onLostPointerCapture={loseLauncherCapture}
+              onPointerCancel={cancelLauncherDrag}
+              onPointerDown={beginLauncherDrag}
+              onPointerMove={moveLauncher}
+              onPointerUp={endLauncherDrag}
               ref={launcherRef}
               style={launcherStyle}
               title="Secret Lab"
@@ -321,6 +362,7 @@ export function SecretLabPanel({
                   "mb-[5px] flex cursor-grab touch-none items-center justify-between border-b border-(--tuner-border) px-0 pt-0 pb-1.5 select-none",
                   isPanelDragging && "cursor-grabbing"
                 )}
+                onLostPointerCapture={losePanelCapture}
                 onPointerCancel={cancelPanelDrag}
                 onPointerDown={beginPanelDrag}
                 onPointerMove={movePanel}
@@ -347,7 +389,7 @@ export function SecretLabPanel({
 
               <div
                 aria-label="Secret Lab sections"
-                className="mb-1 grid grid-cols-4 gap-[3px] border-b border-(--tuner-border) pb-[5px]"
+                className="scroll-fade-x scrollbar-thumb-muted mb-1 flex h-10 shrink-0 scrollbar-thin scrollbar-track-transparent items-start gap-1 overflow-x-auto overflow-y-hidden overscroll-x-contain border-b border-(--tuner-border) pb-1 [&_button]:shrink-0 [&_button]:px-1"
                 role="tablist"
               >
                 {SECRET_LAB_TABS.map((tab) => (
@@ -377,6 +419,7 @@ export function SecretLabPanel({
                 {activeTab === "logo" ? <LogoEffectsControls /> : null}
                 {activeTab === "screen" ? <ScreenEffectsControls /> : null}
                 {activeTab === "badges" ? <PatronBadgeControls /> : null}
+                {activeTab === "experiment" ? <ExperimentControls /> : null}
                 {activeTab === "general" ? <GeneralControls /> : null}
               </div>
 

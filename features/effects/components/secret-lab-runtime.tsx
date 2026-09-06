@@ -4,11 +4,7 @@ import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
 
 import type { SecretLabView } from "@/features/effects/components/secret-lab-panel";
-import {
-  SECRET_LAB_LAUNCHER_EVENT,
-  SECRET_LAB_OPEN_EVENT,
-  unlockSecretLab,
-} from "@/lib/secret-lab-access";
+import { SECRET_LAB_OPEN_EVENT, unlockSecretLab } from "@/lib/secret-lab-access";
 import { isEditableTarget } from "@/lib/ui/editable-target";
 
 const SecretLabPanel = dynamic(
@@ -56,13 +52,10 @@ export function SecretLabRuntime() {
     };
 
     const requestOpen = () => setView("open");
-    const requestLauncher = () => setView("launcher");
     window.addEventListener(SECRET_LAB_OPEN_EVENT, requestOpen);
-    window.addEventListener(SECRET_LAB_LAUNCHER_EVENT, requestLauncher);
     window.addEventListener("keydown", onKeyDown);
     return () => {
       window.removeEventListener(SECRET_LAB_OPEN_EVENT, requestOpen);
-      window.removeEventListener(SECRET_LAB_LAUNCHER_EVENT, requestLauncher);
       window.removeEventListener("keydown", onKeyDown);
     };
   }, []);

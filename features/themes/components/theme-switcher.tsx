@@ -3,10 +3,12 @@
 import { useEffect, useRef, useState, type KeyboardEvent as ReactKeyboardEvent } from "react";
 
 import { Button, buttonVariants } from "@/components/ui/button";
-import { Image } from "@/components/ui/image";
 import { Kbd } from "@/components/ui/kbd";
 import { ThemePickerGallery } from "@/features/themes/components/theme-picker-gallery";
-import { ThemePreviewImage } from "@/features/themes/components/theme-preview-image";
+import {
+  BackgroundPreviewImage,
+  ThemePreviewImage,
+} from "@/features/themes/components/theme-preview-image";
 import { usePickerScroll } from "@/features/themes/use-picker-scroll";
 import {
   CheckIcon,
@@ -14,6 +16,7 @@ import {
   ChevronRightIcon,
   CloseIcon,
   ExternalLinkIcon,
+  LinkIcon,
   SearchIcon,
   ShareIcon,
 } from "@/icons";
@@ -38,7 +41,6 @@ import {
 } from "@/lib/themes/theme-runtime";
 import { shareThemeLink } from "@/lib/themes/theme-share-client";
 import type { OmarchyTheme, ThemeKind } from "@/lib/themes/themes";
-import { wallpapers } from "@/lib/themes/wallpapers";
 import { isEditableTarget } from "@/lib/ui/editable-target";
 import { Modal } from "@/lib/ui/modal";
 import { unreachable } from "@/lib/validation";
@@ -69,6 +71,7 @@ function pickerKeyboardAction(event: ReactKeyboardEvent<HTMLElement>) {
   if (event.code === "Space" && event.ctrlKey && event.shiftKey && event.metaKey && !event.altKey)
     return "cancel";
   if (event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return null;
+  if (event.key.toLowerCase() === "a") return "automatic";
   if (event.key === "ArrowUp") return "up";
   if (event.key === "ArrowDown") return "down";
   const target = event.target;
@@ -186,8 +189,13 @@ export function ThemeSwitcher({
   ];
   const backgrounds = backgroundOptions.filter(matches);
   const resolvedBackground = resolveBackground(background, selectedTheme.id);
-  const backgroundId =
-    resolvedBackground?.kind === "wallpaper" ? resolvedBackground.themeId : "solid";
+  const backgroundId = resolvedBackground
+    ? "themeId" in resolvedBackground
+      ? resolvedBackground.themeId
+      : resolvedBackground.kind === "experiment"
+        ? selectedTheme.id
+        : resolvedBackground.kind
+    : "solid";
   const indices = {
     community: Math.max(
       0,
@@ -244,7 +252,12 @@ export function ThemeSwitcher({
 
   const activateRow = (next: PickerRow) => {
     setRow(next);
-    if (next === "backgrounds") return;
+    if (next === "backgrounds") {
+      if (background.kind === "experiment") {
+        setBackgroundSession((current) => ({ ...current, selected: automaticBackground }));
+      }
+      return;
+    }
     const theme = (next === "official" ? official : community)[indices[next]];
     if (theme) setSelectedThemeId(theme.id);
   };
@@ -276,6 +289,12 @@ export function ThemeSwitcher({
     if (row === "backgrounds") selectBackground(item.id);
     else selectTheme(row, item.id);
   };
+  const selectAutomatic = () => {
+    setQuery("");
+    setRow("backgrounds");
+    setBackgroundSession((current) => ({ ...current, selected: automaticBackground }));
+    previewBackground(automaticBackground);
+  };
   const previewSelection = () => {
     if (row === "backgrounds") {
       if (activeBackground)
@@ -300,7 +319,9 @@ export function ThemeSwitcher({
         if (persist) {
           persistThemePreference(theme);
           persistBackground(background);
-        } else previewBackground(initialBackground);
+        } else {
+          previewBackground(initialBackground);
+        }
         settledRef.current = true;
         onClose();
       },
@@ -319,6 +340,9 @@ export function ThemeSwitcher({
         event.preventDefault();
         event.stopPropagation();
         switch (action) {
+          case "automatic":
+            selectAutomatic();
+            break;
           case "cancel":
             closeWithSelection(false);
             break;
@@ -454,47 +478,36 @@ export function ThemeSwitcher({
           index={2}
           items={backgrounds}
           label="Backgrounds"
-          onActivate={() => setRow("backgrounds")}
+          onActivate={() => activateRow("backgrounds")}
           onSelect={selectBackground}
-          renderPreview={(item, loading) =>
-            item.preference.kind === "wallpaper" ? (
-              <Image
-                alt=""
-                fill
-                loading={loading}
-                placeholder="blur"
-                sizes="(max-width: 640px) 66vw, 512px"
-                src={wallpapers[item.preference.themeId]}
-              />
-            ) : (
-              <span
-                className="home-theme-picker__solid"
-                style={{
-                  backgroundColor:
-                    item.preference.kind === "solid"
-                      ? item.preference.color
-                      : selectedTheme.colors.background,
-                }}
-              >
-                Solid color
-              </span>
-            )
-          }
+          renderPreview={(item, loading) => (
+            <BackgroundPreviewImage
+              preference={item.preference}
+              color={previewedTheme.colors.background}
+              loading={loading}
+            />
+          )}
         />
       </div>
 
       <div className="home-theme-picker__actions">
         {row === "backgrounds" ? (
           <Button
+            aria-label="Automatic"
             aria-pressed={background.kind === "automatic"}
-            onClick={() => {
-              setBackgroundSession((current) => ({ ...current, selected: automaticBackground }));
-              previewBackground(automaticBackground);
-            }}
+            aria-keyshortcuts="a"
+            className="aria-pressed:border-primary aria-pressed:text-primary max-sm:w-10 max-sm:shrink-0 max-sm:px-0"
+            onClick={selectAutomatic}
             size="compact"
+            title="Automatic"
             variant="secondary"
           >
-            {background.kind === "automatic" ? <CheckIcon aria-hidden="true" /> : null} Automatic
+            <Kbd variant="action">A</Kbd>
+            <LinkIcon aria-hidden="true" className="size-4 sm:hidden" />
+            {background.kind === "automatic" ? (
+              <CheckIcon aria-hidden="true" className="max-sm:hidden" />
+            ) : null}
+            <span className="max-sm:sr-only">Automatic</span>
           </Button>
         ) : null}
         <Button
@@ -504,8 +517,8 @@ export function ThemeSwitcher({
           size="compact"
           variant="secondary"
         >
-          <Kbd>Space</Kbd>
-          {row !== "backgrounds" && activeTheme?.id === previewedThemeId ? "Previewing" : "Preview"}
+          <Kbd variant="action">Space</Kbd>
+          {activeTheme?.id === previewedThemeId ? "Previewing" : "Preview"}
         </Button>
         <Button
           aria-keyshortcuts="Enter"
@@ -513,7 +526,7 @@ export function ThemeSwitcher({
           onClick={() => closeWithSelection(true)}
           size="compact"
         >
-          <Kbd>Enter</Kbd>
+          <Kbd variant="action">Enter</Kbd>
           {row === "backgrounds" ? "Use background" : "Use theme"}
         </Button>
       </div>

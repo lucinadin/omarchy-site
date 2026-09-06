@@ -459,6 +459,10 @@ a {
   top: var(--site-announcement-height, 36px);
 }
 
+body:has([data-site-navigation][open]) .site-announcement {
+  visibility: hidden;
+}
+
 @supports (animation-timeline: scroll()) {
   .site-shell--announced .site-announcement {
     animation:
@@ -509,6 +513,15 @@ a {
 
 .omarchy-effects-mark[data-live="true"] .omarchy-effects-mark__stage canvas {
   opacity: 1;
+}
+
+.omarchy-effects-mark__fallback {
+  background-image: var(--logo-preview, none);
+  background-size: 100% 100%;
+}
+
+.omarchy-effects-mark__fallback path {
+  fill: var(--logo-preview-fill, currentColor);
 }
 
 :root[data-logo-boot="fresh"][data-logo-gpu="candidate"][data-logo-motion="animate"][data-logo-reveal="pending"]
@@ -1340,7 +1353,7 @@ html:has(.workstation-lightbox__backdrop) {
   }
 }
 
-@media (hover: none) and (pointer: coarse) {
+@media (width < 40rem), (hover: none) and (pointer: coarse) {
   .home-theme-picker kbd {
     display: none;
   }

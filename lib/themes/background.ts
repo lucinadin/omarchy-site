@@ -8,6 +8,7 @@ export const backgroundPreferenceKey = "omarchy-background:v1";
 export type BackgroundPreference =
   | { kind: "automatic" }
   | { kind: "wallpaper"; themeId: OmarchyThemeId }
+  | { kind: "experiment" }
   | { kind: "solid"; color: string };
 
 export const automaticBackground: BackgroundPreference = { kind: "automatic" };
@@ -16,6 +17,7 @@ export function parseBackgroundPreference(value: string | null): BackgroundPrefe
   if (!value) return automaticBackground;
   try {
     const saved = parseJsonObject(JSON.parse(value));
+    if (saved?.kind === "experiment") return { kind: "experiment" };
     if (saved?.kind === "solid" && isHexColor(saved.color)) {
       return { kind: "solid", color: saved.color };
     }
@@ -72,7 +74,7 @@ export function subscribeBackground(listener: () => void) {
 }
 
 export function resolveBackground(preference: BackgroundPreference, themeId: string | null) {
-  if (preference.kind === "solid") return preference;
+  if (preference.kind === "solid" || preference.kind === "experiment") return preference;
   const id = preference.kind === "wallpaper" ? preference.themeId : themeId;
   const theme = omarchyThemes.find((candidate) => candidate.id === id);
   return theme ? { kind: "wallpaper" as const, themeId: theme.id } : null;

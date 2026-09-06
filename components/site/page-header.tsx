@@ -69,15 +69,6 @@ export function PageHeaderDescription({ className, ...props }: ComponentPropsWit
   );
 }
 
-export function PageHeaderBody({ className, ...props }: ComponentPropsWithoutRef<"div">) {
-  return (
-    <div
-      className={cn("text-muted-foreground mt-fluid-lg w-full max-w-[70ch] text-left", className)}
-      {...props}
-    />
-  );
-}
-
 export function PageHeaderMeta({ className, ...props }: ComponentPropsWithoutRef<"div">) {
   return <div className={cn("mt-8", className)} {...props} />;
 }

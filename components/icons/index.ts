@@ -6,6 +6,7 @@ export {
   DownloadIcon,
   GripVerticalIcon,
   HeartIcon,
+  LinkIcon,
   MinusIcon,
   PaletteIcon,
   PlusIcon,

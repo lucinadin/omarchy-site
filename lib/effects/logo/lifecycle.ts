@@ -1,6 +1,7 @@
 import type { LogoEffectStartMode } from "@/lib/effects/logo/types";
 
 export const LOGO_EFFECT_STORAGE_KEYS = {
+  preview: "omarchy.logo-effect:preview",
   seen: "omarchy.logo-effect:seen",
   state: "omarchy.secret-lab:logo-effects",
 } as const;

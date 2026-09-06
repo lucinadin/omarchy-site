@@ -1,5 +1,6 @@
 import { addTransitionType, startTransition } from "react";
 
+import { clearLogoPreview } from "@/lib/effects/logo/preview";
 import { isJsonArray, parseJsonObject, type JsonObject } from "@/lib/json";
 import { notifySite } from "@/lib/site-notification-events";
 import {
@@ -189,6 +190,7 @@ export function getAppliedThemeId(): string {
 
 export function applyDocumentTheme(themeValue: OmarchyTheme) {
   const root = document.documentElement;
+  if (root.dataset.theme !== themeValue.id) clearLogoPreview();
   root.dataset.theme = themeValue.id;
   root.style.colorScheme = themeValue.mode;
 
