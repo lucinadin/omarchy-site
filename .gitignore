@@ -2,6 +2,7 @@
 node_modules/
 /cn-tables.ts
 out/
+/tmp/og-previews/
 .repos/
 .idea/
 .claude/

@@ -38,6 +38,25 @@ test("wallpaper parallax validates persisted settings and clamps controls", () =
   );
 });
 
+test("enabled parallax moves opposite the pointer and follows scroll with bounded inputs", () => {
+  const settings = { ...defaultWallpaperParallaxSettings, pointer: 10, scroll: 24 };
+  assert.deepEqual(wallpaperParallaxFrame(640, 320, 0.5, 1, -0.5, settings), {
+    x: -10,
+    y: 17,
+    scale: 1.2125,
+  });
+  assert.deepEqual(wallpaperParallaxFrame(640, 320, -1, -1, 1, settings), {
+    x: 10,
+    y: -34,
+    scale: 1.2125,
+  });
+  assert.deepEqual(wallpaperParallaxFrame(640, 320, 2, 4, -3, settings), {
+    x: -10,
+    y: 34,
+    scale: 1.2125,
+  });
+});
+
 test("wallpaper overscan covers the viewport at every extreme of movement", () => {
   for (const [width, height] of [
     [360, 700],

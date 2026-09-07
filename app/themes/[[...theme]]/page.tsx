@@ -40,10 +40,30 @@ export async function generateMetadata({
   const sharedTheme = getSharedTheme((await params).theme);
 
   if (!sharedTheme) {
+    const title = "Themes — Omarchy";
+    const image = {
+      url: "/assets/og/themes/index.png",
+      alt: "Omarchy Themes",
+      width: 1200,
+      height: 630,
+    };
     return {
       alternates: { canonical: "/themes/" },
       description: themesDescription,
-      title: "Themes — Omarchy",
+      title,
+      openGraph: {
+        title,
+        description: themesDescription,
+        url: "/themes/",
+        type: "website",
+        images: [image],
+      },
+      twitter: {
+        card: "summary_large_image",
+        title,
+        description: themesDescription,
+        images: [image],
+      },
     };
   }
 

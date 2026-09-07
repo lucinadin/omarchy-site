@@ -56,7 +56,7 @@ test("background storage accepts only known wallpapers and six-digit colors", ()
   }
 });
 
-test("first paint respects pinned wallpaper, solid color, automatic and invalid preferences", () => {
+test("the inline bootstrap sets background styles and inserts only the selected image preload", () => {
   const wallpapers = {
     "tokyo-night": { src: "/tokyo.webp", blurDataURL: "data:image/webp;base64,tokyo" },
     nord: { src: "/nord.webp", blurDataURL: "data:image/webp;base64,nord" },
@@ -112,10 +112,13 @@ test("first paint respects pinned wallpaper, solid color, automatic and invalid 
         },
         createElement() {
           const link = { href: "", setAttribute() {} };
-          links.push(link);
           return link;
         },
-        head: { append() {} },
+        head: {
+          append(link: (typeof links)[number]) {
+            links.push(link);
+          },
+        },
         querySelector() {
           return null;
         },

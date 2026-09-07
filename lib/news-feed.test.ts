@@ -15,7 +15,7 @@ const entries: readonly NewsFeedEntry[] = [
 ];
 
 describe("news feeds", () => {
-  test("builds a valid RSS document with canonical article URLs and escaped text", () => {
+  test("RSS includes canonical article URLs, escaped text and the article date", () => {
     const rss = buildRssFeed(entries);
 
     assert.match(rss, /^<\?xml version="1\.0" encoding="UTF-8"\?>/u);
@@ -26,7 +26,7 @@ describe("news feeds", () => {
     assert.match(rss, /<pubDate>Thu, 03 Sep 2026 19:45:00 GMT<\/pubDate>/u);
   });
 
-  test("builds an Atom document with per-entry authors and timestamps", () => {
+  test("Atom includes its namespace, self link, escaped author and updated date", () => {
     const atom = buildAtomFeed(entries);
 
     assert.match(atom, /<feed xmlns="http:\/\/www\.w3\.org\/2005\/Atom">/u);

@@ -7,7 +7,7 @@ import {
 } from "@/lib/effects/logo/playback-command";
 
 describe("logo effect replay command", () => {
-  test("replays only the currently subscribed placement", () => {
+  test("replays only the currently subscribed placement", (context) => {
     let primaryReplays = 0;
     let secondaryReplays = 0;
     const unsubscribePrimary = subscribeLogoEffectReplay("primary", () => {
@@ -16,16 +16,16 @@ describe("logo effect replay command", () => {
     const unsubscribeSecondary = subscribeLogoEffectReplay("secondary", () => {
       secondaryReplays += 1;
     });
+    context.after(unsubscribePrimary);
+    context.after(unsubscribeSecondary);
 
     requestLogoEffectReplay("primary");
 
     assert.equal(primaryReplays, 1);
     assert.equal(secondaryReplays, 0);
-    unsubscribePrimary();
-    unsubscribeSecondary();
   });
 
-  test("does not retain a replay after the surface unmounts", () => {
+  test("does not deliver a replay after unsubscribe", () => {
     let replays = 0;
     const unsubscribe = subscribeLogoEffectReplay("primary", () => {
       replays += 1;

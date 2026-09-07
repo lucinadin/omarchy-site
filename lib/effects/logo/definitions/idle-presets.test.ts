@@ -72,19 +72,27 @@ function expectAnimatedIdle(
   const settled = collectInstances(runtime);
   runtime.step({ deltaTicks: elapsedMs / LOGO_EFFECT_TICK_MS, interaction: NO_INTERACTION });
   const idle = collectInstances(runtime);
+  assert.ok(settled.length > 0);
+  assert.ok(idle.length > 0);
+  for (const particle of idle) {
+    assert.ok(Number.isFinite(particle.column) && Number.isFinite(particle.row));
+    assert.ok(
+      particle.color.every((channel) => Number.isFinite(channel) && channel >= 0 && channel <= 255)
+    );
+  }
   assert.notDeepEqual(idle, settled);
 }
 
 describe("authored logo preset idles", () => {
-  test("LaserEtch runs a pilot trace after reveal", () => {
+  test("LaserEtch emits finite, non-static idle frames after settling", () => {
     expectAnimatedIdle(laserEtch, 350);
   });
 
-  test("Wipe runs a directional sheen after reveal", () => {
+  test("Wipe emits finite, non-static idle frames after settling", () => {
     expectAnimatedIdle(wipe, 350);
   });
 
-  test("Color Shift drifts its spectrum after reveal", () => {
+  test("Color Shift emits finite, non-static idle frames after settling", () => {
     expectAnimatedIdle(colorShift, 2_000);
   });
 });

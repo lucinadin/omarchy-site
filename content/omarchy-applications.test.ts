@@ -45,12 +45,16 @@ describe("Omarchy application catalog", () => {
     );
   });
 
-  test("points every record at an existing manual destination", () => {
+  test("application destinations match independently indexed manual pages and headings", () => {
     const index: unknown = JSON.parse(
       readFileSync(new URL("../public/search-index.json", import.meta.url), "utf-8")
     );
     assert.ok(isSearchIndex(index), "Generated search index must match its runtime contract");
-    const urls = new Set(index.entries.map((entry) => entry.url));
+    // Application entries copy manualHref from this catalog, so cannot validate it.
+    const urls = new Set(
+      index.entries.filter((entry) => entry.kind === "manual").map((entry) => entry.url)
+    );
+    assert.ok(urls.size > 0, "Manual content must be indexed");
 
     assert.deepEqual(
       omarchyApplications

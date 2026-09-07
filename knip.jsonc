@@ -23,7 +23,6 @@
   "includeEntryExports": true,
   // Same-file references do not make an export part of the application's module API.
   "ignoreExportsUsedInFile": true,
-  "ignoreBinaries": ["magick"],
   "ignoreIssues": {
     // The cn CLI loads this configuration through its default export.
     "cn.config.ts": ["exports"],

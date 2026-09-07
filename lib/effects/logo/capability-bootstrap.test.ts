@@ -48,6 +48,8 @@ function runBootstrap({
   };
   let decodeError: (() => void) | undefined;
   let watchdog: (() => void) | undefined;
+  let watchdogDelay: number | undefined;
+  const previewImages: { src: string }[] = [];
   let watchdogSelector: string | undefined;
   // The production value is an inline bootstrap string; executing that string is the behavior under test.
   // oxlint-disable-next-line no-new-func
@@ -71,19 +73,26 @@ function runBootstrap({
         src = "";
         constructor() {
           super();
+          previewImages.push(this);
           decodeError = () => this.dispatchEvent(new Event("error"));
         }
       },
       localStorage,
-      matchMedia: () => ({ matches: prefersReducedMotion }),
-      setTimeout(callback: () => void) {
+      matchMedia: (query: string) => {
+        assert.equal(query, "(prefers-reduced-motion: reduce)");
+        return { matches: prefersReducedMotion };
+      },
+      setTimeout(callback: () => void, delay: number) {
         watchdog = callback;
+        watchdogDelay = delay;
       },
     }
   );
   return {
     root,
     styles,
+    previewSources: previewImages.map((image) => image.src),
+    watchdogDelay,
     failPreviewDecode: () => decodeError?.(),
     runWatchdog: () => watchdog?.(),
     watchdogSelector: () => watchdogSelector,
@@ -103,7 +112,8 @@ describe("logo capability bootstrap", () => {
         version: 1,
       }),
     });
-    const { root, styles } = runBootstrap({ gpu: {}, localStorage: local.storage });
+    const { root, styles, previewSources } = runBootstrap({ gpu: {}, localStorage: local.storage });
+    assert.deepEqual(previewSources, [image]);
     assert.equal(styles.get("--logo-preview"), `url("${image}")`);
     assert.equal(styles.get("--logo-preview-fill"), "transparent");
     assert.equal(root.dataset.logoReveal, "consumed");
@@ -221,12 +231,17 @@ describe("logo capability bootstrap", () => {
     assert.equal(unsupported.dataset.logoReveal, "consumed");
   });
 
-  test("the watchdog consumes fresh state and settles only the initial reveal host", () => {
+  test("the watchdog schedules recovery at three seconds and queries pending non-live marks", () => {
     const mark: BootstrapMark = {
       dataset: { effectStartMode: "reveal", logoInitialReveal: "pending" },
     };
-    const { root, runWatchdog, watchdogSelector } = runBootstrap({ gpu: {}, marks: [mark] });
+    const { root, runWatchdog, watchdogSelector, watchdogDelay } = runBootstrap({
+      gpu: {},
+      marks: [mark],
+    });
     assert.equal(root.dataset.logoReveal, "pending");
+    assert.equal(mark.dataset.effectStartMode, "reveal");
+    assert.equal(watchdogDelay, 3_000);
 
     runWatchdog();
 

@@ -20,8 +20,8 @@ const EMISSIONS = [
 ] as const satisfies readonly LogoIdleEmission[];
 
 describe("shared logo idle frames", () => {
-  test("defines an enabled configurable idle for all 37 presets", () => {
-    assert.equal(LOGO_EFFECTS.length, 37);
+  test("defines an enabled configurable idle for every registered effect", () => {
+    assert.ok(LOGO_EFFECTS.length > 0);
     for (const effect of LOGO_EFFECTS) {
       const idle = defaultLogoEffectIdle(effect.id);
       assert.equal(idle.enabled, true, effect.id);
@@ -38,9 +38,23 @@ describe("shared logo idle frames", () => {
       intensity: 0,
     });
     const animated = applyLogoIdleFrame(EMISSIONS, idle, 1_000);
-    assert.notDeepEqual(
+    assert.deepEqual(
       animated.map((emission) => emission.particle.color),
-      EMISSIONS.map((emission) => emission.particle.color)
+      [
+        [255, 255, 255],
+        [0, 0, 255],
+        [255, 0, 0],
+        [0, 255, 0],
+      ]
+    );
+    assert.deepEqual(
+      animated.map(({ particle: { column, row, glyph } }) => [column, row, glyph]),
+      [
+        [0, 0, "A"],
+        [8, 0, "B"],
+        [0, 8, "C"],
+        [8, 8, "D"],
+      ]
     );
   });
 
@@ -55,9 +69,23 @@ describe("shared logo idle frames", () => {
     const vertical = { ...horizontal, gradientAngle: 90 };
     assert.equal(logoIdleGradientAngle(horizontal), 0);
     assert.equal(logoIdleGradientAngle(vertical), 90);
-    assert.notDeepEqual(
-      applyLogoIdleFrame(EMISSIONS, horizontal, 1_000),
-      applyLogoIdleFrame(EMISSIONS, vertical, 1_000)
+    assert.deepEqual(
+      applyLogoIdleFrame(EMISSIONS, horizontal, 1_000).map(({ particle }) => particle.color),
+      [
+        [255, 255, 255],
+        [0, 0, 255],
+        [255, 0, 0],
+        [0, 255, 0],
+      ]
+    );
+    assert.deepEqual(
+      applyLogoIdleFrame(EMISSIONS, vertical, 1_000).map(({ particle }) => particle.color),
+      [
+        [255, 255, 255],
+        [255, 0, 0],
+        [0, 255, 0],
+        [0, 0, 255],
+      ]
     );
   });
 });

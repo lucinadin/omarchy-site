@@ -34,9 +34,34 @@ bright_magenta = "#FF00FF"
 
 test("parses and normalizes the complete Omarchy palette", () => {
   const palette = parseCommunityThemePalette(new TextEncoder().encode(completePalette));
-  assert.equal(palette.mode, "dark");
-  assert.equal(palette.background, "#444444");
-  assert.equal(palette.brightForeground, "#bbbbbb");
+  assert.deepEqual(palette, {
+    mode: "dark",
+    accent: "#111111",
+    selection: "#222222",
+    muted: "#333333",
+    background: "#444444",
+    darkBackground: "#555555",
+    darkerBackground: "#666666",
+    lighterBackground: "#777777",
+    foreground: "#888888",
+    darkForeground: "#999999",
+    lightForeground: "#aaaaaa",
+    brightForeground: "#bbbbbb",
+    red: "#cc0000",
+    yellow: "#cccc00",
+    orange: "#cc6600",
+    green: "#00cc00",
+    cyan: "#00cccc",
+    blue: "#0000cc",
+    magenta: "#cc00cc",
+    brown: "#663300",
+    brightRed: "#ff0000",
+    brightYellow: "#ffff00",
+    brightGreen: "#00ff00",
+    brightCyan: "#00ffff",
+    brightBlue: "#0000ff",
+    brightMagenta: "#ff00ff",
+  });
 });
 
 test("normalizes older minimal palettes and infers their mode", () => {
@@ -49,9 +74,14 @@ foreground = "#f0f0f0"
   );
 
   assert.equal(palette.mode, "dark");
-  assert.equal(palette.selection, palette.accent);
-  assert.equal(palette.darkBackground, palette.background);
-  assert.equal(palette.brightBlue, palette.accent);
+  assert.equal(palette.accent, "#aa5500");
+  assert.equal(palette.selection, "#aa5500");
+  assert.equal(palette.darkBackground, "#101010");
+  assert.equal(palette.brightBlue, "#aa5500");
+  const light = parseCommunityThemePalette(
+    new TextEncoder().encode('accent = "#aa5500"\nbackground = "#f0f0f0"\nforeground = "#101010"')
+  );
+  assert.equal(light.mode, "light");
 });
 
 test("refuses missing fields, unsafe colors, and unsupported TOML", () => {

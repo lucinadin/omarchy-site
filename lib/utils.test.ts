@@ -27,7 +27,7 @@ test("max-height merging respects variants and unrelated dimensions", () => {
   );
 });
 
-test("search dialog owns the height limit while its list can fill the available space", () => {
+test("nested cn calls preserve max-height conflict resolution", () => {
   assert.equal(
     cn("max-h-none", cn("outline-none", "max-h-[min(82%,34rem)]")),
     "outline-none max-h-[min(82%,34rem)]"

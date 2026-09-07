@@ -70,3 +70,17 @@ test("SVG distance field preserves solid areas, holes and exterior", () => {
   assert.throws(() => createLogoDistanceField(new Uint8Array(2), 9));
   assert.ok(createLogoDistanceField(new Uint8Array(81), 9).every((value) => value > 0));
 });
+
+test("distance field encodes distance magnitude, not just inside/outside signs", () => {
+  // A vertical half-plane on a five-cell-wide, 2.4-unit surface: each cell is 0.48 units.
+  const mask = Uint8Array.from([
+    0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1,
+  ]);
+  const field = createLogoDistanceField(mask, 5);
+  const expectedRow = [0.96, 0.48, -0.48, -0.96, -1.44];
+  for (let y = 0; y < 5; y += 1) {
+    for (let x = 0; x < 5; x += 1) {
+      assert.ok(Math.abs(field[y * 5 + x] - expectedRow[x]) < 1e-6, `distance at ${x},${y}`);
+    }
+  }
+});

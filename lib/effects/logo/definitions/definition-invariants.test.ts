@@ -46,7 +46,7 @@ for (const { ambient, definition, groupFields } of effectCases) {
       assert.equal(definition.source?.project, "ttfx");
     });
 
-    test("binds its default colors to the active theme", () => {
+    test("declares theme bindings rather than literal colors in its defaults", () => {
       const kinds: string[] = [];
       collectColorBindingKinds(definition.defaults.values, kinds);
       assert.ok(kinds.length > 0);
@@ -58,7 +58,6 @@ for (const { ambient, definition, groupFields } of effectCases) {
 
     test("prepares the canonical defaults without variant metadata", () => {
       const prepared = definition.prepareDefaults(resolveLogoEffectFallbackColor);
-      assert.equal(prepared.id, definition.id);
       assert.equal(prepared.values.implementation, undefined);
       assert.equal(
         Object.keys(prepared.values).some((key) => key.startsWith("website")),

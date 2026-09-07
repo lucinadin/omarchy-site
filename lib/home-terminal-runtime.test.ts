@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import { describe, test } from "node:test";
+import { isDeepStrictEqual } from "node:util";
 
 import {
   type DesktopCommandRuntime,
@@ -7,6 +8,7 @@ import {
   emptyTerminalSession,
   runTerminalCommand,
 } from "@/lib/home-terminal-runtime";
+import { isJsonArray, parseJsonObject } from "@/lib/json";
 
 const initialState: DesktopCommandState = {
   barPosition: "top",
@@ -87,7 +89,19 @@ describe("browser terminal runtime", () => {
     const json = runTerminalCommand("omarchy commands --json", emptyTerminalSession(), runtime);
     const check = runTerminalCommand("omarchy commands --check", emptyTerminalSession(), runtime);
 
-    assert.equal(JSON.parse(json.output.join("\n")).ok, true);
+    const payload = parseJsonObject(JSON.parse(json.output.join("\n")));
+    assert.ok(payload);
+    assert.equal(payload.ok, true);
+    assert.ok(isJsonArray(payload.commands));
+    assert.ok(
+      payload.commands.some((command) =>
+        isDeepStrictEqual(command, {
+          args: "<theme-name>",
+          route: "omarchy theme set",
+          summary: "Apply an Omarchy theme",
+        })
+      )
+    );
     assert.match(check.output[0], /^Command metadata check passed/u);
   });
 });

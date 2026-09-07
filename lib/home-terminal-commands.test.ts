@@ -4,7 +4,6 @@ import { describe, test } from "node:test";
 import {
   parseOmarchyCommand,
   renderOmarchyCommandHelp,
-  renderOmarchyGroupHelp,
   resolveOmarchyHelp,
   tokenizeTerminalCommand,
 } from "@/lib/home-terminal-commands";
@@ -35,7 +34,10 @@ describe("Omarchy command discovery", () => {
     assert.ok(group);
     assert.ok(command?.definition);
     assert.ok(resolveOmarchyHelp(root)?.includes("Omarchy command center"));
-    assert.deepEqual(resolveOmarchyHelp(group), renderOmarchyGroupHelp("theme"));
+    const groupHelp = resolveOmarchyHelp(group)?.join("\n") ?? "";
+    assert.match(groupHelp, /omarchy theme current\s+Print the current theme/u);
+    assert.match(groupHelp, /omarchy theme list\s+List available themes/u);
+    assert.match(groupHelp, /omarchy theme set <theme-name>\s+Apply an Omarchy theme/u);
     assert.ok(renderOmarchyCommandHelp(command.definition).includes("Options:"));
   });
 

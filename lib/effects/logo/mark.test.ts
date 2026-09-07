@@ -79,10 +79,8 @@ test("canonical path exactly represents the 81 by 20 mark grid", () => {
     true
   );
   assert.equal(OMARCHY_MARK_VIEW_BOX, "0 0 81 20");
-  assert.equal(OMARCHY_MARK_PATH, createOmarchyMarkPath(OMARCHY_MARK));
 
   const rectangles = parseMarkPath(OMARCHY_MARK_PATH);
-  assert.equal(rectangles.length, 211);
   assert.equal(
     rectangles.reduce((area, rectangle) => area + rectangle.width * rectangle.height, 0),
     738

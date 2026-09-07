@@ -1,4 +1,4 @@
-/* oxlint-disable omarchy/no-inline-clamp, omarchy/no-unscaled-typography, no-template-curly-in-string -- RuleTester fixtures intentionally contain invalid utilities and literal template syntax. */
+/* oxlint-disable omarchy/no-inline-clamp, omarchy/no-unscaled-typography, omarchy/no-shadow-drift, no-template-curly-in-string -- RuleTester fixtures intentionally contain invalid utilities and literal template syntax. */
 import { describe, it } from "node:test";
 
 import { RuleTester } from "oxlint/plugins-dev";
@@ -10,6 +10,24 @@ RuleTester.it = it;
 
 const tester = new RuleTester({
   languageOptions: { parserOptions: { ecmaFeatures: { jsx: true } } },
+});
+
+tester.run("no-shadow-drift", plugin.rules["no-shadow-drift"], {
+  valid: [
+    '<div className="shadow-overlay hover:shadow-none inset-shadow-keycap text-shadow-readable" />',
+  ],
+  invalid: [
+    { code: '<div className="shadow-lg" />', errors: [{ messageId: "utility" }] },
+    { code: 'cn("hover:!shadow-[0_0_2px_red]")', errors: [{ messageId: "utility" }] },
+    {
+      code: '<div style={{ boxShadow: "0 0 2px red" }} />',
+      errors: [{ messageId: "inlineShadow" }],
+    },
+    {
+      code: '<div style={{ textShadow: "0 0 2px red" }} />',
+      errors: [{ messageId: "inlineShadow" }],
+    },
+  ],
 });
 
 tester.run("prefer-variable-shorthand", plugin.rules["prefer-variable-shorthand"], {

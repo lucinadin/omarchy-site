@@ -1,21 +1,12 @@
-import { readFile } from "node:fs/promises";
-import { join } from "node:path";
-
 import { ImageResponse } from "next/og";
 
-import { ogFonts, ogSize, ogWordmarkSource } from "@/lib/og/og-assets";
-import { siteBrand } from "@/lib/site-brand";
+import { ogFonts, ogSize, ogWallpaperSource, ogWordmarkSource } from "@/lib/og/og-assets";
+import { siteTagline } from "@/lib/site-brand";
 
 /* oxlint-disable omarchy/no-unscaled-typography -- Satori renders a fixed 1200×630 image canvas. */
 /* oxlint-disable omarchy/no-shadow-drift -- Satori consumes inline styles rather than the website's Tailwind theme. */
 
 const readableTextShadow = "0 2px 12px rgba(0,0,0,0.98)";
-
-const background = await readFile(
-  join(process.cwd(), "public/assets/og/home-theme-collage.jpg"),
-  "base64"
-);
-const backgroundSource = `data:image/jpeg;base64,${background}`;
 
 export function renderHomeOpenGraphImage() {
   return new ImageResponse(
@@ -32,63 +23,74 @@ export function renderHomeOpenGraphImage() {
       <img
         alt=""
         height={630}
-        src={backgroundSource}
+        src={ogWallpaperSource}
         style={{ height: "100%", objectFit: "cover", width: "100%" }}
         width={1200}
       />
-      <img
-        alt="Omarchy"
-        height={244}
-        src={ogWordmarkSource}
-        style={{
-          height: 244,
-          left: 64,
-          objectFit: "contain",
-          position: "absolute",
-          top: 188,
-          width: 1072,
-        }}
-        width={1072}
-      />
       <div
         style={{
-          color: "#f4f2fa",
+          background: "rgba(0,0,0,0.45)",
+          height: "100%",
+          left: 0,
+          position: "absolute",
+          top: 0,
+          width: "100%",
+        }}
+      />
+
+      <div
+        style={{
+          alignItems: "center",
           display: "flex",
           flexDirection: "column",
-          fontFamily: "JetBrains Mono",
-          fontSize: 27,
-          fontWeight: 400,
-          left: 68,
-          letterSpacing: -0.8,
-          lineHeight: 1.28,
+          gap: 32,
+          height: "100%",
+          justifyContent: "center",
+          left: 0,
           position: "absolute",
-          textShadow: readableTextShadow,
-          top: 502,
-          width: 500,
+          top: 0,
+          width: "100%",
         }}
       >
-        <span>Beautiful, Fun &amp;</span>
-        <span>{`Agentic Linux by ${siteBrand.author}`}</span>
+        <img
+          alt="Omarchy"
+          height={244}
+          width={1072}
+          src={ogWordmarkSource}
+          style={{ height: 244, objectFit: "contain", width: 1072 }}
+        />
+        <div
+          style={{
+            color: "#f4f2fa",
+            display: "flex",
+            fontFamily: "JetBrains Mono",
+            fontSize: 32,
+            fontWeight: 400,
+            lineHeight: 1.2,
+            textAlign: "center",
+            textShadow: readableTextShadow,
+          }}
+        >
+          {siteTagline}
+        </div>
       </div>
       <div
         style={{
           color: "#9ece6a",
           display: "flex",
-          flexDirection: "column",
           fontFamily: "JetBrains Mono",
-          fontSize: 34,
+          fontSize: 22,
           fontWeight: 700,
-          left: 916,
-          letterSpacing: -1.2,
+          left: 70,
+          letterSpacing: 1.6,
           lineHeight: 1.18,
           position: "absolute",
           textShadow: readableTextShadow,
-          top: 500,
-          width: 240,
+          top: 552,
+          width: 600,
         }}
       >
-        <span>We can fix</span>
-        <span>everything.</span>
+        We can fix everything.
       </div>
     </div>,
     { ...ogSize, fonts: ogFonts }

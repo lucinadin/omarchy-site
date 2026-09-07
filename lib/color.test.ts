@@ -32,5 +32,7 @@ describe("shared color utilities", () => {
     assert.equal(relativeLuminance(255, 0, 0), 0.2126);
     assert.equal(relativeLuminance(0, 255, 0), 0.7152);
     assert.equal(relativeLuminance(0, 0, 255), 0.0722);
+    // sRGB #808080 is about 21.586% luminance, not 50.196%.
+    assert.ok(Math.abs(relativeLuminance(128, 128, 128) - 0.21586050011389926) < 1e-12);
   });
 });

@@ -1,10 +1,9 @@
-import { mkdir, readFile, writeFile } from "node:fs/promises";
+import { mkdir, readFile, stat, writeFile } from "node:fs/promises";
 import { dirname } from "node:path";
 
 export async function fileExists(filename: string) {
   try {
-    await readFile(filename);
-    return true;
+    return (await stat(filename)).isFile();
   } catch (error) {
     if (error instanceof Error && "code" in error && error.code === "ENOENT") return false;
     throw error;
@@ -31,8 +30,11 @@ export async function writeFileIfChanged(
 
 export async function writeOrCheckFile(filename: string, contents: Uint8Array, check: boolean) {
   if (!check) return writeFileIfChanged(filename, contents);
-  if (!(await fileExists(filename))) return "missing";
-
-  const currentContents = await readFile(filename);
-  return currentContents.equals(Buffer.from(contents)) ? "unchanged" : "changed";
+  try {
+    const currentContents = await readFile(filename);
+    return currentContents.equals(Buffer.from(contents)) ? "unchanged" : "changed";
+  } catch (error) {
+    if (error instanceof Error && "code" in error && error.code === "ENOENT") return "missing";
+    throw error;
+  }
 }

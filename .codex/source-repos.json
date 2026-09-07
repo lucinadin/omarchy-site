@@ -74,8 +74,8 @@
     {
       "name": "cn",
       "url": "https://github.com/shadcn-ui/cn",
-      "commit": "1ca7cc0fbb1e5a77a3e157799da68dbca7063521",
-      "ref": "cn@0.2.5",
+      "commit": "8ff1e720b52b0aec5aa607d1b1e09f96a444104a",
+      "ref": "cn@0.2.6",
       "link": ".repos/cn"
     }
   ]

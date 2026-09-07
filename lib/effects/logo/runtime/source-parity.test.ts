@@ -7,7 +7,6 @@ import {
   buildGradient,
   colorAtFraction,
   gradientFraction,
-  normalizedDistanceFromCenter,
   pointOnLine,
   pointOnQuadraticBezier,
   quadraticBezierLength,
@@ -42,10 +41,10 @@ describe("source-locked runtime primitives", () => {
     assert.equal(gradientFraction(point, bounds, "horizontal"), 3 / 8);
     assert.equal(gradientFraction(point, bounds, "vertical"), 4 / 6);
     assert.equal(gradientFraction(point, bounds, "diagonal"), 11 / 20);
-    assert.equal(
-      gradientFraction(point, bounds, "radial"),
-      normalizedDistanceFromCenter(point, bounds)
-    );
+    // Displacement (-1, 2) from the center; half-diagonal sqrt(52).
+    assert.ok(Math.abs(gradientFraction(point, bounds, "radial") - Math.sqrt(5 / 52)) < 1e-12);
+    assert.equal(gradientFraction({ column: 8, row: 5 }, bounds, "radial"), 0);
+    assert.equal(gradientFraction({ column: 12, row: 8 }, bounds, "radial"), 1);
   });
 
   test("preserves half-even rounding, HSL brightness, and geometry quirks", () => {

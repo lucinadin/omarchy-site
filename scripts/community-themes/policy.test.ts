@@ -33,6 +33,12 @@ test("requires both the push and current commit to be quiet for 48 hours", () =>
   assert.throws(() =>
     assertRepositoryIsQuiet("2026-09-01T12:00:00Z", "2026-09-03T12:00:01Z", buildTime)
   );
+  assert.throws(() =>
+    assertRepositoryIsQuiet("2026-09-02T12:00:01Z", "2026-09-01T12:00:00Z", buildTime)
+  );
+  assert.doesNotThrow(() =>
+    assertRepositoryIsQuiet("2026-09-02T12:00:00Z", "2026-09-02T12:00:00Z", buildTime)
+  );
 });
 
 test("enforces byte, pixel, dimension, and format limits", () => {

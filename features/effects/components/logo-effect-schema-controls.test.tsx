@@ -22,36 +22,11 @@ import {
 import type { LoadedLogoEffectDefinition } from "@/lib/effects/logo/definition";
 import { logoEffect as matrixLogoEffect } from "@/lib/effects/logo/definitions/matrix";
 import { loadLogoEffect, LOGO_EFFECTS } from "@/lib/effects/logo/registry";
-import {
-  defineLogoEffectSchema,
-  isLogoEffectSchemaFieldVisible,
-  logoEffectField,
-  type LogoEffectSchema,
-} from "@/lib/effects/logo/schema";
-import type { JsonObject as LogoEffectJsonObject } from "@/lib/json";
+import { defineLogoEffectSchema, logoEffectField } from "@/lib/effects/logo/schema";
 
 const proofDefinitions = await Promise.all(
   LOGO_EFFECTS.map(async ({ id }) => (await loadLogoEffect(id)).logoEffect)
 );
-
-function expectedEditablePaths(
-  schema: LogoEffectSchema,
-  rootValues: LogoEffectJsonObject,
-  parentPath = ""
-): string[] {
-  const paths: string[] = [];
-  for (const [key, field] of Object.entries(schema)) {
-    if (field.readOnly === true || !isLogoEffectSchemaFieldVisible(field, rootValues)) continue;
-
-    const path = parentPath.length === 0 ? key : `${parentPath}.${key}`;
-    if (field.kind === "group") {
-      paths.push(...expectedEditablePaths(field.fields, rootValues, path));
-    } else if (field.update !== "source-metadata") {
-      paths.push(path);
-    }
-  }
-  return paths;
-}
 
 function renderedEditablePaths(markup: string) {
   return Array.from(markup.matchAll(/data-schema-path="([^"]+)"/gu), (match) => match[1]);
@@ -82,12 +57,13 @@ test("schema editor value parsers preserve exact typed values", () => {
       [10, 11, 12],
       "Customized"
     ),
-    literalLogoColor([10, 11, 12], "Customized")
+    { kind: "literal", reason: "Customized", value: [10, 11, 12] }
   );
-  assert.deepEqual(
-    schemaEditorColorBindingWithRole(literal, "foreground"),
-    themeLogoColor("foreground", [1, 2, 3])
-  );
+  assert.deepEqual(schemaEditorColorBindingWithRole(literal, "foreground"), {
+    kind: "theme",
+    role: "foreground",
+    fallback: [1, 2, 3],
+  });
 
   assert.deepEqual(
     parseSchemaEditorNumberList(
@@ -115,14 +91,79 @@ test("schema editor value parsers preserve exact typed values", () => {
 });
 
 for (const definition of proofDefinitions) {
-  test(`${definition.id} renders every visible writable schema field`, () => {
-    const { markup, values } = renderSchemaControls(definition);
-    assert.deepEqual(
-      renderedEditablePaths(markup).toSorted(),
-      expectedEditablePaths(definition.schema, values).toSorted()
-    );
+  test(`${definition.id} default schema can render editable controls`, () => {
+    const { markup } = renderSchemaControls(definition);
+    const paths = renderedEditablePaths(markup);
+    assert.ok(paths.length > 0);
+    assert.equal(new Set(paths).size, paths.length, "Each control has a unique path");
   });
 }
+
+test("conditional fields and groups follow root values while read-only metadata stays hidden", () => {
+  const schema = defineLogoEffectSchema({
+    enabled: logoEffectField.boolean({ label: "Enabled", tier: "identity", update: "live" }),
+    amount: logoEffectField.number({
+      label: "Amount",
+      tier: "identity",
+      editor: { minimum: 0, maximum: 10, step: 1 },
+      update: "live",
+      visibleWhen: { field: "enabled", equals: true },
+    }),
+    disabledOnly: logoEffectField.boolean({
+      label: "Fallback",
+      tier: "identity",
+      update: "live",
+      visibleWhen: { field: "enabled", equals: false },
+    }),
+    advanced: logoEffectField.group({
+      label: "Advanced",
+      tier: "advanced",
+      visibleWhen: { field: "enabled", equals: true },
+      fields: defineLogoEffectSchema({
+        gain: logoEffectField.number({
+          label: "Gain",
+          tier: "advanced",
+          editor: { minimum: 0, maximum: 10, step: 1 },
+          update: "live",
+        }),
+      }),
+    }),
+    locked: logoEffectField.number({
+      label: "Locked",
+      tier: "identity",
+      editor: { minimum: 0, maximum: 10, step: 1 },
+      update: "live",
+      readOnly: true,
+    }),
+    frames: logoEffectField.number({
+      label: "Frames",
+      tier: "identity",
+      editor: { minimum: 0, maximum: 10, step: 1 },
+      update: "source-metadata",
+    }),
+  });
+  const definition: LoadedLogoEffectDefinition = { ...matrixLogoEffect, schema };
+  for (const [enabled, expected] of [
+    [true, ["enabled", "amount", "advanced.gain"]],
+    [false, ["enabled", "disabledOnly"]],
+  ] as const) {
+    const markup = renderToStaticMarkup(
+      <LogoEffectSchemaControls
+        definition={definition}
+        onValuesChange={() => {}}
+        values={{
+          enabled,
+          amount: 2,
+          disabledOnly: false,
+          advanced: { gain: 3 },
+          locked: 4,
+          frames: 5,
+        }}
+      />
+    );
+    assert.deepEqual(renderedEditablePaths(markup), expected);
+  }
+});
 
 test("renders the standalone symbol editor with an accessible Unicode input", () => {
   const schema = defineLogoEffectSchema({

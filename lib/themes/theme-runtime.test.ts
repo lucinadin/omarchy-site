@@ -119,7 +119,7 @@ describe("theme runtime controls", () => {
     );
   });
 
-  test("keeps theme updates live when local storage rejects writes", () => {
+  test("contains storage write failures while persisting a theme", () => {
     const originalWindow = Object.getOwnPropertyDescriptor(globalThis, "window");
     Object.defineProperty(globalThis, "window", {
       configurable: true,
@@ -177,7 +177,7 @@ describe("theme runtime controls", () => {
     }
   });
 
-  test("bootstraps a saved community theme before hydration", () => {
+  test("the inline bootstrap applies a saved community theme to root styles", () => {
     const background = "#203040";
     const theme: OmarchyTheme = {
       colors: { ...omarchyThemes[0].colors, background },
@@ -273,7 +273,6 @@ describe("theme runtime controls", () => {
                 this.attributes.set(name, value);
               },
             };
-            links.push(link);
             return link;
           },
           documentElement: {
@@ -283,7 +282,11 @@ describe("theme runtime controls", () => {
               setProperty: (name: string, value: string) => properties.set(name, value),
             },
           },
-          head: { append() {} },
+          head: {
+            append(link: (typeof links)[number]) {
+              links.push(link);
+            },
+          },
           querySelector() {
             return null;
           },
@@ -301,7 +304,7 @@ describe("theme runtime controls", () => {
     }
   });
 
-  test("uses React transitions without consulting the manual document API", () => {
+  test("runs the update once without consulting the manual document transition API", () => {
     const originalDocument = Object.getOwnPropertyDescriptor(globalThis, "document");
     Object.defineProperty(globalThis, "document", {
       configurable: true,

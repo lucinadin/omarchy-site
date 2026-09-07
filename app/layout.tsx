@@ -10,7 +10,7 @@ import { SiteSearchRuntime } from "@/components/site/site-search-runtime";
 import { ScreenOverlayTarget } from "@/features/effects/components/screen-overlay-target";
 import { SecretLabRuntime } from "@/features/effects/components/secret-lab-runtime";
 import { getLogoCapabilityBootstrapScript } from "@/lib/effects/logo/capability-bootstrap";
-import { siteBrand, siteTagline, siteTitle } from "@/lib/site-brand";
+import { siteTagline, siteTitle } from "@/lib/site-brand";
 import { getThemeBootstrapScript } from "@/lib/themes/theme-bootstrap";
 import { wallpapers } from "@/lib/themes/wallpapers";
 import { LogoEffectsProvider, ScreenEffectsProvider, ThemePreferenceProvider } from "@/providers";
@@ -27,7 +27,6 @@ const jetBrainsMono = localFont({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteBrand.url),
   title: {
     default: siteTitle,
     template: "%s",

@@ -4,53 +4,81 @@ import { describe, test } from "node:test";
 import { createFrameHealthMonitor, renderQualityDpr } from "./adaptive-quality";
 
 const SIXTY_FPS_FRAME_MS = 1_000 / 60;
-const THIRTY_FPS_FRAME_MS = 1_000 / 30;
 
 describe("adaptive rendering quality", () => {
   test("keeps high quality when presented frames meet the display target", () => {
     const health = createFrameHealthMonitor();
-    let downgrade = false;
     for (let frame = 0; frame < 180; frame += 1) {
-      downgrade = health.record({ active: true, deltaMs: SIXTY_FPS_FRAME_MS, rendered: true });
+      assert.equal(
+        health.record({ active: true, deltaMs: SIXTY_FPS_FRAME_MS, rendered: true }),
+        false,
+        `frame ${frame}`
+      );
     }
-    assert.equal(downgrade, false);
   });
 
   test("requests low quality after two active seconds below the target", () => {
     const health = createFrameHealthMonitor();
-    let downgrade = false;
-    for (let frame = 0; frame < 90; frame += 1) {
-      downgrade = health.record({ active: true, deltaMs: THIRTY_FPS_FRAME_MS, rendered: true });
+    // 40fps uses exact 25ms samples: 79 frames are 1975ms; the 80th reaches 2000ms.
+    for (let frame = 0; frame < 79; frame += 1) {
+      assert.equal(
+        health.record({ active: true, deltaMs: 25, rendered: true }),
+        false,
+        `frame ${frame}`
+      );
     }
-    assert.equal(downgrade, true);
+    assert.equal(health.record({ active: true, deltaMs: 25, rendered: true }), true);
+    assert.equal(
+      health.record({ active: true, deltaMs: SIXTY_FPS_FRAME_MS, rendered: true }),
+      true,
+      "Downgrade remains latched"
+    );
+    health.reset();
+    for (let frame = 0; frame < 79; frame += 1) {
+      assert.equal(
+        health.record({ active: true, deltaMs: 25, rendered: true }),
+        false,
+        `after reset: frame ${frame}`
+      );
+    }
+    assert.equal(health.record({ active: true, deltaMs: 25, rendered: true }), true);
   });
 
   test("judges a fixed-step animation by its presentation target, not display refresh", () => {
     const health = createFrameHealthMonitor();
-    let downgrade = false;
     for (let frame = 0; frame < 360; frame += 1) {
-      downgrade = health.record({
-        active: true,
-        deltaMs: 1_000 / 120,
-        rendered: frame % 2 === 0,
-        targetFps: 60,
-      });
+      assert.equal(
+        health.record({
+          active: true,
+          deltaMs: 1_000 / 120,
+          rendered: frame % 2 === 0,
+          targetFps: 60,
+        }),
+        false,
+        `frame ${frame}`
+      );
     }
-    assert.equal(downgrade, false);
   });
 
   test("does not count hidden time or a suspended frame as poor performance", () => {
-    const health = createFrameHealthMonitor();
-    for (let frame = 0; frame < 50; frame += 1) {
-      health.record({ active: true, deltaMs: THIRTY_FPS_FRAME_MS, rendered: true });
+    for (const interruption of [
+      { active: false, deltaMs: 25, rendered: false },
+      { active: true, deltaMs: 1_000, rendered: false },
+    ]) {
+      const health = createFrameHealthMonitor();
+      for (let frame = 0; frame < 50; frame += 1) {
+        assert.equal(health.record({ active: true, deltaMs: 25, rendered: true }), false);
+      }
+      assert.equal(health.record(interruption), false);
+      for (let frame = 0; frame < 79; frame += 1) {
+        assert.equal(
+          health.record({ active: true, deltaMs: 25, rendered: true }),
+          false,
+          `after interruption: frame ${frame}`
+        );
+      }
+      assert.equal(health.record({ active: true, deltaMs: 25, rendered: true }), true);
     }
-    health.record({ active: false, deltaMs: 1_000, rendered: false });
-
-    let downgrade = false;
-    for (let frame = 0; frame < 30; frame += 1) {
-      downgrade = health.record({ active: true, deltaMs: SIXTY_FPS_FRAME_MS, rendered: true });
-    }
-    assert.equal(downgrade, false);
   });
 
   test("renders low quality at one device pixel and clamps high quality to two", () => {
